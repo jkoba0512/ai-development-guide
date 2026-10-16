@@ -50,9 +50,9 @@ For the editing check, switch to an approval-based mode such as Default. Inspect
 
 ## Run the first-run checks
 
-Return to [Run the first-run checks](../setup.md#run-the-first-run-checks). Read WORKING_RULES.md and SPEC.md first, then perform the small-edit and execution checks.
+Return to [Run the first-run checks](../setup.md#run-the-first-run-checks). Read [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([setup](../setup.md#prepare-your-records) · [template](../assets/templates/WORKING_RULES.md.txt)) and SPEC.md first, then perform the small-edit and execution checks.
 
-Explicitly supply WORKING_RULES.md and the other requested records. CLAUDE.md is an optional adapter that may point to those records; it is not a required part of the shared workflow.
+Explicitly supply [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([setup](../setup.md#prepare-your-records) · [template](../assets/templates/WORKING_RULES.md.txt)) and the other requested records. CLAUDE.md is an optional adapter that may point to those records; it is not a required part of the shared workflow.
 
 ## Continue development
 

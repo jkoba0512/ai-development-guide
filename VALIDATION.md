@@ -134,3 +134,10 @@ Screenshots are regenerated for the English edition:
 - Local internal-link checks and strict build passed.
 - Local browser verification passed for all 17 pages, 9 assets including the new template, English search, dark mode, and mobile layout.
 - Refreshed preview screenshots. Product access and pricing findings were not changed.
+
+## Working-rules reminder links
+
+- Added explanation, setup, and download links beside shared working-rules references across the guide.
+- Kept copyable prompts and folder trees plain; placed reference links immediately before them.
+- Included absolute guide links in the downloadable handoff template so they remain usable outside the site.
+- Internal file/section-link checks and the strict build passed.

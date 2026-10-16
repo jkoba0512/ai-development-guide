@@ -17,6 +17,8 @@ A specification defines what must be true for the work to be complete. Review th
 
 ## Ask the AI for a draft
 
+Working rules: [explanation](../templates.md#tool-independent-working-rules) · [setup](../setup.md#prepare-your-records) · [template](../assets/templates/WORKING_RULES.md.txt).
+
 ```text
 I want a small Python CLI that summarizes study durations.
 Read the project working rules in WORKING_RULES.md or the contents provided with this request.

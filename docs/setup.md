@@ -56,10 +56,12 @@ Use a text editor to fill in the starting records; the AI tool does not need to 
 - **ENVIRONMENT.md:** record the environment, selected tool/interface, account access type, and available permission settings. Do not include secret values.
 - **VERIFICATION.md:** leave results marked as not run until you execute them.
 - **HANDOFF.md:** set the next task to “Complete the reading, editing, and execution checks.”
-- **WORKING_RULES.md:** read and keep the shared working rules.
+- **[WORKING_RULES.md](templates.md#tool-independent-working-rules) ([setup](setup.md#prepare-your-records) · [template](assets/templates/WORKING_RULES.md.txt)):** read and keep the shared working rules.
 - **DECISIONS.md:** leave it ready for later decisions.
 
 Your folder should now look like this:
+
+Working rules: [explanation](templates.md#tool-independent-working-rules) · [setup](setup.md#prepare-your-records) · [template](assets/templates/WORKING_RULES.md.txt).
 
 ```text
 ai-practice/
@@ -90,7 +92,7 @@ If using Git, initialize with `git init` from this folder. Create a `.gitignore`
 
 For a new terminal, first locate the folder. From the directory containing `ai-practice`, run `cd ai-practice`. From elsewhere, use its full path, quoted if it contains spaces. If already inside it, skip that command. Check the working directory with `pwd` on macOS/Linux or `Get-Location` in PowerShell.
 
-Follow the linked tool instructions to start the session and set permissions **before sending the first request**. Confirm that its project/folder display points to `ai-practice`. WORKING_RULES.md is an ordinary project document with no assumed automatic loading. Explicitly ask the tool to read it. If the interface cannot access local files, attach or paste its contents and the requested project records before sending the task.
+Follow the linked tool instructions to start the session and set permissions **before sending the first request**. Confirm that its project/folder display points to `ai-practice`. [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([setup](setup.md#prepare-your-records) · [template](assets/templates/WORKING_RULES.md.txt)) is an ordinary project document with no assumed automatic loading. Explicitly ask the tool to read it. If the interface cannot access local files, attach or paste its contents and the requested project records before sending the task.
 
 ## Run the first-run checks
 
@@ -105,6 +107,8 @@ Before starting, confirm that:
 ### Reading
 
 Send this request in the conversation you just opened:
+
+Working rules: [explanation](templates.md#tool-independent-working-rules) · [setup](setup.md#prepare-your-records) · [template](assets/templates/WORKING_RULES.md.txt).
 
 ```text
 Read the project working rules (WORKING_RULES.md) and SPEC.md, using the local files

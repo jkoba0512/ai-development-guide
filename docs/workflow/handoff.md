@@ -12,9 +12,9 @@ Use shared files to make work reproducible across conversations, tools, computer
 | ENVIRONMENT.md | OS, versions, dependencies, startup commands, and permissions |
 | HANDOFF.md | Current state, unfinished work, and the next single task |
 | DECISIONS.md | Choices, reasons, and rejected alternatives |
-| WORKING_RULES.md | Shared working rules and reading order |
+| [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([setup](../setup.md#prepare-your-records) · [template](../assets/templates/WORKING_RULES.md.txt)) | Shared working rules and reading order |
 
-WORKING_RULES.md is a tool-independent project document. Explicitly provide it and the other records by file access, attachment, or pasted text; no automatic loading is assumed. **Ask the tool to summarize the supplied documents before proceeding.**
+[WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([setup](../setup.md#prepare-your-records) · [template](../assets/templates/WORKING_RULES.md.txt)) is a tool-independent project document. Explicitly provide it and the other records by file access, attachment, or pasted text; no automatic loading is assumed. **Ask the tool to summarize the supplied documents before proceeding.**
 
 Tool-specific instruction files, such as AGENTS.md or CLAUDE.md, are optional adapters. If you use one, keep only references to the shared documents and avoid maintaining a second set of project rules. None is required to follow this guide.
 
@@ -42,6 +42,8 @@ If HANDOFF.md is included in the commit that will be created after writing it, y
 A push does not transfer uncommitted files. Copying a Git worktree as an ordinary folder can break its Git references. Create a destination worktree using Git's workflow, or transfer the actual files and records appropriately.
 
 ## After moving
+
+Working rules: [explanation](../templates.md#tool-independent-working-rules) · [setup](../setup.md#prepare-your-records) · [template](../assets/templates/WORKING_RULES.md.txt).
 
 ```text
 Read WORKING_RULES.md, SPEC.md, ENVIRONMENT.md, VERIFICATION.md, and HANDOFF.md

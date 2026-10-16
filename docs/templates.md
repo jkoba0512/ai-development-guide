@@ -9,17 +9,17 @@ Save the linked text files, remove the final `.txt` to make them Markdown files,
 | [VERIFICATION.md](assets/templates/VERIFICATION.md.txt) | Who ran each command, exit codes, and actual results |
 | [HANDOFF.md](assets/templates/HANDOFF.md.txt) | Current state and information needed to resume |
 | [DECISIONS.md](assets/templates/DECISIONS.md.txt) | Reasons and consequences of decisions |
-| [WORKING_RULES.md](assets/templates/WORKING_RULES.md.txt) | Shared working rules |
+| [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([setup](setup.md#prepare-your-records) · [template](assets/templates/WORKING_RULES.md.txt)) | Shared working rules |
 
 These are blank starting templates. Mark unknowns as unverified; do not mark checks as passed unless they ran. You do not need to record account names or secret values.
 
 ## Tool-independent working rules
 
-WORKING_RULES.md is an ordinary Markdown document, not a special configuration file for any AI product. This guide uses it as the single source of shared project instructions.
+[WORKING_RULES.md](templates.md#tool-independent-working-rules) ([setup](setup.md#prepare-your-records) · [template](assets/templates/WORKING_RULES.md.txt)) is an ordinary Markdown document, not a special configuration file for any AI product. This guide uses it as the single source of shared project instructions.
 
 Explicitly provide its contents when starting work: ask a tool with file access to read it, attach the file to a conversation, or paste the text into your request. The same method applies to SPEC.md and the other records. A tool that cannot access local files can still use the documents you supply; save its proposed changes yourself.
 
-If you already created AGENTS.md from an earlier version of this guide, rename it to WORKING_RULES.md and update your project references. No other tool-specific file is required.
+If you already created AGENTS.md from an earlier version of this guide, rename it to [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([setup](setup.md#prepare-your-records) · [template](assets/templates/WORKING_RULES.md.txt)) and update your project references. No other tool-specific file is required.
 
 ## What belongs where
 
