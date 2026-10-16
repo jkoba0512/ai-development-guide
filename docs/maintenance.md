@@ -1,6 +1,6 @@
 # Local Checks and Publication Preparation
 
-This guide uses Material for MkDocs and is prepared for publication at https://jkoba0512.github.io/ai-development-guide/. The active deployment workflow is in `.github/workflows/pages.yml`; deploy updates manually after completing the local checks below.
+This guide uses Material for MkDocs and is published at https://jkoba0512.github.io/ai-development-guide/. The active deployment workflow is in `.github/workflows/pages.yml`; deploy updates manually after completing the local checks below.
 
 ## Build locally
 

@@ -47,9 +47,9 @@ VALIDATION.md            Verification results for this guide
 
 Repository: [jkoba0512/ai-development-guide](https://github.com/jkoba0512/ai-development-guide).
 
-Planned website (not yet available): https://jkoba0512.github.io/ai-development-guide/
+Live website: https://jkoba0512.github.io/ai-development-guide/
 
-The guide has been uploaded. GitHub rejected Pages activation because the current plan does not support Pages for this private repository. Publication is pending a repository visibility or plan decision.
+The repository is public and the guide is published through GitHub Pages. The live pages, downloads, English search, dark mode, and mobile layout have been verified.
 
 The active workflow is stored at `.github/workflows/pages.yml`. It runs local-equivalent checks, builds the site, and deploys through GitHub Pages when manually dispatched. A push alone does not deploy the site. Keep `.venv/` and generated `site/` out of Git.
 

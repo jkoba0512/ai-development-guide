@@ -88,7 +88,7 @@ Screenshots are regenerated for the English edition:
 - No hands-on Windows / Linux execution or assistive-technology accessibility review.
 - No comprehensive external-link monitoring.
 - Material prints an advisory about MkDocs 2.0 on startup; this project uses pinned MkDocs 1.6.1.
-- No GitHub Pages configuration, workflow execution, remote creation, push, or external publication.
+- At the time of the initial and English-edition checks, no GitHub Pages configuration, workflow execution, remote creation, push, or external publication had been performed. See the publication update below.
 - The draft workflow remains at deployment/pages.yml.example, outside GitHub Actions' active workflow path.
 
 ## Repository upload and deployment attempt
@@ -96,4 +96,17 @@ Screenshots are regenerated for the English edition:
 - Uploaded the guide and manual Pages workflow to jkoba0512/ai-development-guide, branch main.
 - Local internal-link checks, all 9 sample tests, and the strict build passed.
 - GitHub rejected Pages activation with HTTP 422: the current plan does not support GitHub Pages for this private repository.
-- No website has been deployed. Repository visibility has not been changed; publication awaits the owner’s decision.
+- At this attempt, no website had been deployed. Publication awaited the owner's repository visibility or plan decision.
+
+## Publication verification
+
+- The owner changed the repository to public; public visibility was confirmed through the GitHub API.
+- Enabled GitHub Pages with build_type=workflow and HTTPS enforced.
+- Published https://jkoba0512.github.io/ai-development-guide/.
+- Initial successful deployment: https://github.com/jkoba0512/ai-development-guide/actions/runs/38858349854.
+- GitHub Actions passed dependency installation, internal-link checks, all 9 sample tests, strict build, artifact upload, and deployment.
+- Ran scripts/check_preview.py against the public URL: all 17 pages and 9 static assets returned HTTP 200.
+- Confirmed English search, dark mode, mobile layout, and no JavaScript page errors.
+- Refreshed the desktop/mobile screenshots from the live site.
+- Updated README and site maintenance instructions to reflect publication.
+- Product pricing research remains dated 2026-10-06; deployment did not include a new product-terms review.
