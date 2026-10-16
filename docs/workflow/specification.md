@@ -19,12 +19,16 @@ A specification defines what must be true for the work to be complete. Review th
 
 ```text
 I want a small Python CLI that summarizes study durations.
-Read AGENTS.md first, then draft SPEC.md without implementing the program.
+Read the project working rules in WORKING_RULES.md or the contents provided with this request.
+If those contents are unavailable, ask me to provide them before proceeding.
+Then draft SPEC.md without implementing the program.
 Include purpose, inputs, outputs, invalid-input behavior, exclusions,
 and acceptance criteria.
 List unclear points as questions or open decisions instead of silently assuming answers.
 No external APIs, persistent storage, or additional packages are needed.
 ```
+
+The working rules can be read from a local file, attached, or pasted into the conversation. This prompt does not require any product-specific instruction file or automatic loading. If the tool cannot save files, copy the agreed draft into SPEC.md yourself.
 
 Review the draft for unrequested storage, authentication, or paid APIs. Save the agreed version in SPEC.md and record important choices and their reasons in DECISIONS.md.
 

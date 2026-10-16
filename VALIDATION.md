@@ -123,3 +123,14 @@ Screenshots are regenerated for the English edition:
 - Local browser checks passed for 17 pages, 9 static assets, English search, dark mode, and mobile layout.
 - Clicked all 8 getting-started links and all 5 tool routes in the local browser; destination URLs and section IDs matched.
 - Refreshed preview screenshots and reviewed the homepage layout.
+
+## Tool-independent working instructions
+
+- Replaced the shared AGENTS.md template with WORKING_RULES.md, an ordinary Markdown project document.
+- Updated specification, implementation, first-run, practice, and handoff prompts, along with tool pages and the downloadable handoff template.
+- Documented explicit reading, attachments, and pasted text, including what to do when a required document is unavailable.
+- Kept product instruction files only as optional adapters; added migration guidance for existing practice folders.
+- Updated template-presence checks and the browser-check download route.
+- Local internal-link checks and strict build passed.
+- Local browser verification passed for all 17 pages, 9 assets including the new template, English search, dark mode, and mobile layout.
+- Refreshed preview screenshots. Product access and pricing findings were not changed.

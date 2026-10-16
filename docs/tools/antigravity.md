@@ -33,7 +33,7 @@ Select Request Review in project permissions. In the IDE, also use Request Revie
 
 ## Run the first-run checks
 
-Continue to [Run the first-run checks](../setup.md#run-the-first-run-checks). Ask the agent to read AGENTS.md and SPEC.md first. Review plans and artifacts before applying them; permit folder-scoped edits only for the editing check.
+Continue to [Run the first-run checks](../setup.md#run-the-first-run-checks). Ask the agent to read WORKING_RULES.md and SPEC.md first. Review plans and artifacts before applying them; permit folder-scoped edits only for the editing check.
 
 If browser operation becomes necessary, use a practice page and dedicated profile, avoiding pages signed in to personal accounts.
 

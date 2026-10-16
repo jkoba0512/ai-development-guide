@@ -12,9 +12,11 @@ Use shared files to make work reproducible across conversations, tools, computer
 | ENVIRONMENT.md | OS, versions, dependencies, startup commands, and permissions |
 | HANDOFF.md | Current state, unfinished work, and the next single task |
 | DECISIONS.md | Choices, reasons, and rejected alternatives |
-| AGENTS.md | Shared working rules and reading order |
+| WORKING_RULES.md | Shared working rules and reading order |
 
-Automatic loading of AGENTS.md varies by product and version. Where needed, use CLAUDE.md or Copilot-specific instructions to point to the common files. Avoid maintaining competing sources of truth. **A reference does not prove that a file was read: ask the tool to summarize it first.**
+WORKING_RULES.md is a tool-independent project document. Explicitly provide it and the other records by file access, attachment, or pasted text; no automatic loading is assumed. **Ask the tool to summarize the supplied documents before proceeding.**
+
+Tool-specific instruction files, such as AGENTS.md or CLAUDE.md, are optional adapters. If you use one, keep only references to the shared documents and avoid maintaining a second set of project rules. None is required to follow this guide.
 
 ## Before moving
 
@@ -42,8 +44,9 @@ A push does not transfer uncommitted files. Copying a Git worktree as an ordinar
 ## After moving
 
 ```text
-Read AGENTS.md, SPEC.md, ENVIRONMENT.md, VERIFICATION.md, and HANDOFF.md
-in that order.
+Read WORKING_RULES.md, SPEC.md, ENVIRONMENT.md, VERIFICATION.md, and HANDOFF.md
+in that order, using local files or the supplied attachments/text.
+If a required document is unavailable, ask me to provide it before proceeding.
 Summarize the current objective, code state, last verification,
 unfinished work, and next single task.
 Report contradictions between the specification and code first.

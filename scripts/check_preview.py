@@ -17,7 +17,7 @@ routes = [
     "/templates/", "/troubleshooting/", "/maintenance/", "/sources/",
     "/assets/templates/SPEC.md.txt", "/assets/templates/ENVIRONMENT.md.txt",
     "/assets/templates/VERIFICATION.md.txt", "/assets/templates/HANDOFF.md.txt",
-    "/assets/templates/DECISIONS.md.txt", "/assets/templates/AGENTS.md.txt",
+    "/assets/templates/DECISIONS.md.txt", "/assets/templates/WORKING_RULES.md.txt",
     "/assets/example/study_stats.py", "/assets/example/test_study_stats.py",
     "/assets/stylesheets/extra.css",
 ]

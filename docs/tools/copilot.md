@@ -21,9 +21,9 @@ Follow [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practi
 ## Open the practice folder
 
 1. In VS Code, choose **File → Open Folder** and select **`ai-practice`**.
-2. Check that Explorer shows SPEC.md, AGENTS.md, and the other records.
+2. Check that Explorer shows SPEC.md, WORKING_RULES.md, and the other records.
 3. Open Copilot Chat.
-4. Attach AGENTS.md and SPEC.md, or explicitly name them in your first request.
+4. Attach WORKING_RULES.md and SPEC.md, or explicitly name them in your first request.
 
 Review unfamiliar repository settings and scripts before trusting a folder.
 
@@ -41,4 +41,4 @@ Mode names vary by version. Record the actual interface in ENVIRONMENT.md. Free 
 
 Proceed to the [Practice project](../practice.md). Review accepted completions and run tests yourself. Using another provider's model within Copilot does not grant a subscription to that provider's product.
 
-For later [handoffs](../workflow/handoff.md), point product-specific instruction files to the common AGENTS.md and reading order rather than maintaining separate rule sets.
+For later [handoffs](../workflow/handoff.md), point product-specific instruction files to the common WORKING_RULES.md and reading order rather than maintaining separate rule sets.

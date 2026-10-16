@@ -23,7 +23,7 @@ A runnable [reference implementation](assets/example/study_stats.py) and [refere
 
 ## 2. Request implementation
 
-In your prepared `ai-practice` folder, keep the shared records and ask the AI to read SPEC.md and AGENTS.md, then implement `src/study_stats.py` and `tests/test_study_stats.py`. Use the [implementation prompt](workflow/implementation.md).
+In your prepared `ai-practice` folder, keep the shared records and ask the AI to read SPEC.md and WORKING_RULES.md, then implement `src/study_stats.py` and `tests/test_study_stats.py`. Use the [implementation prompt](workflow/implementation.md).
 
 Review the changes yourself. Confirm handling of no input, malformed input, and out-of-range values. Check that failed numeric conversion is not silently ignored.
 

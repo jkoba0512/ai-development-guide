@@ -5,7 +5,8 @@
 Limit each task to one feature or acceptance criterion. Name the files to change and the boundaries of the work.
 
 ```text
-Read AGENTS.md, SPEC.md, and HANDOFF.md.
+Read WORKING_RULES.md, SPEC.md, and HANDOFF.md from the project or the supplied contents.
+If a required document is unavailable, ask me to provide it before proceeding.
 Create src/study_stats.py and tests/test_study_stats.py to satisfy AC-01 through AC-04.
 Use only the Python standard library, with no storage or network operations.
 Derive expected results from SPEC.md. Check input validation and CLI exit codes.

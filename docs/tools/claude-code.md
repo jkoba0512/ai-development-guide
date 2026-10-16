@@ -50,9 +50,9 @@ For the editing check, switch to an approval-based mode such as Default. Inspect
 
 ## Run the first-run checks
 
-Return to [Run the first-run checks](../setup.md#run-the-first-run-checks). Read AGENTS.md and SPEC.md first, then perform the small-edit and execution checks.
+Return to [Run the first-run checks](../setup.md#run-the-first-run-checks). Read WORKING_RULES.md and SPEC.md first, then perform the small-edit and execution checks.
 
-If using CLAUDE.md, point it to the shared records and confirm that they were read. Creating tool-specific instructions is not required for the first exercise.
+Explicitly supply WORKING_RULES.md and the other requested records. CLAUDE.md is an optional adapter that may point to those records; it is not a required part of the shared workflow.
 
 ## Continue development
 

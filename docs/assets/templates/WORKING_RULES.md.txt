@@ -1,6 +1,8 @@
 # Shared Working Rules
 
-- Read SPEC.md, ENVIRONMENT.md, VERIFICATION.md, and HANDOFF.md first.
+This is an ordinary, tool-independent project document. Read it explicitly, or provide its contents as an attachment or pasted text. No automatic loading is assumed.
+
+- Read the available SPEC.md, ENVIRONMENT.md, VERIFICATION.md, and HANDOFF.md records first, from files or supplied contents. Ask for any required document you cannot access; do not pretend to have read it.
 - Report unreadable files, specification/code contradictions, and open decisions before proceeding.
 - Treat the specification as the source of truth. Do not change acceptance criteria without agreement.
 - Implement small changes. Do not add out-of-scope features or dependencies.

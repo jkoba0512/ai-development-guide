@@ -4,7 +4,7 @@ Updated: [YYYY-MM-DD]
 
 ## Reading order
 
-AGENTS.md → SPEC.md → ENVIRONMENT.md → VERIFICATION.md → this file
+WORKING_RULES.md → SPEC.md → ENVIRONMENT.md → VERIFICATION.md → this file
 
 ## Objective and current state
 
