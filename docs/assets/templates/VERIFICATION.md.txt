@@ -1,0 +1,26 @@
+# Verification Record
+
+## Target
+
+- Timestamp: [include timezone]
+- Code version: [commit or identifier for uncommitted changes]
+- Environment: [ENVIRONMENT.md version]
+- Executed by: [person / AI tool name]
+
+## Results
+
+| AC | Working directory and command | Expected result | Actual result and exit code | Status |
+| --- | --- | --- | --- | --- |
+| AC-01 | [command] | [result] | [output and exit code] | [pass / fail / not run] |
+
+## Manual review
+
+[Diffs, dependencies, network/storage behavior, and verification method]
+
+## Failure reproduction
+
+[Minimal input, commands, and actual error]
+
+## Checks not run and limitations
+
+[Unverified operating systems or conditions, with reasons]

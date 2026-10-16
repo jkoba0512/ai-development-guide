@@ -1,0 +1,3 @@
+:root { --md-text-font: system-ui, sans-serif; --md-code-font: ui-monospace, monospace; }
+.md-typeset { line-height: 1.8; }
+.md-typeset table:not([class]) th { min-width: 7rem; }

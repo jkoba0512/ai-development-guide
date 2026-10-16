@@ -1,0 +1,92 @@
+# Local Verification Record
+
+## English edition — 2026-10-13
+
+Scope: translate the guide, templates, prompts, configuration, sample messages, and project documentation into English. Product research retains its original date of 2026-10-06.
+
+All English-edition checks passed locally.
+
+| Check | Result |
+| --- | --- |
+| Source-language scan | No Japanese text in README, validation record, configuration, guide, templates, sample code, scripts, or deployment draft |
+| Internal links and navigation | Passed: 17 pages and 6 templates |
+| Sample tests | Passed: all 9 tests, including translated CLI output and error messages |
+| Strict build | Passed: generated English HTML in site/ |
+| Local preview | Served on http://127.0.0.1:8001/; port 8000 was already in use |
+| HTTP checks | All 17 pages and 9 static assets returned HTTP 200 |
+| English interface | Checked pages use html lang=en; navigation and theme controls are English |
+| English search | Query "handoff" returned visible results |
+| Dark mode and mobile layout | Passed; no document-wide overflow at 390×844 |
+| Browser errors | No JavaScript page errors on checked pages |
+| Screenshots | Regenerated desktop and mobile images and reviewed both |
+
+Commands used:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/check_docs.py
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m unittest discover -s docs/assets/example -v
+.venv/bin/python -m mkdocs build --strict
+.venv/bin/python -m mkdocs serve --dev-addr 127.0.0.1:8001
+GUIDE_PREVIEW_URL=http://127.0.0.1:8001 uv run --python .venv/bin/python --with playwright python scripts/check_preview.py
+```
+
+External publication remains unperformed.
+
+## Initial edition — 2026-10-06 (Asia/Tokyo)
+
+The original local files were checked before Git initialization.
+
+### Environment
+
+- macOS 26.6.2 / arm64
+- Python 3.12.11 in .venv
+- MkDocs 1.6.1 / Material for MkDocs 9.7.6
+- All 29 dependencies pinned in requirements.txt
+- Local Google Chrome, checked headlessly with Playwright
+
+### Original results
+
+| Check | Command / method | Result |
+| --- | --- | --- |
+| Internal links, navigation, templates | .venv/bin/python scripts/check_docs.py | Passed: 17 pages, relative links, 6 templates |
+| Sample tests | PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m unittest discover -s docs/assets/example -v | Passed: 9 tests covering normal, boundary, and invalid inputs, CLI exit codes, and repeatability |
+| Strict build | .venv/bin/python -m mkdocs build --strict | Passed: exit code 0, generated site/ |
+| Local serving | .venv/bin/python -m mkdocs serve --dev-addr 127.0.0.1:8000 | Passed: loopback only |
+| All pages and downloads | scripts/check_preview.py | 17 pages and 9 static assets returned HTTP 200 |
+| Original-language search | Browser search for the original handoff term | Passed: 9 relevant results |
+| Dark mode | Browser toggle | Passed |
+| Mobile width | Practice page at 390×844 | Passed: no document-wide horizontal overflow |
+| JavaScript | pageerror event monitoring | No exceptions on checked pages |
+| Visual review | Two screenshots in artifacts/ | Navigation, tables, code, and text layout checked |
+
+### Browser check
+
+Start a loopback preview, then run:
+
+```sh
+uv run --python .venv/bin/python --with playwright python scripts/check_preview.py
+```
+
+The script defaults to http://127.0.0.1:8000/. Set GUIDE_PREVIEW_URL to another local URL if that port is occupied. It currently uses the macOS Google Chrome executable path. For another OS, change the browser path or install a browser following Playwright's official instructions.
+
+Screenshots are regenerated for the English edition:
+
+- [Desktop](artifacts/preview-desktop.png)
+- [Mobile](artifacts/preview-mobile.png)
+
+### Corrections during original verification
+
+- Saved templates as .md.txt so the site serves raw text; documented removing .txt when saving.
+- Changed the browser navigation wait from networkidle to load because live-reload traffic continues.
+- Waited for search initialization before entering a query and then waited for visible results.
+
+## Limitations and checks not performed
+
+- Official product documentation was researched, but subscriptions, student verification, and hands-on operation of the five products were not tested.
+- Account-specific regional checkout prices, student eligibility, and renewal terms are unverified.
+- Grok Build's free allowance and extra Antigravity allowance through Google's student offer remain unverified in the guide.
+- No hands-on Windows / Linux execution or assistive-technology accessibility review.
+- No comprehensive external-link monitoring.
+- Material prints an advisory about MkDocs 2.0 on startup; this project uses pinned MkDocs 1.6.1.
+- No GitHub Pages configuration, workflow execution, remote creation, push, or external publication.
+- The draft workflow remains at deployment/pages.yml.example, outside GitHub Actions' active workflow path.

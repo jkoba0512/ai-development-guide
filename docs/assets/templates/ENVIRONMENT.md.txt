@@ -1,0 +1,35 @@
+# Environment
+
+Checked: [YYYY-MM-DD]
+
+## Runtime
+
+- OS / shell: [type and version]
+- Python or other runtime: [version]
+- AI tool / version / interface: [details]
+- Working directory: [portable description]
+- Local / cloud: [details]
+
+## Access and billing
+
+- Plan / authentication: [subscription / API / institutional access]
+- Price and renewal date: [currency, monthly/annual billing, free-period end]
+- Student benefit: [verified / unverified, expiry]
+- Additional billing / automatic top-ups: [status and budget]
+- Official terms checked on / URL: [details]
+
+## Permissions
+
+- Read / write scope: [details]
+- Command approvals / sandbox: [details]
+- Network / browser / external integrations: [details]
+
+## Reproduction steps
+
+- Install dependencies: [commands and lockfile or pinned versions]
+- Start: [directory and command]
+- Test: [directory and command]
+
+## Secrets
+
+[Required environment-variable names and secure storage locations only. Do not include values.]

@@ -1,0 +1,38 @@
+# Handoff
+
+Updated: [YYYY-MM-DD]
+
+## Reading order
+
+AGENTS.md → SPEC.md → ENVIRONMENT.md → VERIFICATION.md → this file
+
+## Objective and current state
+
+[Specification status, completed scope, and remaining work]
+
+## Code location and version
+
+- Working directory / worktree: [details]
+- Branch / baseline commit: [details]
+- Uncommitted changes and untracked files: [details]
+
+## Last verification
+
+[Relevant VERIFICATION.md entry, execution date, and pass / fail / not run]
+
+## Decisions
+
+[References to DECISIONS.md]
+
+## Next single task
+
+[One concrete task and its acceptance criteria]
+
+## Authorized scope
+
+[Files to change, commands, and network access]
+External publication / push / billing: [authorization status]
+
+## Open issues and notes
+
+[Known problems, dependencies, OS differences, and whether concurrent agents were stopped]

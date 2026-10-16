@@ -1,0 +1,65 @@
+site_url: https://jkoba0512.github.io/ai-development-guide/
+repo_url: https://github.com/jkoba0512/ai-development-guide
+repo_name: jkoba0512/ai-development-guide
+site_name: AI Development Practice Guide for Students
+site_description: Setup, specifications, implementation, verification, safe permissions, and handoffs for AI-assisted development
+docs_dir: docs
+site_dir: site
+strict: true
+theme:
+  name: material
+  language: en
+  font: false
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.footer
+    - content.code.copy
+    - search.suggest
+plugins:
+  - search:
+      lang: en
+markdown_extensions:
+  - admonition
+  - tables
+  - attr_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+extra_css:
+  - assets/stylesheets/extra.css
+nav:
+  - Introduction: index.md
+  - Costs and Student Benefits: plans.md
+  - Common Setup: setup.md
+  - Tool Setup:
+      - Antigravity: tools/antigravity.md
+      - Grok Build: tools/grok-build.md
+      - GitHub Copilot: tools/copilot.md
+      - Codex: tools/codex.md
+      - Claude Code: tools/claude-code.md
+  - Development Workflow:
+      - Write a Specification: workflow/specification.md
+      - Implementation and Verification: workflow/implementation.md
+      - Safe Permission Settings: workflow/permissions.md
+      - Handoffs Between Environments: workflow/handoff.md
+  - Practice Project: practice.md
+  - Templates: templates.md
+  - Troubleshooting: troubleshooting.md
+  - Local Checks and Publication: maintenance.md
+  - Official Sources and Updates: sources.md

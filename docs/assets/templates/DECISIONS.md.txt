@@ -1,0 +1,5 @@
+# Decision Record
+
+| Date | Decision | Reason | Alternatives considered | Affected requirements / tests |
+| --- | --- | --- | --- | --- |
+| [date] | [choice] | [reason] | [alternatives] | [AC IDs and files] |

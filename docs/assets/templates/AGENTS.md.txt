@@ -1,0 +1,12 @@
+# Shared Working Rules
+
+- Read SPEC.md, ENVIRONMENT.md, VERIFICATION.md, and HANDOFF.md first.
+- Report unreadable files, specification/code contradictions, and open decisions before proceeding.
+- Treat the specification as the source of truth. Do not change acceptance criteria without agreement.
+- Implement small changes. Do not add out-of-scope features or dependencies.
+- Keep secrets and personal information out of AI inputs, conversations, and shared files.
+- Check targets and reasons before expanding permission scope.
+- Check specific authorization for external publication, pushes, billing, and third-party transmission.
+- Run tests and record commands, working directories, and exit codes.
+- Distinguish observed results from assumptions and checks not run.
+- Update HANDOFF.md before ending work or moving environments.
