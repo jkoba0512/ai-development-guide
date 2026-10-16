@@ -2,7 +2,7 @@
 
 This guide was created for students enrolled in the **System Design** course.
 
-Learn to define a specification, review changes, and verify behavior while using AI for assistance. Start with whichever of Antigravity, Grok Build, GitHub Copilot, Codex, or Claude Code fits your access and budget. You do not need subscriptions to all five.
+Learn to define a specification, review changes, and verify behavior while using AI for assistance. Start with whichever of Antigravity, Grok Build, GitHub Copilot, Codex, or Claude Code fits your access and budget. You can start with a free option. Paid subscriptions are optional.
 
 !!! info "When product terms were checked"
     October 6, 2026. Prices, student benefits, usage limits, and interfaces can change. Before subscribing, review [Costs and student benefits](plans.md) and its official sources. The English translation was prepared on October 13, 2026; the product terms have not been rechecked as part of translation.
