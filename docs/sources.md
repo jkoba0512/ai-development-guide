@@ -64,5 +64,4 @@ The older Codex documentation URLs on developers.openai.com redirected to learn.
 | --- | --- |
 | 2026-10-06 | Initial edition: official research for five products, shared development/verification/handoff workflow, and MkDocs structure. No external publication |
 | 2026-10-13 | English edition: translated documentation, prompts, templates, code messages, and configuration. Original research date retained |
-
 | 2026-10-17 | Made shared working instructions tool-independent through WORKING_RULES.md and explicit document sharing; updated prompts, templates, and handoff guidance |
