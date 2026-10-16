@@ -1,5 +1,7 @@
 # AI Development Practice Guide for Students
 
+This guide was created for students enrolled in the **System Design** course.
+
 Learn to define a specification, review changes, and verify behavior while using AI for assistance. Start with whichever of Antigravity, Grok Build, GitHub Copilot, Codex, or Claude Code fits your access and budget. You do not need subscriptions to all five.
 
 !!! info "When product terms were checked"
