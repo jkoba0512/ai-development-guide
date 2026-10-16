@@ -8,6 +8,10 @@ Product information was checked on **2026-10-06** by opening official pricing, s
 
 The guide was translated into English on **2026-10-13**. Translation did not include a new product-terms review. Japan-specific findings remain explicitly identified and should not be interpreted as worldwide offers.
 
+## Setup-flow review
+
+The setup sequence was revised to separate installation and authentication from project startup. The official Antigravity setup, VS Code setup, Grok CLI, Codex CLI, and Claude Code CLI references were reopened to check these steps. In particular, standalone login commands let CLI users authenticate before creating or opening the practice folder. This review did not recheck prices or student offers; those findings retain their 2026-10-06 verification date.
+
 ## Sources
 
 | Category | Official page | What was checked |
@@ -37,6 +41,7 @@ The guide was translated into English on **2026-10-13**. Translation did not inc
 | Claude | [Pricing](https://claude.com/pricing) | Pro monthly/annual billing, Code, Education |
 | Claude | [Education](https://claude.com/solutions/education) | Institutional access |
 | Claude Code | [Overview](https://code.claude.com/docs/en/overview) | OS-specific setup, authentication, API selection |
+| Claude Code | [CLI reference](https://code.claude.com/docs/en/cli-reference) | Standalone authentication and CLI startup |
 | Claude Code | [Permissions](https://code.claude.com/docs/en/permissions) | Modes and approvals |
 | Material | [Getting started](https://squidfunk.github.io/mkdocs-material/getting-started/) | Local setup |
 | Material | [Publishing](https://squidfunk.github.io/mkdocs-material/publishing-your-site/) | GitHub Pages publication |

@@ -110,3 +110,16 @@ Screenshots are regenerated for the English edition:
 - Refreshed the desktop/mobile screenshots from the live site.
 - Updated README and site maintenance instructions to reflect publication.
 - Product pricing research remains dated 2026-10-06; deployment did not include a new product-terms review.
+
+## Getting-started sequence revision
+
+- Replaced the reading list with an ordered getting-started workflow: choose a tool, install and sign in, prepare the folder and records, open the folder or start the CLI, run first checks, build the practice project, and hand off only when needed.
+- Updated all five tool pages with matching stages and return links to common setup.
+- Added explicit app/editor folder-opening instructions and CLI login/startup commands, with working-directory guidance.
+- Clarified Python prerequisites, optional Git, and preparing all six records with a text editor before the first agent task.
+- Updated the practice project to use the existing folder and records rather than an empty new folder.
+- Reopened official setup/CLI documentation to check authentication steps. Product pricing findings retain the original verification date.
+- Internal-link and section-anchor checks passed for all 17 pages; strict build passed.
+- Local browser checks passed for 17 pages, 9 static assets, English search, dark mode, and mobile layout.
+- Clicked all 8 getting-started links and all 5 tool routes in the local browser; destination URLs and section IDs matched.
+- Refreshed preview screenshots and reviewed the homepage layout.

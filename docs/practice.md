@@ -2,9 +2,15 @@
 
 Complete a small Python development cycle without external APIs or additional packages. Use the same specification and checks with any of the five tools.
 
+## Before you begin
+
+Complete [Getting started](index.md#getting-started) through the [first-run checks](setup.md#run-the-first-run-checks). You should have one installed and signed-in tool, a prepared `ai-practice` folder, the shared records, Python, and recorded smoke-check results.
+
+Keep using that folder and tool. You do not need to install another tool or buy a subscription for this project.
+
 ## 1. Agree on the specification
 
-Save the [specification template](assets/templates/SPEC.md.txt) as SPEC.md by removing the final `.txt`, then fill in:
+Update the SPEC.md already in your practice folder using the requirements below. If you need a fresh copy, save the [specification template](assets/templates/SPEC.md.txt) and remove its final `.txt`. Keep the earlier smoke-check results in VERIFICATION.md.
 
 - Purpose: show the count, total, and average of study-session durations.
 - Input: one or more integer minute values from 0 through 1440.
@@ -17,7 +23,7 @@ A runnable [reference implementation](assets/example/study_stats.py) and [refere
 
 ## 2. Request implementation
 
-In an otherwise empty practice folder, ask the AI to read SPEC.md and AGENTS.md, then implement `src/study_stats.py` and `tests/test_study_stats.py`. Use the [implementation prompt](workflow/implementation.md).
+In your prepared `ai-practice` folder, keep the shared records and ask the AI to read SPEC.md and AGENTS.md, then implement `src/study_stats.py` and `tests/test_study_stats.py`. Use the [implementation prompt](workflow/implementation.md).
 
 Review the changes yourself. Confirm handling of no input, malformed input, and out-of-range values. Check that failed numeric conversion is not silently ignored.
 

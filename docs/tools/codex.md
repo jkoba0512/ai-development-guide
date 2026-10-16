@@ -1,48 +1,66 @@
 # Codex
 
-Codex is available through desktop, CLI, IDE, cloud, and other surfaces. **The entry points available on a free plan may differ from those available through paid plans or API access.** First review [official pricing](https://learn.chatgpt.com/docs/pricing) and the [comparison](../plans.md).
+This page follows the [Getting started](../index.md#getting-started) sequence: install and sign in → prepare a folder → open it → run the first checks. Choose **one interface**, not every Codex surface.
 
-## Try the free plan
+Desktop, CLI, IDE, and cloud access can have different plan requirements. Review [Costs and student benefits](../plans.md) before choosing. The guide does not require a paid subscription.
 
-The reviewed pricing page includes Codex in ChatGPT Free, with desktop-app availability subject to rollout. Install the official app using the [official quickstart](https://learn.chatgpt.com/docs/quickstart) and sign in with your ChatGPT account. If the feature is unavailable, check rollout status or choose another accessible tool rather than creating an API key based on an assumption that CLI access is also free.
+## Install and sign in
 
-## Use the CLI
+### Desktop route for eligible free accounts
 
-Choose a subscription that includes CLI access or budgeted API usage. Follow Install Codex on the [official CLI page](https://learn.chatgpt.com/docs/codex/cli) for installation instructions appropriate to your OS.
+The previously reviewed pricing page includes desktop access for ChatGPT Free subject to rollout. Use the [official quickstart](https://learn.chatgpt.com/docs/quickstart) to install the appropriate app and sign in with your ChatGPT account.
 
-After installation, reopen your terminal and run:
+Confirm that your account actually has the relevant local coding interface. If unavailable, choose another free-capable tool; do not create a billed API key just to continue this guide. [Official pricing](https://learn.chatgpt.com/docs/pricing).
+
+### Optional CLI route
+
+Use this route only if you already have suitable CLI access or deliberately choose budgeted API usage. Follow the installation instructions on the [official CLI page](https://learn.chatgpt.com/docs/codex/cli). Reopen the terminal and run:
 
 ```sh
 codex --version
 codex --help
+codex login
 ```
 
-Enter the practice folder and follow initial authentication instructions. For subscription access, choose ChatGPT sign-in and distinguish it from API authentication.
+For account-based access, complete browser sign-in with the intended ChatGPT account. `codex login status` checks the authentication mode. API authentication is separate. These login commands do not start a project task. [Official CLI reference](https://learn.chatgpt.com/docs/developer-commands?surface=cli).
 
-## Safe starting settings
+**Checkpoint:** your selected interface starts and authentication is complete. Save the version and interface in ENVIRONMENT.md once created.
 
-On supported CLI versions, begin with reading:
+## Prepare the practice folder
+
+Follow [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practice`, check Python, and [prepare the six records](../setup.md#prepare-your-records). Return here afterward.
+
+## Open the practice folder
+
+### Desktop app
+
+Use the app's local project/folder selector to open or add **`ai-practice`**. Check its path and start a conversation in that local project. Select reading-first permissions before the initial request. UI labels may differ; follow the [official quickstart](https://learn.chatgpt.com/docs/quickstart) for your interface.
+
+### CLI
+
+From the directory containing `ai-practice`, run:
 
 ```sh
+cd ai-practice
 codex --sandbox read-only --ask-for-approval on-request
 ```
 
-For implementation, allow writes inside the working folder:
+If already in `ai-practice`, skip the first command. If elsewhere, use the folder's full path first.
+
+For the editing check, restart in the same folder with:
 
 ```sh
 codex --sandbox workspace-write --ask-for-approval on-request
 ```
 
-Use `/permissions` to inspect the active settings. Organization restrictions take precedence in managed environments. Do not make unrestricted access or disabled approvals/sandboxing your initial configuration. [Official CLI reference](https://learn.chatgpt.com/docs/developer-commands?surface=cli).
+Use `/permissions` to inspect settings. Managed restrictions take precedence. Review exactly what an approval authorizes; do not use unrestricted access or disabled sandboxing as a default. CLI flags do not automatically apply to the desktop or IDE interface. [Official CLI reference](https://learn.chatgpt.com/docs/developer-commands?surface=cli).
 
-The reading-first command sets initial permissions. If a later approval requests writing, review exactly what it would authorize.
+## Run the first-run checks
 
-## First run and development
+Follow [Run the first-run checks](../setup.md#run-the-first-run-checks), reading AGENTS.md and SPEC.md before editing. Record whether the AI or a person performed each operation.
 
-Read AGENTS.md and SPEC.md and complete the [common first-run checks](../setup.md). In desktop or IDE interfaces, check the UI permission controls. CLI flags do not automatically apply to other interfaces.
+Check usage in the account dashboard or supported CLI commands such as `/status`. Additional credits and API billing are separate decisions. [Official pricing](https://learn.chatgpt.com/docs/pricing).
 
-Check usage through your account dashboard and supported CLI commands such as `/status`. Decide separately about additional credits and API billing. [Official pricing and usage](https://learn.chatgpt.com/docs/pricing).
+## Continue development
 
-## Handoff
-
-Record the working directory, branch, and dependencies in both local and cloud environments. Import cloud changes, rerun tests locally, and update HANDOFF.md. Do not depend solely on conversation-resume features. See [Common handoff steps](../workflow/handoff.md).
+Proceed to the [Practice project](../practice.md). When moving between local and cloud work later, record directories, branches, and dependencies. Retrieve cloud changes, rerun tests locally, and update HANDOFF.md. See [Handoffs](../workflow/handoff.md).

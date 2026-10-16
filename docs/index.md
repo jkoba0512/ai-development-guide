@@ -20,13 +20,31 @@ Learn to define a specification, review changes, and verify behavior while using
 
 Chat history alone does not provide a complete set of working code and verification evidence. **Keep the specification, code, and verification records in the same project so you and the next AI tool can read them again.**
 
-## Reading order
+<span id="reading-order"></span>
 
-1. Choose an accessible tool using [Costs and student benefits](plans.md).
-2. Prepare your folder and records using [Common setup](setup.md).
-3. Follow the tool's setup page and complete the first-run checks.
-4. Work through specification, implementation, and verification in the [Practice project](practice.md).
-5. Move to another conversation or tool using [Handoffs between environments](workflow/handoff.md).
+## Getting started
+
+Follow these steps in order. Choose **one** tool and interface; you do not need to install all five or buy a subscription.
+
+1. **Choose a tool.** Check [Costs and student benefits](plans.md) and select an option you can access without paying if you want to stay on a free plan.
+2. **Install and sign in.** Use your [chosen tool's setup page](#choose-your-tool-page) below. Complete its **Install and sign in** section before opening a project.
+3. **Prepare the folder and records.** Follow [Prepare a working folder](setup.md#prepare-a-working-folder) and [Prepare your records](setup.md#prepare-your-records). Create the files with a text editor; no agent task is needed yet.
+4. **Open the folder or start the CLI.** Follow [Open the folder or start the CLI](setup.md#open-the-folder-or-start-the-cli), then the matching tool instructions. Confirm the project path and set reading-first permissions.
+5. **Check reading, editing, and execution.** Complete [Run the first-run checks](setup.md#run-the-first-run-checks) and record the actual results.
+6. **Build the practice project.** Work through specification, implementation, and verification in the [Practice project](practice.md).
+7. **Hand off when needed.** Later, if changing conversations, tools, or computers, use [Handoffs between environments](workflow/handoff.md). Switching tools is not required for the first exercise.
+
+### Choose your tool page
+
+Start with **Install and sign in** on just one of these pages. Each then directs you to the shared folder preparation, explains how to start in that folder, and returns you to the first-run checks.
+
+| Selected tool | Setup route |
+| --- | --- |
+| Antigravity | [App / IDE](tools/antigravity.md#install-and-sign-in) |
+| Grok Build | [CLI](tools/grok-build.md#install-and-sign-in) |
+| GitHub Copilot | [VS Code](tools/copilot.md#install-and-sign-in) |
+| Codex | [Desktop, or optional CLI with suitable access](tools/codex.md#install-and-sign-in) |
+| Claude Code | [CLI with suitable access](tools/claude-code.md#install-and-sign-in) |
 
 If you are new to programming or terminals, begin by recording errors and actual results. The Python example is for learning. The same workflow applies to web apps, research scripts, and personal projects.
 

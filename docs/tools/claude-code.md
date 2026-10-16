@@ -1,12 +1,14 @@
 # Claude Code
 
-Claude chat and Claude Code do not have identical free-access conditions. Confirm that your plan includes Code or that you have budgeted usage-based access. See [Costs and student benefits](../plans.md) and [Claude's official pricing](https://claude.com/pricing).
+This page follows the [Getting started](../index.md#getting-started) sequence: install and sign in → prepare a folder → open it → run the first checks. This walkthrough uses the **CLI**.
 
-## Setup
+Claude chat's free allowance does not establish free Claude Code access. Check [Costs and student benefits](../plans.md) and [official pricing](https://claude.com/pricing). If Code is unavailable under your existing access and you want a free route, choose another tool. Buying a plan is optional.
 
-Choose the method for your OS in the [official overview](https://code.claude.com/docs/en/overview). For example, the reviewed documentation provides these commands for an existing Homebrew installation on macOS or WinGet on Windows:
+## Install and sign in
 
-=== "macOS / Homebrew"
+Choose the method for your OS in the [official overview](https://code.claude.com/docs/en/overview). For example, the reviewed instructions support:
+
+=== "macOS / existing Homebrew"
     ```sh
     brew install --cask claude-code
     ```
@@ -16,18 +18,42 @@ Choose the method for your OS in the [official overview](https://code.claude.com
     winget install Anthropic.ClaudeCode
     ```
 
-For Linux / WSL or native installers, read the corresponding official tab and check the source of scripts before executing them. Check for updates regularly with Homebrew / WinGet installations.
+For Linux / WSL or native installers, use the corresponding official instructions and review script sources. Check updates regularly with Homebrew / WinGet installations.
 
-In a new terminal, run `claude --version`, then start `claude` from the practice folder. Confirm the billing source during initial login. If `ANTHROPIC_API_KEY` is already set, check whether it enables API billing instead of subscription usage. [Official setup and authentication](https://code.claude.com/docs/en/overview).
+Reopen the terminal, then check installation and sign in without starting a project session:
 
-## Initial permissions
+```sh
+claude --version
+claude auth login
+```
 
-Start in Plan mode to inspect reading scope and the proposed plan. Use an approval-based mode such as Default when moving to edits. Inspect rules with `/permissions`, avoiding broad command permissions and bypass modes as defaults. [Permissions](https://code.claude.com/docs/en/permissions).
+Follow the browser authentication prompts. Confirm the intended account and billing source. If `ANTHROPIC_API_KEY` is already set, check whether it selects API billing instead of subscription access. Use `claude auth status` to inspect authentication without sharing secret values. [Official CLI reference](https://code.claude.com/docs/en/cli-reference).
 
-Plan mode is not the same as OS-level isolation. Check shell, network, and sandbox permissions too. See [Safe permission settings](../workflow/permissions.md).
+**Checkpoint:** the version command works and authentication is complete. Save those details in ENVIRONMENT.md once created.
 
-## First run and handoff
+## Prepare the practice folder
 
-Complete the [common first-run checks](../setup.md). If using CLAUDE.md, keep it focused on references to the shared AGENTS.md, SPEC.md, VERIFICATION.md, and HANDOFF.md. Confirm in the first response that the files were actually read.
+Follow [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practice`, check Python, and [prepare the six records](../setup.md#prepare-your-records). Return here afterward.
 
-Even if moving conversations between interfaces is supported, save code and verification records first. When switching to a different AI tool, resume from the shared files. See [Handoff steps](../workflow/handoff.md).
+## Open the practice folder
+
+From the directory containing `ai-practice`, run:
+
+```sh
+cd ai-practice
+claude
+```
+
+If already inside `ai-practice`, skip the first command. If elsewhere, navigate using the full path first. Confirm the displayed project path and select **Plan** mode before sending your first request.
+
+For the editing check, switch to an approval-based mode such as Default. Inspect rules with `/permissions`, avoiding broad permissions and bypass modes. Plan mode is not OS-level isolation; also inspect shell, network, and sandbox permissions. [Permissions](https://code.claude.com/docs/en/permissions).
+
+## Run the first-run checks
+
+Return to [Run the first-run checks](../setup.md#run-the-first-run-checks). Read AGENTS.md and SPEC.md first, then perform the small-edit and execution checks.
+
+If using CLAUDE.md, point it to the shared records and confirm that they were read. Creating tool-specific instructions is not required for the first exercise.
+
+## Continue development
+
+Proceed to the [Practice project](../practice.md). Save code and verification records before moving conversations between interfaces. For another tool, resume from the shared files. See [Handoffs](../workflow/handoff.md).

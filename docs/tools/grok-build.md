@@ -1,40 +1,49 @@
 # Grok Build
 
-Grok Build is a coding agent that works with local code. It is distinct from Grok chat and Grok Learning. This guide covers the official CLI. [Official overview](https://docs.x.ai/build/overview).
+This page follows the [Getting started](../index.md#getting-started) sequence: install and sign in → prepare a folder → open it → run the first checks. It covers the official CLI, which works with local code. Grok chat and Grok Learning are separate products. [Official overview](https://docs.x.ai/build/overview).
 
-## Confirm access conditions
+## Install and sign in
 
-A Grok Free plan does not, by itself, establish free Build access. Review [Costs and student benefits](../plans.md) and the [official pricing table](https://x.ai/pricing), then confirm Build eligibility and limits after signing in. API-key use has a separate billing source from subscriptions; set a budget before using it.
-
-## Setup
-
-1. Find the installation instructions for your OS on the [official setup page](https://docs.x.ai/build/overview).
-2. Check the distribution source and script before executing it. The reviewed official installer URL for macOS / Linux / WSL is shown below.
-3. In a new terminal, run `grok version` and record the result in ENVIRONMENT.md.
-4. Enter the practice folder and use `grok login` for browser authentication.
-
-```text
-https://x.ai/cli/install.sh
-```
-
-Read the official procedure and choose the correct OS-specific method rather than pasting a URL into a shell. Keep API keys out of conversations and shared configuration. Use environment variables or another secure method only when needed.
-
-Sources for version and authentication commands: [CLI reference](https://docs.x.ai/build/cli/reference).
-
-## Start with limited permissions
-
-Check `grok --help`. On supported versions, start with:
+1. Review [Costs and student benefits](../plans.md) and the [official pricing table](https://x.ai/pricing). A Grok Free plan alone does not establish free Build access. If Build requires paid access for your account and you want a free route, choose another tool.
+2. Use the installation instructions for your OS on the [official setup page](https://docs.x.ai/build/overview). Review the source and script before executing it.
+3. Open a new terminal and run the following commands to check installation and sign in. You do not need to start a coding session yet.
 
 ```sh
+grok version
+grok login
+```
+
+The reviewed macOS / Linux / WSL installer URL is `https://x.ai/cli/install.sh`. Use the official OS-specific procedure rather than pasting the URL alone into a shell.
+
+Complete browser authentication and confirm the account's Build access. API-key use has separate billing; do not set it up as a workaround for unavailable free access. Keep keys out of conversations and shared files. Source: [CLI reference](https://docs.x.ai/build/cli/reference).
+
+**Checkpoint:** the version command works and authentication is complete. Save the version in ENVIRONMENT.md once you create that file.
+
+## Prepare the practice folder
+
+Follow [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practice`, check Python, and [prepare the six records](../setup.md#prepare-your-records). Return here afterward.
+
+## Open the practice folder
+
+From the directory containing `ai-practice`, run:
+
+```sh
+cd ai-practice
 grok --sandbox read-only
 ```
 
-Keep Ask mode enabled, then begin with `/plan` and a reading-only request. When implementing, switch to a sandbox profile suitable for changes inside the working folder and review edits and commands. See [Permissions](https://docs.x.ai/build/features/permissions), [Plan mode](https://docs.x.ai/build/features/plan-mode), and [Sandbox](https://docs.x.ai/build/features/sandbox).
+If already inside `ai-practice`, skip `cd ai-practice`. If elsewhere, navigate using its full path first. Check `grok --help` if your installed version rejects an option.
 
-**Relevant limitations:** the reviewed documentation states that the sandbox is off by default. Child-process network blocking for read-only / strict is enforced on Linux, not in the same way on macOS. Model API and web-tool networking are separate. Use a practice folder containing no confidential files. [Sandbox limitations](https://docs.x.ai/build/features/sandbox).
+Keep **Ask** mode enabled. Enter `/plan`, then send the reading request from the common checks. For implementation, restart with an appropriate folder-scoped sandbox such as `grok --sandbox workspace` and retain Ask mode; review the requested changes and commands. [CLI reference](https://docs.x.ai/build/cli/reference), [Permissions](https://docs.x.ai/build/features/permissions), [Plan mode](https://docs.x.ai/build/features/plan-mode), [Sandbox](https://docs.x.ai/build/features/sandbox).
 
-## First run and handoff
+The reviewed sandbox documentation states that it is off by default. Child-process network blocking for read-only / strict differs between Linux and macOS; model API and web-tool networking are separate. Use a practice folder without confidential files. [Sandbox limitations](https://docs.x.ai/build/features/sandbox).
 
-Complete the [common first-run checks](../setup.md). Use `grok inspect` to inspect discovered settings, rules, and integrations. [Official settings](https://docs.x.ai/build/settings).
+## Run the first-run checks
 
-Even when using conversation export/import, keep SPEC.md, code, and VERIFICATION.md as the sources of truth. Rerun tests after a move; do not assume settings or permissions transferred. See [Handoffs](../workflow/handoff.md).
+Return to [Run the first-run checks](../setup.md#run-the-first-run-checks). Start with reading, then allow the small edit and verify execution.
+
+Within the practice directory, `grok inspect` shows discovered settings, rules, and integrations. [Official settings](https://docs.x.ai/build/settings).
+
+## Continue development
+
+Proceed to the [Practice project](../practice.md). When changing conversations or tools later, keep SPEC.md, code, and VERIFICATION.md as the sources of truth even when using chat export/import. Rerun tests after moving; do not assume permissions transferred. See [Handoffs](../workflow/handoff.md).
