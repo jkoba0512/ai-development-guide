@@ -90,3 +90,10 @@ Screenshots are regenerated for the English edition:
 - Material prints an advisory about MkDocs 2.0 on startup; this project uses pinned MkDocs 1.6.1.
 - No GitHub Pages configuration, workflow execution, remote creation, push, or external publication.
 - The draft workflow remains at deployment/pages.yml.example, outside GitHub Actions' active workflow path.
+
+## Repository upload and deployment attempt
+
+- Uploaded the guide and manual Pages workflow to jkoba0512/ai-development-guide, branch main.
+- Local internal-link checks, all 9 sample tests, and the strict build passed.
+- GitHub rejected Pages activation with HTTP 422: the current plan does not support GitHub Pages for this private repository.
+- No website has been deployed. Repository visibility has not been changed; publication awaits the owner’s decision.
