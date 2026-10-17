@@ -1,21 +1,49 @@
 # Write a Specification
 
-A specification defines what must be true for the work to be complete. Review the AI's assumptions and save the agreed requirements in SPEC.md before implementation.
+Before asking AI to write code, decide **what the program should do and how you will judge whether it works**. Write those decisions in SPEC.md. This document is your specification.
+
+For example, “summarize my study time” leaves many questions unanswered: Are the numbers minutes or hours? Are decimals allowed? What happens if nothing is entered? If you leave these choices to the AI, it may build something different from what you intended.
+
+**Your task on this page:** prepare and review SPEC.md. You are not implementing the program or running its tests yet.
+
+## Before you begin
+
+Complete the [first-run checks](../setup.md#run-the-first-run-checks). Keep using your prepared practice folder and chosen tool.
+
+You will use:
+
+- [SPEC.md](../assets/templates/SPEC.md.txt) to save the agreed requirements and completion checks.
+- [DECISIONS.md](../assets/templates/DECISIONS.md.txt) to record important choices and their reasons.
+- The shared working rules: [explanation](../templates.md#tool-independent-working-rules) · [setup](../setup.md#prepare-your-records) · [template](../assets/templates/WORKING_RULES.md.txt).
+
+If SPEC.md currently describes the smoke check, replace that description with the new program's specification. Keep the earlier execution results in VERIFICATION.md.
 
 ## Decide these six things first
 
-| Item | Example: study-time statistics CLI |
-| --- | --- |
-| Purpose | Check the total and average duration of several study sessions |
-| User and operation | Enter durations in minutes in a terminal |
-| Input | One or more integers from 0 through 1440 |
-| Output | Count, total minutes, average minutes to one decimal place |
-| Invalid input | No input, negatives, values above the limit, decimals, and text produce errors |
-| Out of scope | Login, storage, cloud connections, and charts |
+For this exercise, imagine that you studied for 25 minutes and then 50 minutes. You want to enter those durations and see how many sessions you recorded, their total duration, and their average.
 
-“Make it useful” or “make it look good” does not establish completion criteria. Define concrete inputs, outputs, and exclusions.
+We will make a small **command-line program (CLI)**: a program you run by typing a command in a terminal.
+
+Read the example decisions below. They are choices for this exercise, not universal rules for all programs.
+
+| Question you must answer | Decision for this exercise |
+| --- | --- |
+| Purpose: what problem are we solving? | Summarize the durations of study sessions |
+| User and operation: who uses it, and how? | A student enters durations in minutes in a terminal |
+| Input: what values are allowed? | One or more integers from 0 through 1440; each number is one session |
+| Output: what should be shown? | Session count, total minutes, and average minutes to one decimal place |
+| Invalid input: what should happen if a value is not allowed? | Show an error on standard error and finish with exit code 2 |
+| Out of scope: what are we deliberately leaving out? | Accounts, file storage, network access, charts, and additional packages |
+
+An **exit code** is a number a program returns when it finishes. In this exercise, 0 means success and 2 means invalid input. **Standard error** is the output channel used for error messages.
+
+For example, allowing 0 means a session with no recorded study time is valid. Allowing 1440 sets the maximum duration of one session to one day. You could make different choices in another project, but you must state them before implementation.
+
+**What to do now:** put these decisions into the corresponding sections of SPEC.md. If a choice is unclear, write it under Open decisions instead of leaving it for the AI to guess.
 
 ## Ask the AI for a draft
+
+Open your chosen tool's conversation for the practice folder. Paste the following request into its chat input. For a CLI tool, enter it in the AI conversation, not at the operating system's shell prompt.
 
 Working rules: [explanation](../templates.md#tool-independent-working-rules) · [setup](../setup.md#prepare-your-records) · [template](../assets/templates/WORKING_RULES.md.txt).
 
@@ -23,29 +51,88 @@ Working rules: [explanation](../templates.md#tool-independent-working-rules) · 
 I want a small Python CLI that summarizes study durations.
 Read the project working rules in WORKING_RULES.md or the contents provided with this request.
 If those contents are unavailable, ask me to provide them before proceeding.
-Then draft SPEC.md without implementing the program.
+
+Draft SPEC.md without implementing the program.
+For this exercise:
+- Input is one or more integer durations in minutes, each from 0 through 1440.
+- Output is the session count, total minutes, and average minutes to one decimal place.
+- Successful execution returns exit code 0.
+- Missing input, negatives, values above 1440, decimals, and text are invalid.
+- Invalid input produces an error on standard error and exit code 2.
+- No external APIs, persistent storage, or additional packages are needed.
+
 Include purpose, inputs, outputs, invalid-input behavior, exclusions,
-and acceptance criteria.
-List unclear points as questions or open decisions instead of silently assuming answers.
-No external APIs, persistent storage, or additional packages are needed.
+and acceptance criteria with concrete inputs, expected results, and verification methods.
+List any remaining unclear points as questions or open decisions.
 ```
 
-The working rules can be read from a local file, attached, or pasted into the conversation. This prompt does not require any product-specific instruction file or automatic loading. If the tool cannot save files, copy the agreed draft into SPEC.md yourself.
+The working rules can be read from a local file, attached, or pasted into the conversation. No product-specific instruction file or automatic loading is required.
 
-Review the draft for unrequested storage, authentication, or paid APIs. Save the agreed version in SPEC.md and record important choices and their reasons in DECISIONS.md.
+Read the AI's draft yourself. Check it against the decisions above. If it adds login, storage, charts, or a paid API, ask it to remove those additions. If it asks a question, answer it or record it as an open decision.
+
+If the tool cannot save files, copy the reviewed draft into SPEC.md yourself. **An AI response in a conversation is not the saved specification until you put it in the project file.**
 
 ## Connect acceptance criteria to tests
 
-| ID | Action | Expected result |
-| --- | --- | --- |
-| AC-01 | Enter 25 and 50 | Count 2, total 75, average 37.5 |
-| AC-02 | Enter 0 | Count 1, total 0, average 0.0 |
-| AC-03 | Enter 1440 | Successful completion |
-| AC-04 | No input / negative / 1441 / decimal / text | Error message and a nonzero exit code |
-| AC-05 | Run normally | No file creation, network access, or additional dependencies |
+An **acceptance criterion** is a condition the program must satisfy before you call the work complete. “The program works” is too vague. “Entering 25 and 50 produces count 2, total 75, and average 37.5” is something you can actually check.
 
-Derive expected results from the specification, rather than reverse-engineering them from generated code. If acceptance criteria change, update the specification and the decision record first.
+**AC** stands for acceptance criterion. AC-01 and AC-02 are labels that let you refer to a condition in the specification, a test, or a verification record.
+
+### Work through one example
+
+For the input 25 and 50, calculate the expected result yourself:
+
+1. There are two numbers, so the session count is **2**.
+2. Add them: 25 + 50 = **75 minutes**.
+3. Divide the total by the count: 75 / 2 = **37.5 minutes**.
+
+You now know what a correct implementation must produce, even though the program does not exist yet. Save this as AC-01 in SPEC.md.
+
+Later, a test will run the program with these inputs and compare its actual output with that expected result. The **criterion states what must be true**; the **test checks whether it is true**.
+
+### Write checks for other situations
+
+A program can work with 25 and 50 but still fail on an empty input or a boundary value. Add checks for those situations too.
+
+| ID | Input or behavior to check | Expected result | How to verify it after implementation |
+| --- | --- | --- | --- |
+| AC-01 | Enter 25 and 50 | Count 2, total 75, average 37.5; exit code 0 | Run the CLI and compare the output; include an automated test |
+| AC-02 | Enter 0 | Count 1, total 0, average 0.0; exit code 0 | Check the minimum allowed value manually or with a test |
+| AC-03 | Enter 1440 | Count 1, total 1440, average 1440.0; exit code 0 | Check the maximum allowed value manually or with a test |
+| AC-04 | Try each separately: no input, -1, 1441, 1.5, and abc | Error on standard error and exit code 2 for each case | Run each invalid input separately; include tests for each |
+| AC-05 | Run the program normally | No application data files created, no network access, and no additional package dependencies | Review the code and dependencies; inspect the folder before and after running |
+
+AC-02 and AC-03 are **boundary checks**: they test the ends of the allowed range. AC-04 checks that the program rejects invalid inputs instead of silently using them. AC-05 checks the scope of the implementation; a correct numeric answer alone does not establish that it avoids storage or networking.
+
+**What to do now:** add this table to the Acceptance criteria section of SPEC.md. You are planning the checks, not claiming that they have passed.
+
+### Use the criteria after implementation
+
+After the program is implemented, you will use AC-01 like this:
+
+```text
+Input: 25 50
+Expected output: Count: 2 / Total: 75 min / Average: 37.5 min
+Expected exit code: 0
+```
+
+Run the program, compare its actual result with these expectations, and record the command, output, exit code, and pass/fail result under AC-01 in VERIFICATION.md. Repeat for the other criteria. The [Practice project](../practice.md#3-run-normal-and-invalid-input-cases) gives the execution commands.
+
+An automated test performs a comparison for you; it does not decide what the correct answer should be. For AC-05, review is also necessary: a passing calculation test does not prove that no network access occurs.
+
+For example, if generated code prints an average of 75 for 25 and 50, do not change AC-01 to expect 75 just to make the test pass. The calculation above shows that the implementation needs correction.
+
+If you intentionally change a requirement, update SPEC.md and record the reason in DECISIONS.md first. Then update the corresponding tests.
 
 ## Ready for implementation
 
-Proceed when you can explain the inputs, outputs, and error behavior, each acceptance criterion has a verification method, and open decisions identify an owner and next action. Continue with [Implementation and verification](implementation.md) and the [templates](../templates.md).
+Before moving on, check that:
+
+- [ ] SPEC.md is saved in the practice folder, not only in the conversation.
+- [ ] You can explain the permitted inputs, expected output, and invalid-input behavior.
+- [ ] Each acceptance criterion has a concrete expected result and a verification method.
+- [ ] You understand why 25 and 50 should produce an average of 37.5.
+- [ ] Questions affecting implementation are resolved; deferred questions have an owner and next action.
+- [ ] You have not marked planned checks as passed.
+
+Your deliverable from this page is **the reviewed SPEC.md, including the acceptance criteria**, plus any decision notes. Next, follow [Implementation and verification](implementation.md) to ask the AI to write code and perform the planned checks.

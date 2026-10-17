@@ -141,3 +141,12 @@ Screenshots are regenerated for the English edition:
 - Kept copyable prompts and folder trees plain; placed reference links immediately before them.
 - Included absolute guide links in the downloadable handoff template so they remain usable outside the site.
 - Internal file/section-link checks and the strict build passed.
+
+## Specification exercise explanation
+
+- Rewrote the specification page as a guided exercise with a clear purpose and saved deliverable.
+- Defined CLI, exit code, standard error, acceptance criterion, and boundary checks in context.
+- Explained the 25-and-50 example calculation and the distinction between criteria and tests.
+- Added actions for drafting, reviewing, saving, and later executing checks, plus a readiness checklist.
+- Preserved working-rules reference links and existing section anchors.
+- Internal-link checks and strict build passed. No sample implementation changed.
