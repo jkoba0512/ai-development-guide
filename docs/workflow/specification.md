@@ -12,7 +12,9 @@ Complete the [first-run checks](../setup.md#run-the-first-run-checks), then keep
 
 In that earlier exercise, you created `smoke.py`, a tiny program that prints **Ready for AI development**. Its purpose was simply to confirm that you could create and run a Python file. Now you are starting a different task: designing the study-duration program.
 
-The files below are **ordinary text documents in your practice folder**, not Python programs. The `.md` extension means Markdown: you can edit the contents as text and use headings and lists to organize them. You do not run these files as commands.
+You will use two documents in this exercise: **SPEC.md** to describe what the program must do, and **DECISIONS.md** to record important choices and their reasons. Save both files directly in your practice folder (for example, `ai-practice/SPEC.md` and `ai-practice/DECISIONS.md`). If you created them during Common Setup, open those existing files. The next two sections show example contents and provide templates if the files are missing.
+
+Both are ordinary text documents. The `.md` extension means Markdown: you can edit the contents as text and use headings and lists to organize them. Open them in your editor to read or edit them; you do not run them as Python programs or terminal commands.
 
 ### SPEC.md: describe what the program must do
 
