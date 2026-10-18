@@ -25,7 +25,7 @@ Working rules reference:
 
 ## Decisions
 
-[References to DECISIONS.md]
+[References to the Decisions and reasons section of SPEC.md]
 
 ## Next single task
 

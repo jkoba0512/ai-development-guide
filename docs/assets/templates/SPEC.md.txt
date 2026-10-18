@@ -29,6 +29,14 @@ Status: [draft / agreed / changing]
 | --- | --- | --- | --- |
 | AC-01 | [input] | [result] | [test / manual check] |
 
+## Decisions and reasons
+
+[Record important choices here, alongside the requirements in this file.]
+
+| Decision | Reason | Alternatives considered | Affected acceptance criteria |
+| --- | --- | --- | --- |
+| [choice] | [reason] | [alternatives] | [AC IDs] |
+
 ## Open decisions
 
 [Decision needed, owner, and deadline]

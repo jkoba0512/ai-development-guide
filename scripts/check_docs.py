@@ -43,9 +43,9 @@ for page in pages:
             anchors = {slugify_unicode(heading, "-") for heading in headings}
             if unquote(url.fragment) not in anchors:
                 errors.append(f"{page.relative_to(DOCS)}: missing anchor: {target}")
-for name in ("SPEC", "ENVIRONMENT", "VERIFICATION", "HANDOFF", "DECISIONS", "WORKING_RULES"):
+for name in ("SPEC", "ENVIRONMENT", "VERIFICATION", "HANDOFF", "WORKING_RULES"):
     if not (DOCS / "assets" / "templates" / f"{name}.md.txt").is_file():
         errors.append(f"missing template: {name}")
 if errors:
     raise SystemExit("\n".join(errors))
-print(f"OK: {len(pages)} pages, navigation, relative links, 6 templates")
+print(f"OK: {len(pages)} pages, navigation, relative links, 5 templates")

@@ -12,9 +12,9 @@ Complete the [first-run checks](../setup.md#run-the-first-run-checks), then keep
 
 In that earlier exercise, you created `smoke.py`, a tiny program that prints **Ready for AI development**. Its purpose was simply to confirm that you could create and run a Python file. Now you are starting a different task: designing the study-duration program.
 
-You will use two documents in this exercise: **SPEC.md** to describe what the program must do, and **DECISIONS.md** to record important choices and their reasons. Save both files directly in your practice folder (for example, `ai-practice/SPEC.md` and `ai-practice/DECISIONS.md`). If you created them during Common Setup, open those existing files. The next two sections show example contents and provide templates if the files are missing.
+Use **SPEC.md** for both the program's requirements and the reasons behind important choices. Save it directly in your practice folder (for example, `ai-practice/SPEC.md`). If you created it during Common Setup, open that existing file. The following sections show example contents and provide a template if the file is missing.
 
-Both are ordinary text documents. The `.md` extension means Markdown: you can edit the contents as text and use headings and lists to organize them. Open them in your editor to read or edit them; you do not run them as Python programs or terminal commands.
+SPEC.md is an ordinary text document. The `.md` extension means Markdown: you can edit the contents as text and use headings and lists to organize them. Open it in your editor to read or edit it; you do not run it as a Python program or terminal command.
 
 ### SPEC.md: describe what the program must do
 
@@ -34,14 +34,14 @@ Completion check: entering 25 and 50 gives count 2, total 75, and average 37.5.
 
 This is a preview, not the complete specification. The next sections help you fill in the details. If you already have SPEC.md from the first-run exercise, update that file for the study-duration program. If it is missing, [download the specification template](../assets/templates/SPEC.md.txt), save it in your practice folder, and remove the final `.txt`.
 
-### DECISIONS.md: explain why you chose a requirement
+### In the same SPEC.md, explain important choices
 
-SPEC.md says **what** the program must do. DECISIONS.md records **why** you chose an important requirement, especially when another reasonable choice was possible.
+Add a **Decisions and reasons** section to SPEC.md. It explains **why** you chose an important requirement, especially when another reasonable choice was possible. Keeping the requirement and its reason in one file makes them easier to read together.
 
 For example:
 
 ```markdown
-# Decision record
+## Decisions and reasons
 
 Decision: allow a study duration of 0 minutes.
 Reason: a planned session may end without any recorded study time.
@@ -49,7 +49,7 @@ Alternative considered: reject 0 and accept only positive durations.
 Effect on the specification: entering 0 must succeed with count 1, total 0, and average 0.0.
 ```
 
-You do not need to record every small detail. Add an entry when you make a meaningful choice or change a requirement. This helps you explain your work and prevents the next AI conversation from guessing the reason. If needed, [download the decision-record template](../assets/templates/DECISIONS.md.txt) and save it as DECISIONS.md.
+You do not need to record every small detail. Add an entry in this section when you make a meaningful choice or change a requirement. This helps you explain your work and prevents the next AI conversation from guessing the reason. The specification template includes this section; no separate decision file is needed for this exercise.
 
 ### Give the AI your project instructions
 
@@ -74,7 +74,7 @@ Use these links when you need a reminder:
 
 VERIFICATION.md records **what actually happened when you ran a check**: the command, output, and result. Keep the earlier `smoke.py` execution results there. Updating SPEC.md for the new program does not mean deleting evidence of the earlier exercise.
 
-**What to do now:** open SPEC.md and DECISIONS.md in your editor, and make sure the AI has received the project instructions. Continue below to decide the new program's requirements. You will save the reviewed specification before asking for code.
+**What to do now:** open SPEC.md in your editor, and make sure the AI has received the project instructions. Continue below to decide the new program's requirements. You will save the reviewed specification before asking for code.
 
 ## Decide these six things first
 
@@ -122,6 +122,8 @@ For this exercise:
 
 Include purpose, inputs, outputs, invalid-input behavior, exclusions,
 and acceptance criteria with concrete inputs, expected results, and verification methods.
+Include a Decisions and reasons section in SPEC.md for important choices,
+their reasons, alternatives considered, and affected acceptance criteria.
 List any remaining unclear points as questions or open decisions.
 ```
 
@@ -181,7 +183,7 @@ An automated test performs a comparison for you; it does not decide what the cor
 
 For example, if generated code prints an average of 75 for 25 and 50, do not change AC-01 to expect 75 just to make the test pass. The calculation above shows that the implementation needs correction.
 
-If you intentionally change a requirement, update SPEC.md and record the reason in DECISIONS.md first. Then update the corresponding tests.
+If you intentionally change a requirement, update the requirement and its reason together in SPEC.md first. Then update the corresponding tests.
 
 ## Ready for implementation
 
@@ -194,4 +196,4 @@ Before moving on, check that:
 - [ ] Questions affecting implementation are resolved; deferred questions have an owner and next action.
 - [ ] You have not marked planned checks as passed.
 
-Your deliverable from this page is **the reviewed SPEC.md, including the acceptance criteria**, plus any decision notes. Next, follow [Implementation and verification](implementation.md) to ask the AI to write code and perform the planned checks.
+Your deliverable from this page is **the reviewed SPEC.md, including acceptance criteria and important decisions with their reasons**. Next, follow [Implementation and verification](implementation.md) to ask the AI to write code and perform the planned checks.

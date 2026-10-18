@@ -173,3 +173,10 @@ Screenshots are regenerated for the English edition:
 - Browser verification passed: 18 pages, 9 static assets, English search, dark mode, and mobile layout; no JavaScript page errors.
 - Replaced a fixed browser delay with a search-initialization readiness check after an initial timing-related failure.
 - OS-specific installer instructions were checked against official Astral documentation; a fresh uv install and native Windows student setup were not executed. No system Python installation was removed.
+
+## Keep requirements and reasons together
+
+- Merged decision notes into SPEC.md with a Decisions and reasons section and an example.
+- Updated setup, prompts, handoffs, templates, and checks to use five shared records.
+- Kept the old decision-template URL available with migration instructions.
+- Relative-link checks and the strict MkDocs build passed.

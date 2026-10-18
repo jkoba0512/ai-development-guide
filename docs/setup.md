@@ -27,16 +27,15 @@ Git is optional. If using it, verify `git --version`. Record uv, Python, OS, she
 
 ## Prepare your records
 
-Save the six files from [Shared templates](templates.md) into `ai-practice`. Each download ends in `.md.txt`: remove the final `.txt` so, for example, `SPEC.md.txt` becomes `SPEC.md`.
+Save the five files from [Shared templates](templates.md) into `ai-practice`. Each download ends in `.md.txt`: remove the final `.txt` so, for example, `SPEC.md.txt` becomes `SPEC.md`.
 
 Use a text editor to fill in the starting records; the AI tool does not need to be running yet.
 
-- **SPEC.md:** write “First-run check: create a Python script that prints Ready for AI development. No external packages or network access.”
+- **SPEC.md:** write “First-run check: create a Python script that prints Ready for AI development. No external packages or network access.” Keep important choices and their reasons in the same file.
 - **ENVIRONMENT.md:** record the environment, selected tool/interface, account access type, and available permission settings. Do not include secret values.
 - **VERIFICATION.md:** leave results marked as not run until you execute them.
 - **HANDOFF.md:** set the next task to “Complete the reading, editing, and execution checks.”
 - **[WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)):** read and keep the shared working rules.
-- **DECISIONS.md:** leave it ready for later decisions.
 
 Your folder should now look like this:
 
@@ -49,7 +48,6 @@ ai-practice/
 ├── VERIFICATION.md
 ├── HANDOFF.md
 ├── WORKING_RULES.md
-├── DECISIONS.md
 ├── pyproject.toml
 ├── .python-version
 ├── uv.lock
@@ -83,7 +81,7 @@ Before starting, confirm that:
 
 - [ ] Your chosen tool is installed and signed in with the intended account.
 - [ ] The [Python and uv environment check](python-uv.md#check-that-python-runs) passes in ai-practice.
-- [ ] The six records are saved under ai-practice.
+- [ ] The five records are saved under ai-practice.
 - [ ] The tool is open in that folder, with reading-first permissions.
 - [ ] No paid subscription is needed for your selected free route; any paid route was chosen deliberately.
 

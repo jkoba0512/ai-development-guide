@@ -4,11 +4,10 @@ Save the linked text files, remove the final `.txt` to make them Markdown files,
 
 | File | Purpose |
 | --- | --- |
-| [SPEC.md](assets/templates/SPEC.md.txt) | Purpose, inputs, outputs, and acceptance criteria |
+| [SPEC.md](assets/templates/SPEC.md.txt) | Purpose, inputs, outputs, acceptance criteria, and decisions with their reasons |
 | [ENVIRONMENT.md](assets/templates/ENVIRONMENT.md.txt) | Environment, authentication method, billing, permissions, and reproduction steps |
 | [VERIFICATION.md](assets/templates/VERIFICATION.md.txt) | Who ran each command, exit codes, and actual results |
 | [HANDOFF.md](assets/templates/HANDOFF.md.txt) | Current state and information needed to resume |
-| [DECISIONS.md](assets/templates/DECISIONS.md.txt) | Reasons and consequences of decisions |
 | [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)) | Shared working rules |
 
 These are blank starting templates. Mark unknowns as unverified; do not mark checks as passed unless they ran. You do not need to record account names or secret values.
@@ -21,9 +20,11 @@ Explicitly provide its contents when starting work: ask a tool with file access 
 
 If you already created AGENTS.md from an earlier version of this guide, rename it to [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)) and update your project references. No other tool-specific file is required.
 
+If you used an earlier version of this guide and already have DECISIONS.md, copy its relevant entries into the **Decisions and reasons** section of SPEC.md. Use SPEC.md for future updates so you do not maintain the same information in two places. A separate decision record is only useful later if the history becomes too long to read comfortably alongside the requirements.
+
 ## What belongs where
 
-- SPEC.md: “Reject decimal inputs.”
+- SPEC.md: “Reject decimal inputs.” Include the reason in its Decisions and reasons section.
 - Code: convert to integers and check the permitted range.
 - VERIFICATION.md: “Entered 1.5 and confirmed exit code 2.”
 - HANDOFF.md: “Invalid-input checks passed. Next, run the same tests in another environment.”

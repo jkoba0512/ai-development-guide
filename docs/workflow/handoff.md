@@ -6,13 +6,12 @@ Use shared files to make work reproducible across conversations, tools, computer
 
 | Source of truth | Purpose |
 | --- | --- |
-| SPEC.md | Purpose, inputs, outputs, acceptance criteria, and exclusions |
+| SPEC.md | Purpose, inputs, outputs, acceptance criteria, exclusions, and important decisions with their reasons |
 | src/ and tests/ | Actual code and verification methods |
 | pyproject.toml, .python-version, and uv.lock | Python environment settings and resolved dependencies; exclude .venv |
 | VERIFICATION.md | What ran, where, by whom, and with what result |
 | ENVIRONMENT.md | OS, versions, dependencies, startup commands, and permissions |
 | HANDOFF.md | Current state, unfinished work, and the next single task |
-| DECISIONS.md | Choices, reasons, and rejected alternatives |
 | [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt)) | Shared working rules and reading order |
 
 [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt)) is a tool-independent project document. Explicitly provide it and the other records by file access, attachment, or pasted text; no automatic loading is assumed. **Ask the tool to summarize the supplied documents before proceeding.**

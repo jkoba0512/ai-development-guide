@@ -33,7 +33,7 @@ Follow the browser authentication prompts. Confirm the intended account and bill
 
 ## Prepare the practice folder
 
-Follow [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practice`, prepare [Python with uv](../python-uv.md), and [prepare the six records](../setup.md#prepare-your-records). Return here afterward.
+Follow [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practice`, prepare [Python with uv](../python-uv.md), and [prepare the five records](../setup.md#prepare-your-records). Return here afterward.
 
 ## Open the practice folder
 

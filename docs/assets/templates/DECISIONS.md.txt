@@ -1,5 +1,7 @@
-# Decision Record
+# Decisions have moved into SPEC.md
 
-| Date | Decision | Reason | Alternatives considered | Affected requirements / tests |
-| --- | --- | --- | --- | --- |
-| [date] | [choice] | [reason] | [alternatives] | [AC IDs and files] |
+This legacy download is kept for existing links. For this exercise, record decisions in the Decisions and reasons section of SPEC.md.
+
+If you already used this file, copy its relevant entries into SPEC.md and maintain them there.
+
+Specification template: https://jkoba0512.github.io/ai-development-guide/assets/templates/SPEC.md.txt
