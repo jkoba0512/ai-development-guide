@@ -70,6 +70,8 @@ Use these links when you need a reminder:
 - [How to save the file in your project](../setup.md#prepare-your-records): shows when and where to create it.
 - [Download the working-rules template](../assets/templates/WORKING_RULES.md.txt): provides the actual text to save. Remove the final `.txt` from the downloaded filename.
 
+For the difference between the shared rules and automatically discovered files such as CLAUDE.md or AGENTS.md, see [Tool-specific instruction files](../templates.md#tool-specific-instruction-files). You do not need to create a tool-specific file for this exercise.
+
 ### Keep previous results separately
 
 VERIFICATION.md records **what actually happened when you ran a check**: the command, output, and result. Keep the earlier `smoke.py` execution results there. Updating SPEC.md for the new program does not mean deleting evidence of the earlier exercise.

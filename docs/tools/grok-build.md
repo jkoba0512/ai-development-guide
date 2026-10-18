@@ -38,6 +38,8 @@ Keep **Ask** mode enabled. Enter `/plan`, then send the reading request from the
 
 The reviewed sandbox documentation states that it is off by default. Child-process network blocking for read-only / strict differs between Linux and macOS; model API and web-tool networking are separate. Use a practice folder without confidential files. [Sandbox limitations](https://docs.x.ai/build/features/sandbox).
 
+For this tool's instruction-file names and how they relate to the shared rules, see [Tool-specific instruction files](../templates.md#tool-specific-instruction-files). Automatic discovery is optional for this exercise.
+
 ## Run the first-run checks
 
 Return to [Run the first-run checks](../setup.md#run-the-first-run-checks). Start with reading, then allow the small edit and verify execution.

@@ -75,6 +75,8 @@ For a new terminal, first locate the folder. From the directory containing `ai-p
 
 Follow the linked tool instructions to start the session and set permissions **before sending the first request**. Confirm that its project/folder display points to `ai-practice`. [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)) is an ordinary project document with no assumed automatic loading. Explicitly ask the tool to read it. If the interface cannot access local files, attach or paste its contents and the requested project records before sending the task.
 
+For an explanation of filenames such as CLAUDE.md, AGENTS.md, and .github/copilot-instructions.md, see [Tool-specific instruction files](templates.md#tool-specific-instruction-files). They are optional for this exercise; keep using the explicit reading request below.
+
 ## Run the first-run checks
 
 Before starting, confirm that:

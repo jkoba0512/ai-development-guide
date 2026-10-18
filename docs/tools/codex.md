@@ -55,6 +55,8 @@ codex --sandbox workspace-write --ask-for-approval on-request
 
 Use `/permissions` to inspect settings. Managed restrictions take precedence. Review exactly what an approval authorizes; do not use unrestricted access or disabled sandboxing as a default. CLI flags do not automatically apply to the desktop or IDE interface. [Official CLI reference](https://learn.chatgpt.com/docs/developer-commands?surface=cli).
 
+For this tool's instruction-file names and how they relate to the shared rules, see [Tool-specific instruction files](../templates.md#tool-specific-instruction-files). Automatic discovery is optional for this exercise.
+
 ## Run the first-run checks
 
 Follow [Run the first-run checks](../setup.md#run-the-first-run-checks), reading [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt)) and SPEC.md before editing. Record whether the AI or a person performed each operation.

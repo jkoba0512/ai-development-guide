@@ -16,7 +16,7 @@ Use shared files to make work reproducible across conversations, tools, computer
 
 [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt)) is a tool-independent project document. Explicitly provide it and the other records by file access, attachment, or pasted text; no automatic loading is assumed. **Ask the tool to summarize the supplied documents before proceeding.**
 
-Tool-specific instruction files, such as AGENTS.md or CLAUDE.md, are optional adapters. If you use one, keep only references to the shared documents and avoid maintaining a second set of project rules. None is required to follow this guide.
+[Tool-specific instruction files](../templates.md#tool-specific-instruction-files), such as AGENTS.md or CLAUDE.md, are optional adapters. If you use one, keep only references to the shared documents and avoid maintaining a second set of project rules. None is required to follow this guide.
 
 ## Before moving
 

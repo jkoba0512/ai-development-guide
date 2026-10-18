@@ -48,6 +48,8 @@ If already inside `ai-practice`, skip the first command. If elsewhere, navigate 
 
 For the editing check, switch to an approval-based mode such as Default. Inspect rules with `/permissions`, avoiding broad permissions and bypass modes. Plan mode is not OS-level isolation; also inspect shell, network, and sandbox permissions. [Permissions](https://code.claude.com/docs/en/permissions).
 
+For this tool's instruction-file names and how they relate to the shared rules, see [Tool-specific instruction files](../templates.md#tool-specific-instruction-files). Automatic discovery is optional for this exercise.
+
 ## Run the first-run checks
 
 Return to [Run the first-run checks](../setup.md#run-the-first-run-checks). Read [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt)) and SPEC.md first, then perform the small-edit and execution checks.

@@ -180,3 +180,10 @@ Screenshots are regenerated for the English edition:
 - Updated setup, prompts, handoffs, templates, and checks to use five shared records.
 - Kept the old decision-template URL available with migration instructions.
 - Relative-link checks and the strict MkDocs build passed.
+
+## Explain tool-specific instruction files
+
+- Added an official-source comparison for all five tools and corrected the Codex filename to AGENTS.md.
+- Explained explicit shared-rule delivery, optional tool-specific pointers, and Claude Code imports without assuming cross-tool import syntax.
+- Added discovery links from setup, specification, tool pages, and handoffs. No instruction files were created in the guide repository.
+- Official-document review covers instruction discovery only, not pricing or student benefits.

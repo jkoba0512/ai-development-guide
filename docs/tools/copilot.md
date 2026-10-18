@@ -31,6 +31,8 @@ Review unfamiliar repository settings and scripts before trusting a folder.
 
 Keep global terminal and tool auto-approval disabled. Review commands and diffs. If adding MCP later, inspect the destination and tools and begin with session-scoped approval. Sandbox availability depends on OS and session type; check the active interface. [VS Code security](https://code.visualstudio.com/docs/agents/run/security).
 
+For this tool's instruction-file names and how they relate to the shared rules, see [Tool-specific instruction files](../templates.md#tool-specific-instruction-files). Automatic discovery is optional for this exercise.
+
 ## Run the first-run checks
 
 Start in a question/explanation mode, then follow [Run the first-run checks](../setup.md#run-the-first-run-checks). Switch to an editing agent for the small-edit stage. If that interface cannot edit or run files, perform the operation yourself and record who did it.

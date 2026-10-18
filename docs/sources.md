@@ -64,6 +64,18 @@ The environment instructions were checked against Astral's official documentatio
 | [Manage dependencies](https://docs.astral.sh/uv/concepts/projects/dependencies/) | Explicit dependency changes |
 | [GitHub Actions](https://docs.astral.sh/uv/guides/integration/github/) | uv-based website build |
 
+## Project instruction-file sources
+
+Instruction-file names and discovery behavior were checked on 2026-10-18. This review does not recheck prices or student benefits.
+
+| Tool | Official source |
+| --- | --- |
+| Codex | [Custom instructions with AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md) |
+| Claude Code | [Project instructions, memory, and file imports](https://code.claude.com/docs/en/memory) |
+| Copilot in VS Code | [Custom instructions](https://code.visualstudio.com/docs/agent-customization/custom-instructions) |
+| Antigravity | [Rules and activation](https://antigravity.google/docs/rules) |
+| Grok Build | [Project rules and discovery](https://docs.x.ai/build/features/project-rules) |
+
 ## Unverified items
 
 - Final regional prices, taxes, and checkout conditions shown to individual accounts in Japan.

@@ -31,6 +31,8 @@ See [official project setup](https://antigravity.google/docs/getting-started).
 
 Select Request Review in project permissions. In the IDE, also use Request Review for terminal auto-execution and enable artifact review. Restrict access outside the project and enable Terminal Sandbox where supported. Names differ by OS and interface. [Official settings](https://antigravity.google/docs/settings).
 
+For this tool's instruction-file names and how they relate to the shared rules, see [Tool-specific instruction files](../templates.md#tool-specific-instruction-files). Automatic discovery is optional for this exercise.
+
 ## Run the first-run checks
 
 Continue to [Run the first-run checks](../setup.md#run-the-first-run-checks). Ask the agent to read [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt)) and SPEC.md first. Review plans and artifacts before applying them; permit folder-scoped edits only for the editing check.

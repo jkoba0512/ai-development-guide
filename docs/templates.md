@@ -18,9 +18,50 @@ These are blank starting templates. Mark unknowns as unverified; do not mark che
 
 Explicitly provide its contents when starting work: ask a tool with file access to read it, attach the file to a conversation, or paste the text into your request. The same method applies to SPEC.md and the other records. A tool that cannot access local files can still use the documents you supply; save its proposed changes yourself.
 
-If you already created AGENTS.md from an earlier version of this guide, rename it to [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)) and update your project references. No other tool-specific file is required.
+If you already created AGENTS.md from an earlier version of this guide, rename it to [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)) and update your project references. If it contains tool-specific settings or instructions, review them first. You can retain a short AGENTS.md that points to the shared file as explained below; no other tool-specific file is required.
 
 If you used an earlier version of this guide and already have DECISIONS.md, copy its relevant entries into the **Decisions and reasons** section of SPEC.md. Use SPEC.md for future updates so you do not maintain the same information in two places. A separate decision record is only useful later if the history becomes too long to read comfortably alongside the requirements.
+
+## Tool-specific instruction files
+
+The shared [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)) serves the same general purpose as CLAUDE.md or AGENTS.md: it tells an AI agent how to work on your project. The difference is **how the instructions reach the agent**. This guide's shared filename has no assumed automatic discovery; supported tool-specific files are discovered according to the tool's rules.
+
+These are project-level examples, checked against official documentation on **October 18, 2026**. They are not an exhaustive list. Support depends on the interface, version, settings, and file location. Some filenames are supported by several tools.
+
+| Tool | Project instruction file or location | How it is used / official source |
+| --- | --- | --- |
+| Codex | `AGENTS.md` in the project root | Codex discovers project instructions before work; nested instructions can refine their scope. The filename is **AGENTS.md**, with an **S**, not AGENT.md. [Official instructions](https://learn.chatgpt.com/docs/agent-configuration/agents-md) |
+| Claude Code | `CLAUDE.md` in the project root (or `.claude/CLAUDE.md`) | Loaded as project instructions at session start. Current versions also support AGENTS.md under documented conditions; check the installed version and Project instructions setting. [Official memory documentation](https://code.claude.com/docs/en/memory) |
+| GitHub Copilot in VS Code | `.github/copilot-instructions.md` | Project-wide instructions for Copilot sessions; support and application depend on the session and instruction-file settings. [Official VS Code instructions](https://code.visualstudio.com/docs/agent-customization/custom-instructions) |
+| Antigravity | `AGENTS.md` or `GEMINI.md`; modular rules in `.agents/rules/*.md` | Supports workspace and directory rules. Modular rule files need activation metadata; a Markdown file placed arbitrarily in the project is not equivalent. [Official rules](https://antigravity.google/docs/rules) |
+| Grok Build | `AGENTS.md`; also supports `CLAUDE.md` and `.grok/rules/*.md` | Discovers project rules in the directory tree. Use `grok inspect` to check discovered files. [Official project rules](https://docs.x.ai/build/features/project-rules) |
+
+### What should you do in this exercise?
+
+**Keep using the shared working rules and explicitly provide them when starting a conversation. You do not need to create all the files in the table.** Use the [explanation](templates.md#tool-independent-working-rules), [setup instructions](setup.md#prepare-your-records), and [template](assets/templates/WORKING_RULES.md.txt) for the shared file. SPEC.md still holds requirements and their reasons; the instruction file describes how the AI should work.
+
+If you later want your chosen tool to discover instructions automatically, add a small tool-specific file that points to the shared rules. Keep the actual rules in one place. For example, put this in `ai-practice/AGENTS.md` for Codex:
+
+Shared file reference: [What the working rules mean](templates.md#tool-independent-working-rules) · [How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt).
+
+```markdown
+# Project instructions
+
+Before starting work, read WORKING_RULES.md in this project root and follow it.
+If you cannot access it, ask the user to provide its contents before proceeding.
+```
+
+This is an instruction to read another file, **not a guaranteed file import**. Check that the agent actually reads the shared rules. For Claude Code, an explicit import is supported: put this in `ai-practice/CLAUDE.md` to load the shared file alongside it:
+
+Shared file reference: [What the working rules mean](templates.md#tool-independent-working-rules) · [How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt).
+
+```markdown
+@WORKING_RULES.md
+```
+
+The `@` import syntax here is specific to Claude Code; do not assume it has the same meaning in other tools. Before resuming, ask the agent to summarize the rules and identify the files it read. If you already have a tool-specific file, review and update it rather than overwriting it or creating conflicting instructions.
+
+These documents guide behavior; they do not themselves enforce a sandbox or grant permissions. Configure [safe permissions](workflow/permissions.md) separately.
 
 ## What belongs where
 
