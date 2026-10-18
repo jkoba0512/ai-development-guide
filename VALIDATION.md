@@ -150,3 +150,12 @@ Screenshots are regenerated for the English edition:
 - Added actions for drafting, reviewing, saving, and later executing checks, plus a readiness checklist.
 - Preserved working-rules reference links and existing section anchors.
 - Internal-link checks and strict build passed. No sample implementation changed.
+
+## Beginner-facing project document explanations
+
+- Added concrete contents examples for the specification and decision record, explaining what each file is for.
+- Explained Markdown as editable text and distinguished project documents from executable programs.
+- Described the first exercise by its actual file and output rather than unexplained smoke-check terminology.
+- Explained how to provide project instructions to the AI and what each reference link does.
+- Replaced terse working-rules link labels across the guide with descriptive labels.
+- Internal-link checks and the strict build passed.

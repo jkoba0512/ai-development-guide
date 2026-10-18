@@ -4,7 +4,7 @@
 
 Limit each task to one feature or acceptance criterion. Name the files to change and the boundaries of the work.
 
-Working rules: [explanation](../templates.md#tool-independent-working-rules) · [setup](../setup.md#prepare-your-records) · [template](../assets/templates/WORKING_RULES.md.txt).
+Project instructions for the AI: [What the working rules mean](../templates.md#tool-independent-working-rules) · [How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt).
 
 ```text
 Read WORKING_RULES.md, SPEC.md, and HANDOFF.md from the project or the supplied contents.

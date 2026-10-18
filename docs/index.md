@@ -12,7 +12,7 @@ Learn to define a specification, review changes, and verify behavior while using
 | Stage | What you check yourself | What you keep |
 | --- | --- | --- |
 | Setup | Official distribution source and correct account | Environment and subscription notes |
-| First run | Reading, editing, and execution work | A small smoke check |
+| First run | Reading, editing, and execution work | A short first-run check |
 | Specification | Inputs, outputs, and completion criteria | SPEC.md |
 | Implementation | Changes match the specification | Code and diffs |
 | Verification | Normal, boundary, and invalid inputs behave correctly | Tests and VERIFICATION.md |

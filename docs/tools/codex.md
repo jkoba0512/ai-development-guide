@@ -57,7 +57,7 @@ Use `/permissions` to inspect settings. Managed restrictions take precedence. Re
 
 ## Run the first-run checks
 
-Follow [Run the first-run checks](../setup.md#run-the-first-run-checks), reading [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([setup](../setup.md#prepare-your-records) · [template](../assets/templates/WORKING_RULES.md.txt)) and SPEC.md before editing. Record whether the AI or a person performed each operation.
+Follow [Run the first-run checks](../setup.md#run-the-first-run-checks), reading [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt)) and SPEC.md before editing. Record whether the AI or a person performed each operation.
 
 Check usage in the account dashboard or supported CLI commands such as `/status`. Additional credits and API billing are separate decisions. [Official pricing](https://learn.chatgpt.com/docs/pricing).
 

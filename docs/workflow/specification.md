@@ -8,15 +8,71 @@ For example, “summarize my study time” leaves many questions unanswered: Are
 
 ## Before you begin
 
-Complete the [first-run checks](../setup.md#run-the-first-run-checks). Keep using your prepared practice folder and chosen tool.
+Complete the [first-run checks](../setup.md#run-the-first-run-checks), then keep using the same practice folder and chosen tool.
 
-You will use:
+In that earlier exercise, you created `smoke.py`, a tiny program that prints **Ready for AI development**. Its purpose was simply to confirm that you could create and run a Python file. Now you are starting a different task: designing the study-duration program.
 
-- [SPEC.md](../assets/templates/SPEC.md.txt) to save the agreed requirements and completion checks.
-- [DECISIONS.md](../assets/templates/DECISIONS.md.txt) to record important choices and their reasons.
-- The shared working rules: [explanation](../templates.md#tool-independent-working-rules) · [setup](../setup.md#prepare-your-records) · [template](../assets/templates/WORKING_RULES.md.txt).
+The files below are **ordinary text documents in your practice folder**, not Python programs. The `.md` extension means Markdown: you can edit the contents as text and use headings and lists to organize them. You do not run these files as commands.
 
-If SPEC.md currently describes the smoke check, replace that description with the new program's specification. Keep the earlier execution results in VERIFICATION.md.
+### SPEC.md: describe what the program must do
+
+SPEC is short for specification. This file tells you and the AI **what to build and what counts as a correct result**.
+
+A short example of its contents looks like this:
+
+```markdown
+# Study-duration program
+
+Purpose: summarize my study sessions.
+Input: one or more integer durations in minutes, from 0 through 1440.
+Output: the session count, total minutes, and average to one decimal place.
+Invalid input: show an error and return exit code 2.
+Completion check: entering 25 and 50 gives count 2, total 75, and average 37.5.
+```
+
+This is a preview, not the complete specification. The next sections help you fill in the details. If you already have SPEC.md from the first-run exercise, update that file for the study-duration program. If it is missing, [download the specification template](../assets/templates/SPEC.md.txt), save it in your practice folder, and remove the final `.txt`.
+
+### DECISIONS.md: explain why you chose a requirement
+
+SPEC.md says **what** the program must do. DECISIONS.md records **why** you chose an important requirement, especially when another reasonable choice was possible.
+
+For example:
+
+```markdown
+# Decision record
+
+Decision: allow a study duration of 0 minutes.
+Reason: a planned session may end without any recorded study time.
+Alternative considered: reject 0 and accept only positive durations.
+Effect on the specification: entering 0 must succeed with count 1, total 0, and average 0.0.
+```
+
+You do not need to record every small detail. Add an entry when you make a meaningful choice or change a requirement. This helps you explain your work and prevents the next AI conversation from guessing the reason. If needed, [download the decision-record template](../assets/templates/DECISIONS.md.txt) and save it as DECISIONS.md.
+
+### Give the AI your project instructions
+
+[WORKING_RULES.md](../templates.md#tool-independent-working-rules) contains **instructions for how the AI should work on your project**. It is not the program's specification. For example, the instructions can tell the AI:
+
+```text
+Ask about missing requirements before implementing.
+Do not change agreed completion criteria without asking.
+Do not add features or dependencies outside the agreed scope.
+Report which checks you actually ran and which you did not run.
+```
+
+Read these instructions yourself, then ask your tool to read the file, attach it, or paste its contents into the conversation. Merely saving the file does not guarantee that an AI tool has read it.
+
+Use these links when you need a reminder:
+
+- [What the working rules mean](../templates.md#tool-independent-working-rules): explains the purpose of the instructions and how to provide them to any tool.
+- [How to save the file in your project](../setup.md#prepare-your-records): shows when and where to create it.
+- [Download the working-rules template](../assets/templates/WORKING_RULES.md.txt): provides the actual text to save. Remove the final `.txt` from the downloaded filename.
+
+### Keep previous results separately
+
+VERIFICATION.md records **what actually happened when you ran a check**: the command, output, and result. Keep the earlier `smoke.py` execution results there. Updating SPEC.md for the new program does not mean deleting evidence of the earlier exercise.
+
+**What to do now:** open SPEC.md and DECISIONS.md in your editor, and make sure the AI has received the project instructions. Continue below to decide the new program's requirements. You will save the reviewed specification before asking for code.
 
 ## Decide these six things first
 
@@ -45,7 +101,7 @@ For example, allowing 0 means a session with no recorded study time is valid. Al
 
 Open your chosen tool's conversation for the practice folder. Paste the following request into its chat input. For a CLI tool, enter it in the AI conversation, not at the operating system's shell prompt.
 
-Working rules: [explanation](../templates.md#tool-independent-working-rules) · [setup](../setup.md#prepare-your-records) · [template](../assets/templates/WORKING_RULES.md.txt).
+Project instructions for the AI: [What the working rules mean](../templates.md#tool-independent-working-rules) · [How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt).
 
 ```text
 I want a small Python CLI that summarizes study durations.

@@ -7,7 +7,7 @@ Updated: [YYYY-MM-DD]
 WORKING_RULES.md → SPEC.md → ENVIRONMENT.md → VERIFICATION.md → this file
 
 Working rules reference:
-[Explanation](https://jkoba0512.github.io/ai-development-guide/templates/#tool-independent-working-rules) · [Setup](https://jkoba0512.github.io/ai-development-guide/setup/#prepare-your-records) · [Template](https://jkoba0512.github.io/ai-development-guide/assets/templates/WORKING_RULES.md.txt)
+[What the working rules mean](https://jkoba0512.github.io/ai-development-guide/templates/#tool-independent-working-rules) · [How to save the file](https://jkoba0512.github.io/ai-development-guide/setup/#prepare-your-records) · [Download the rules template](https://jkoba0512.github.io/ai-development-guide/assets/templates/WORKING_RULES.md.txt)
 
 ## Objective and current state
 
