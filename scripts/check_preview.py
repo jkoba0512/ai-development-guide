@@ -1,4 +1,4 @@
-"""Optional browser smoke check. Run using uv run --with playwright python scripts/check_preview.py."""
+"""Optional browser check. Run using uv run --locked --with playwright python scripts/check_preview.py."""
 from pathlib import Path
 import os
 from playwright.sync_api import sync_playwright
@@ -6,11 +6,11 @@ import json
 from urllib.request import urlopen
 
 ROOT = Path(__file__).resolve().parent.parent
-BASE = os.environ.get("GUIDE_PREVIEW_URL", "http://127.0.0.1:8000").rstrip("/")
+BASE = os.environ.get("GUIDE_PREVIEW_URL", "http://127.0.0.1:8001/ai-development-guide").rstrip("/")
 ARTIFACTS = ROOT / "artifacts"
 ARTIFACTS.mkdir(exist_ok=True)
 routes = [
-    "/", "/plans/", "/setup/", "/tools/antigravity/", "/tools/grok-build/",
+    "/", "/plans/", "/python-uv/", "/setup/", "/tools/antigravity/", "/tools/grok-build/",
     "/tools/copilot/", "/tools/codex/", "/tools/claude-code/",
     "/workflow/specification/", "/workflow/implementation/",
     "/workflow/permissions/", "/workflow/handoff/", "/practice/",
@@ -26,7 +26,7 @@ for route in routes:
         assert response.status == 200, route
 with urlopen(BASE + "/search/search_index.json", timeout=10) as response:
     index = json.load(response)
-    assert len(index["docs"]) >= 17
+    assert len(index["docs"]) >= 18
     assert any("handoff" in item.get("text", "").lower() for item in index["docs"])
 errors = []
 with sync_playwright() as p:
@@ -36,14 +36,17 @@ with sync_playwright() as p:
     )
     page = browser.new_page(viewport={"width": 1440, "height": 1000}, locale="en-US")
     page.on("pageerror", lambda error: errors.append(str(error)))
-    for route in ("/", "/plans/", "/practice/", "/templates/"):
+    for route in ("/", "/plans/", "/python-uv/", "/practice/", "/templates/"):
         page.goto(BASE + route, wait_until="load")
         assert page.locator("h1").is_visible(), route
         assert page.locator("html").get_attribute("lang") == "en", route
     page.goto(BASE + "/", wait_until="load")
     page.screenshot(path=str(ARTIFACTS / "preview-desktop.png"), full_page=True)
     search = page.locator('input[data-md-component="search-query"]')
-    page.wait_for_timeout(1500)
+    page.wait_for_function(
+        "document.querySelector('.md-search-result__meta')?.textContent.includes('Type to start searching')",
+        timeout=30000,
+    )
     search.fill("handoff")
     page.locator(".md-search-result__link").first.wait_for(state="visible", timeout=10000)
     assert page.locator(".md-search-result__link").count() > 0, "English search results missing"
@@ -58,4 +61,4 @@ with sync_playwright() as p:
     page.screenshot(path=str(ARTIFACTS / "preview-mobile.png"), full_page=True)
     assert not errors, errors
     browser.close()
-print("OK: 17 pages, 9 static assets, search index, English search, dark mode, mobile layout; no page errors")
+print("OK: 18 pages, 9 static assets, search index, English search, dark mode, mobile layout; no page errors")

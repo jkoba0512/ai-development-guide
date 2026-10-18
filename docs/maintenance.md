@@ -4,15 +4,18 @@ This guide uses Material for MkDocs and is published at https://jkoba0512.github
 
 ## Build locally
 
-Use Python 3.11 or later and the virtual environment described in the README. Run from the project root:
+Install uv using [Python and uv setup](python-uv.md#install-uv). This repository already contains pyproject.toml, .python-version, and uv.lock. Do not run uv init here. Run from the repository root:
 
 ```sh
-python -m pip install -r requirements.txt
-python scripts/check_docs.py
-python -m mkdocs build --strict
-python -m unittest discover -s docs/assets/example -v
-python -m mkdocs serve --dev-addr 127.0.0.1:8000
+uv python install
+uv sync --locked
+uv run --locked python scripts/check_docs.py
+uv run --locked mkdocs build --strict
+uv run --locked python -m unittest discover -s docs/assets/example -v
+uv run --locked mkdocs serve --dev-addr 127.0.0.1:8001
 ```
+
+Open http://127.0.0.1:8001/ai-development-guide/. The same commands work in PowerShell.
 
 The final command keeps running. Open the site in a browser and check navigation, English search, tables, code blocks, dark mode, and template downloads. Stop with Ctrl+C. Binding only to loopback keeps this preview local.
 
@@ -28,7 +31,13 @@ Official references: [Material getting started](https://squidfunk.github.io/mkdo
 4. Keep the comparison and tool pages consistent.
 5. Run internal-link checks and a strict build, then inspect representative pages in a browser.
 
-When updating dependencies, change the pinned versions in requirements.txt and repeat these checks. If a price or benefit cannot be established, mark it as unverified instead of guessing.
+When deliberately updating website dependencies, review pyproject.toml (including the migration constraints retaining previously verified versions), regenerate uv.lock with uv lock, and run uv sync --locked. Repeat the checks above. requirements.txt is a compatibility export; refresh it with:
+
+```sh
+uv export --locked --no-hashes --no-emit-project --output-file requirements.txt
+```
+
+Do not edit the exported requirements.txt instead of the project definition. If a price or benefit cannot be established, mark it as unverified instead of guessing.
 
 ## Publish or update GitHub Pages
 
@@ -40,7 +49,7 @@ The repository and site URL are configured for this project. For updates, comple
 4. Copy `deployment/pages.yml.example` to `.github/workflows/pages.yml`. Recheck recommended action versions in official documentation.
 5. In GitHub Settings → Pages → Build and deployment, select GitHub Actions.
 6. Commit and push only the files intended for publication.
-7. Dispatch the workflow manually in GitHub Actions. A push alone does not trigger this draft.
+7. Dispatch the workflow manually in GitHub Actions. A push alone does not trigger this workflow.
 8. Check relative paths, search, and downloads at the public URL.
 
 The build job has contents: read permission. The deploy job has pages: write and id-token: write. Review restrictions can also be configured on the `github-pages` environment. [GitHub Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).

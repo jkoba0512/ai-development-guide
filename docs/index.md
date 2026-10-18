@@ -28,7 +28,7 @@ Follow these steps in order. Choose **one** tool and interface; you do not need 
 
 1. **Choose a tool.** Check [Costs and student benefits](plans.md) and select an option you can access without paying if you want to stay on a free plan.
 2. **Install and sign in.** Use your [chosen tool's setup page](#choose-your-tool-page) below. Complete its **Install and sign in** section before opening a project.
-3. **Prepare the folder and records.** Follow [Prepare a working folder](setup.md#prepare-a-working-folder) and [Prepare your records](setup.md#prepare-your-records). Create the files with a text editor; no agent task is needed yet.
+3. **Prepare Python, the folder, and records.** Follow [Set up Python with uv](python-uv.md) to install uv and Python and create ai-practice. Then [prepare your records](setup.md#prepare-your-records) with a text editor; no agent task is needed yet.
 4. **Open the folder or start the CLI.** Follow [Open the folder or start the CLI](setup.md#open-the-folder-or-start-the-cli), then the matching tool instructions. Confirm the project path and set reading-first permissions.
 5. **Check reading, editing, and execution.** Complete [Run the first-run checks](setup.md#run-the-first-run-checks) and record the actual results.
 6. **Build the practice project.** Work through specification, implementation, and verification in the [Practice project](practice.md).
@@ -46,7 +46,7 @@ Start with **Install and sign in** on just one of these pages. Each then directs
 | Codex | [Desktop, or optional CLI with suitable access](tools/codex.md#install-and-sign-in) |
 | Claude Code | [CLI with suitable access](tools/claude-code.md#install-and-sign-in) |
 
-If you are new to programming or terminals, begin by recording errors and actual results. The Python example is for learning. The same workflow applies to web apps, research scripts, and personal projects.
+If you are new to programming or terminals, begin by recording errors and actual results. The Python examples use [uv-managed environments](python-uv.md). They are learning exercises, not a statement that every System Design assignment uses Python. The same workflow applies to web apps, research scripts, and personal projects.
 
 ## Your first completion goals
 

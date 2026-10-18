@@ -8,6 +8,7 @@ Use shared files to make work reproducible across conversations, tools, computer
 | --- | --- |
 | SPEC.md | Purpose, inputs, outputs, acceptance criteria, and exclusions |
 | src/ and tests/ | Actual code and verification methods |
+| pyproject.toml, .python-version, and uv.lock | Python environment settings and resolved dependencies; exclude .venv |
 | VERIFICATION.md | What ran, where, by whom, and with what result |
 | ENVIRONMENT.md | OS, versions, dependencies, startup commands, and permissions |
 | HANDOFF.md | Current state, unfinished work, and the next single task |
@@ -55,7 +56,15 @@ Report contradictions between the specification and code first.
 Do not edit files, add dependencies, or publish anything at this stage.
 ```
 
-Once the summary is correct, configure the environment, authentication, and permissions again. Set secrets securely in the destination environment; do not restore their values from shared files. Rerun the standard tests and append the destination results.
+Once the summary is correct, configure the environment, authentication, and permissions again. Set secrets securely in the destination environment; do not restore their values from shared files. For Python projects in this guide, recreate the environment with uv rather than copying .venv:
+
+```sh
+uv python install
+uv sync --locked
+uv run --locked python -m unittest discover -s tests -v
+```
+
+Run the tests after they exist. See [Python and uv setup](../python-uv.md#dependencies-and-moving-to-another-computer). Append the destination results.
 
 ## Ready to resume
 

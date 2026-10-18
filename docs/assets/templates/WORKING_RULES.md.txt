@@ -12,3 +12,5 @@ This is an ordinary, tool-independent project document. Read it explicitly, or p
 - Run tests and record commands, working directories, and exit codes.
 - Distinguish observed results from assumptions and checks not run.
 - Update HANDOFF.md before ending work or moving environments.
+
+- For Python work in this guide, use uv to run code and tests. Keep pyproject.toml, .python-version, and uv.lock with the project; do not share .venv or silently change dependencies.

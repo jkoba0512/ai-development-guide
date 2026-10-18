@@ -4,7 +4,7 @@ Complete a small Python development cycle without external APIs or additional pa
 
 ## Before you begin
 
-Complete [Getting started](index.md#getting-started) through the [first-run checks](setup.md#run-the-first-run-checks). You should have one installed and signed-in tool, a prepared `ai-practice` folder, the shared records, Python, and recorded results from the initial `smoke.py` exercise (the program that prints `Ready for AI development`).
+Complete [Getting started](index.md#getting-started) through the [first-run checks](setup.md#run-the-first-run-checks). You should have one installed and signed-in tool, a prepared `ai-practice` folder, the shared records, a [Python environment prepared with uv](python-uv.md), and recorded results from the initial `smoke.py` exercise (the program that prints `Ready for AI development`).
 
 Keep using that folder and tool. You do not need to install another tool or buy a subscription for this project.
 
@@ -29,31 +29,19 @@ Review the changes yourself. Confirm handling of no input, malformed input, and 
 
 ## 3. Run normal and invalid-input cases
 
-=== "macOS / Linux"
-    ```sh
-    python3 src/study_stats.py 25 50
-    python3 src/study_stats.py 0
-    python3 src/study_stats.py 1440
-    python3 src/study_stats.py
-    python3 src/study_stats.py -1
-    python3 src/study_stats.py 1441
-    python3 src/study_stats.py 1.5
-    python3 src/study_stats.py abc
-    python3 -m unittest discover -s tests -v
-    ```
+Run from ai-practice. These commands work on macOS, Linux, and Windows PowerShell.
 
-=== "Windows PowerShell"
-    ```powershell
-    py -3 src/study_stats.py 25 50
-    py -3 src/study_stats.py 0
-    py -3 src/study_stats.py 1440
-    py -3 src/study_stats.py
-    py -3 src/study_stats.py -1
-    py -3 src/study_stats.py 1441
-    py -3 src/study_stats.py 1.5
-    py -3 src/study_stats.py abc
-    py -3 -m unittest discover -s tests -v
-    ```
+```sh
+uv run --locked python src/study_stats.py 25 50
+uv run --locked python src/study_stats.py 0
+uv run --locked python src/study_stats.py 1440
+uv run --locked python src/study_stats.py
+uv run --locked python src/study_stats.py -1
+uv run --locked python src/study_stats.py 1441
+uv run --locked python src/study_stats.py 1.5
+uv run --locked python src/study_stats.py abc
+uv run --locked python -m unittest discover -s tests -v
+```
 
 Successful cases return exit code 0; invalid inputs return 2. Immediately after a command, check `echo $?` on macOS/Linux or `$LASTEXITCODE` in PowerShell. Check before running another command.
 
@@ -68,7 +56,7 @@ Save the distributed implementation to `src/study_stats.py` and the tests to `te
 
 ## 4. Record results and explanations
 
-Record the command and actual result for each acceptance criterion in VERIFICATION.md. To check for storage and networking, review the code and compare the folder before and after execution. Record the method used; passing these tests alone does not prove an absence of network access.
+Record the command and actual result for each acceptance criterion in VERIFICATION.md. uv's environment setup creates project metadata and may download Python; those setup operations are separate from the program's behavior. After setup, add `--offline` to uv run if you also want to prohibit uv downloads. To check the program for storage and networking, review the code and compare the folder before and after execution. Record the method used; passing these tests alone does not prove an absence of network access.
 
 Ask the AI to explain the following, then check its explanation yourself:
 

@@ -11,6 +11,8 @@ Read WORKING_RULES.md, SPEC.md, and HANDOFF.md from the project or the supplied 
 If a required document is unavailable, ask me to provide it before proceeding.
 Create src/study_stats.py and tests/test_study_stats.py to satisfy AC-01 through AC-04.
 Use only the Python standard library, with no storage or network operations.
+Run Python and tests through uv in the existing project environment.
+Do not add packages or change project environment files without asking.
 Derive expected results from SPEC.md. Check input validation and CLI exit codes.
 Report the tests actually run, their results, and checks not performed separately.
 ```
@@ -44,12 +46,12 @@ Ask for a step-by-step explanation with a short input when you do not understand
 For the Python practice project:
 
 ```sh
-python3 -m unittest discover -s tests -v
-python3 src/study_stats.py 25 50
-python3 src/study_stats.py -1
+uv run --locked python -m unittest discover -s tests -v
+uv run --locked python src/study_stats.py 25 50
+uv run --locked python src/study_stats.py -1
 ```
 
-On Windows, replace `python3` with `py -3`. The last command intentionally exercises invalid input; a nonzero exit code is the expected result.
+These uv commands work on macOS, Linux, and Windows PowerShell after [environment setup](../python-uv.md). The last command intentionally exercises invalid input; a nonzero exit code is the expected result.
 
 ## When a check fails
 

@@ -8,43 +8,22 @@ Here, “your development tool” means the app, editor, or CLI you selected: An
 
 ## Prepare a working folder
 
-Create an `ai-practice` folder separate from personal documents and secrets. At this stage, use your file manager or terminal; you do not need an AI agent to create the folder. The folder where terminal commands run is called the working directory.
+This guide's first-run exercise and practice project use **Python 3.12 managed with uv**. Follow [Set up Python with uv](python-uv.md) now. It explains how to install uv and Python, create a separate `ai-practice` folder, prepare its environment, and check execution.
 
-Choose a location you can find again. Open a terminal in that location, then run:
-
-=== "macOS / Linux"
-    ```sh
-    mkdir ai-practice
-    cd ai-practice
-    mkdir src tests
-    ```
-
-=== "Windows PowerShell"
-    ```powershell
-    mkdir ai-practice
-    cd ai-practice
-    mkdir src, tests
-    ```
-
-If the folder already exists, open it instead of creating it again. These commands leave the terminal inside `ai-practice`; do not repeat `cd ai-practice` from inside it.
+If you already created the folder, follow the manual's [existing-project instructions](python-uv.md#create-the-practice-project) instead of creating it again. Return here after the environment check. You do not need an AI agent to perform these steps.
 
 ### Check Python for the practice example
 
-The first-run exercise and practice project use Python 3.11 or later. In your terminal, run:
+From the prepared `ai-practice` folder, run:
 
-=== "macOS / Linux"
-    ```sh
-    python3 --version
-    ```
+```sh
+uv --version
+uv run --locked python --version
+```
 
-=== "Windows PowerShell"
-    ```powershell
-    py -3 --version
-    ```
+The second command should show Python 3.12.x. Follow the [environment manual](python-uv.md#check-that-python-runs) if it fails. Installing an AI tool does not prepare this Python environment automatically.
 
-If Python is missing or too old, use your school's approved installation method or the [official Python downloads](https://www.python.org/downloads/), reopen the terminal, and check the version again. Installing an AI tool does not necessarily install Python.
-
-Git is optional for the first checks. If using it, verify `git --version`. Record the OS, shell, Python version, and selected tool version once ENVIRONMENT.md is ready.
+Git is optional. If using it, verify `git --version`. Record uv, Python, OS, shell, and tool versions once ENVIRONMENT.md is ready.
 
 ## Prepare your records
 
@@ -71,6 +50,10 @@ ai-practice/
 ├── HANDOFF.md
 ├── WORKING_RULES.md
 ├── DECISIONS.md
+├── pyproject.toml
+├── .python-version
+├── uv.lock
+├── .venv/
 ├── src/
 └── tests/
 ```
@@ -99,7 +82,7 @@ Follow the linked tool instructions to start the session and set permissions **b
 Before starting, confirm that:
 
 - [ ] Your chosen tool is installed and signed in with the intended account.
-- [ ] Python 3.11 or later is available.
+- [ ] The [Python and uv environment check](python-uv.md#check-that-python-runs) passes in ai-practice.
 - [ ] The six records are saved under ai-practice.
 - [ ] The tool is open in that folder, with reading-first permissions.
 - [ ] No paid subscription is needed for your selected free route; any paid route was chosen deliberately.
@@ -127,20 +110,18 @@ Once reading works, switch from reading-only / Plan mode to the tool's approval-
 ```text
 Create only smoke.py. It should print "Ready for AI development" when run.
 Use Python without external packages or network access.
+Run Python through uv, using the existing project environment.
+Do not change pyproject.toml, uv.lock, or .python-version for this task.
 After writing the file, show its contents and explain how to run it.
 ```
 
 Read the change. Open a terminal in `ai-practice`, or use the editor's integrated terminal and confirm its working directory. Run:
 
-=== "macOS / Linux"
-    ```sh
-    python3 smoke.py
-    ```
+```sh
+uv run --locked python smoke.py
+```
 
-=== "Windows PowerShell"
-    ```powershell
-    py -3 smoke.py
-    ```
+This command is the same on macOS, Linux, and Windows PowerShell.
 
 Expected output: `Ready for AI development`. Record the directory, command, output, and pass/fail result in VERIFICATION.md.
 

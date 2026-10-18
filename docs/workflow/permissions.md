@@ -31,8 +31,8 @@ Features differ by OS, interface, and administrator policy. In particular, Grok'
 
 Inspect the **target path, destination, options, and any chained operations**, not just the command's first word.
 
-- `python -m unittest` runs project code. Read unfamiliar tests before executing them.
-- `pip install` uses the network and writes to an environment. Use a virtual environment and check package sources.
+- `uv run --locked python -m unittest` runs project code. Read unfamiliar tests before executing them.
+- `uv sync` and `uv add` may download packages and write environment or lock files. Review the dependency changes and sources. Run Python with uv in the project environment.
 - `curl ... | bash` executes downloaded code. Review the official URL and script, and make this decision specifically for installation.
 - `git push` sends code outside your machine. Confirm the destination and included history.
 - Deletion, reset, and force push can be difficult to undo. Confirm targets and recovery options first.

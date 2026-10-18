@@ -21,7 +21,7 @@ Complete browser authentication and confirm the account's Build access. API-key 
 
 ## Prepare the practice folder
 
-Follow [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practice`, check Python, and [prepare the six records](../setup.md#prepare-your-records). Return here afterward.
+Follow [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practice`, prepare [Python with uv](../python-uv.md), and [prepare the six records](../setup.md#prepare-your-records). Return here afterward.
 
 ## Open the practice folder
 

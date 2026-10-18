@@ -6,6 +6,8 @@ Checked: [YYYY-MM-DD]
 
 - OS / shell: [type and version]
 - Python or other runtime: [version]
+- uv: [version for Python projects]
+- Python pin and lockfile: [.python-version and uv.lock revision]
 - AI tool / version / interface: [details]
 - Working directory: [portable description]
 - Local / cloud: [details]
@@ -26,9 +28,9 @@ Checked: [YYYY-MM-DD]
 
 ## Reproduction steps
 
-- Install dependencies: [commands and lockfile or pinned versions]
-- Start: [directory and command]
-- Test: [directory and command]
+- Install dependencies: [for these Python exercises: uv sync --locked]
+- Start: [directory and command, e.g. uv run --locked python src/study_stats.py 25 50]
+- Test: [directory and command, e.g. uv run --locked python -m unittest discover -s tests -v]
 
 ## Secrets
 

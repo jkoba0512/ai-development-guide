@@ -16,7 +16,7 @@ The official documentation describes app, IDE, and CLI entry points. This walkth
 
 ## Prepare the practice folder
 
-Use [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practice`, check Python, and [prepare the six records](../setup.md#prepare-your-records). Return here after saving them.
+Use [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practice`, prepare [Python with uv](../python-uv.md), and [prepare the six records](../setup.md#prepare-your-records). Return here after saving them.
 
 ## Open the practice folder
 

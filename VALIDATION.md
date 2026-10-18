@@ -159,3 +159,17 @@ Screenshots are regenerated for the English edition:
 - Explained how to provide project instructions to the AI and what each reference link does.
 - Replaced terse working-rules link labels across the guide with descriptive labels.
 - Internal-link checks and the strict build passed.
+
+## Python and uv environment setup — 2026-10-18
+
+- Added an English Python/uv setup manual and linked it from getting started, common setup, tool pages, and practice.
+- Described Python as the language for this guide's exercises, without asserting language requirements for all System Design assignments.
+- Standardized student execution on uv run --locked and documented Python 3.12, isolated environments, lockfiles, dependencies, offline runs, and handoffs.
+- Added pyproject.toml, .python-version, and uv.lock for this website; preserved all 29 previously verified package versions. requirements.txt is now a compatibility export.
+- Converted both active and draft Pages workflows to uv installation, locked synchronization, checks, tests, and build.
+- Verified the documented student flow in the Git-ignored .local-checks/uv-student folder using uv 0.11.1 and Python 3.12.11: initialization, version pinning, sync, environment path, one-line execution, offline startup program, normal/invalid CLI inputs, and all 9 reference tests passed.
+- The isolated student project declares no third-party dependencies.
+- uv sync --locked, internal links (18 pages and 6 templates), and uv-based strict build passed for the website.
+- Browser verification passed: 18 pages, 9 static assets, English search, dark mode, and mobile layout; no JavaScript page errors.
+- Replaced a fixed browser delay with a search-initialization readiness check after an initial timing-related failure.
+- OS-specific installer instructions were checked against official Astral documentation; a fresh uv install and native Windows student setup were not executed. No system Python installation was removed.

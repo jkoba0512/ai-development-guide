@@ -49,6 +49,21 @@ The setup sequence was revised to separate installation and authentication from 
 
 The older Codex documentation URLs on developers.openai.com redirected to learn.chatgpt.com during research; the guide links to the destinations.
 
+## Python and uv environment sources
+
+The environment instructions were checked against Astral's official documentation on 2026-10-18. This review covers setup and execution, not a new check of AI-product prices or student benefits.
+
+| Official page | Use in this guide |
+| --- | --- |
+| [Install uv](https://docs.astral.sh/uv/getting-started/installation/) | OS-specific installation and version check |
+| [Manage Python](https://docs.astral.sh/uv/guides/install-python/) | uv-managed Python installation |
+| [Create projects](https://docs.astral.sh/uv/concepts/projects/init/) | Minimal practice project |
+| [Project files](https://docs.astral.sh/uv/concepts/projects/layout/) | pyproject.toml, lockfile, and environment |
+| [Run commands](https://docs.astral.sh/uv/concepts/projects/run/) | Execute Python through uv |
+| [Lock and sync](https://docs.astral.sh/uv/concepts/projects/sync/) | Locked setup and reproduction |
+| [Manage dependencies](https://docs.astral.sh/uv/concepts/projects/dependencies/) | Explicit dependency changes |
+| [GitHub Actions](https://docs.astral.sh/uv/guides/integration/github/) | uv-based website build |
+
 ## Unverified items
 
 - Final regional prices, taxes, and checkout conditions shown to individual accounts in Japan.
@@ -65,3 +80,4 @@ The older Codex documentation URLs on developers.openai.com redirected to learn.
 | 2026-10-06 | Initial edition: official research for five products, shared development/verification/handoff workflow, and MkDocs structure. No external publication |
 | 2026-10-13 | English edition: translated documentation, prompts, templates, code messages, and configuration. Original research date retained |
 | 2026-10-17 | Made shared working instructions tool-independent through [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)) and explicit document sharing; updated prompts, templates, and handoff guidance |
+| 2026-10-18 | Added Python/uv environment setup; standardized Python execution and website builds on uv |

@@ -46,6 +46,7 @@ extra_css:
 nav:
   - Introduction: index.md
   - Costs and Student Benefits: plans.md
+  - Python and uv Setup: python-uv.md
   - Common Setup: setup.md
   - Tool Setup:
       - Antigravity: tools/antigravity.md

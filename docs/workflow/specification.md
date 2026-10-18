@@ -109,6 +109,7 @@ Read the project working rules in WORKING_RULES.md or the contents provided with
 If those contents are unavailable, ask me to provide them before proceeding.
 
 Draft SPEC.md without implementing the program.
+Use the existing uv-managed Python project; no dependency additions are needed.
 For this exercise:
 - Input is one or more integer durations in minutes, each from 0 through 1440.
 - Output is the session count, total minutes, and average minutes to one decimal place.
@@ -158,7 +159,7 @@ A program can work with 25 and 50 but still fail on an empty input or a boundary
 | AC-04 | Try each separately: no input, -1, 1441, 1.5, and abc | Error on standard error and exit code 2 for each case | Run each invalid input separately; include tests for each |
 | AC-05 | Run the program normally | No application data files created, no network access, and no additional package dependencies | Review the code and dependencies; inspect the folder before and after running |
 
-AC-02 and AC-03 are **boundary checks**: they test the ends of the allowed range. AC-04 checks that the program rejects invalid inputs instead of silently using them. AC-05 checks the scope of the implementation; a correct numeric answer alone does not establish that it avoids storage or networking.
+AC-02 and AC-03 are **boundary checks**: they test the ends of the allowed range. AC-04 checks that the program rejects invalid inputs instead of silently using them. AC-05 concerns the program's behavior after [uv environment preparation](../python-uv.md), not the environment files or downloads created during setup. AC-05 checks the scope of the implementation; a correct numeric answer alone does not establish that it avoids storage or networking.
 
 **What to do now:** add this table to the Acceptance criteria section of SPEC.md. You are planning the checks, not claiming that they have passed.
 
