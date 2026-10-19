@@ -76,6 +76,17 @@ Instruction-file names and discovery behavior were checked on 2026-10-18. This r
 | Antigravity | [Rules and activation](https://antigravity.google/docs/rules) |
 | Grok Build | [Project rules and discovery](https://docs.x.ai/build/features/project-rules) |
 
+## Optional Obsidian extension sources
+
+Reviewed on 2026-10-19 for the optional extension. This does not update the earlier AI-product pricing review.
+
+| Official page | Use in this guide |
+| --- | --- |
+| [Data storage](https://help.obsidian.md/Files+and+folders/How+Obsidian+stores+data) | Local Markdown files, vaults, and app settings |
+| [Create or open a vault](https://help.obsidian.md/Getting+started/Create+a+vault) | Open the existing practice folder |
+| [Internal links](https://help.obsidian.md/Linking+notes+and+files/Internal+links) | Markdown links for portability |
+| [Pricing](https://obsidian.md/pricing) | Free app and optional paid services |
+
 ## Unverified items
 
 - Final regional prices, taxes, and checkout conditions shown to individual accounts in Japan.

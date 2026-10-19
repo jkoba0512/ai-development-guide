@@ -208,3 +208,12 @@ Screenshots are regenerated for the English edition:
 - Removed the Optional verification record section and the specification-page paragraph about creating files or transcribing output.
 - Removed links to the deleted section and shortened repeated recording explanations.
 - Kept a brief instruction to review displayed results and request a saved summary if wanted.
+
+## Optional Obsidian extension
+
+- Added an English extension after the basic practice, separate from required setup.
+- Explained opening the existing project as a vault, reviewing an AI handoff, and sharing selected Markdown files.
+- Kept plugins/automation outside the introduction and verification saving optional.
+- Added official storage, vault, linking, and pricing sources reviewed on 2026-10-19.
+- Updated navigation, related-page links, and preview coverage for 19 pages.
+- Relative-link checks, strict build, and local browser checks passed (19 pages, search, dark mode, mobile layout, no page errors).

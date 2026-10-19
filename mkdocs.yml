@@ -60,6 +60,8 @@ nav:
       - Safe Permission Settings: workflow/permissions.md
       - Handoffs Between Environments: workflow/handoff.md
   - Practice Project: practice.md
+  - Optional Extensions:
+      - Organize Knowledge with Obsidian: obsidian.md
   - Templates: templates.md
   - Troubleshooting: troubleshooting.md
   - Local Checks and Publication: maintenance.md

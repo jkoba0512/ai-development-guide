@@ -75,3 +75,5 @@ Run the tests after they exist. See [Python and uv setup](../python-uv.md#depend
 - [ ] Multiple agents are not modifying the same files simultaneously.
 
 Keep unknowns marked as unverified. If tests fail after a move, check Python versions, dependencies, working directory, and OS differences before changing the specification.
+
+For an optional way to read and organize the same project documents, see [Organize project knowledge with Obsidian](../obsidian.md).

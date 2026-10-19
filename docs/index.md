@@ -34,6 +34,8 @@ Follow these steps in order. Choose **one** tool and interface; you do not need 
 6. **Build the practice project.** Work through specification, implementation, and verification in the [Practice project](practice.md).
 7. **Hand off when needed.** Later, if changing conversations, tools, or computers, use [Handoffs between environments](workflow/handoff.md). Switching tools is not required for the first exercise.
 
+After the practice project, explore [Organize project knowledge with Obsidian](obsidian.md) if you want a place to connect learning notes and prepare AI handoffs. This is an optional extension.
+
 ### Choose your tool page
 
 Start with **Install and sign in** on just one of these pages. Each then directs you to the shared folder preparation, explains how to start in that folder, and returns you to the first-run checks.

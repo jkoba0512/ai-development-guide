@@ -14,7 +14,7 @@ routes = [
     "/tools/copilot/", "/tools/codex/", "/tools/claude-code/",
     "/workflow/specification/", "/workflow/implementation/",
     "/workflow/permissions/", "/workflow/handoff/", "/practice/",
-    "/templates/", "/troubleshooting/", "/maintenance/", "/sources/",
+    "/obsidian/", "/templates/", "/troubleshooting/", "/maintenance/", "/sources/",
     "/assets/templates/SPEC.md.txt", "/assets/templates/ENVIRONMENT.md.txt",
     "/assets/templates/VERIFICATION.md.txt", "/assets/templates/HANDOFF.md.txt",
     "/assets/templates/WORKING_RULES.md.txt",
@@ -26,7 +26,7 @@ for route in routes:
         assert response.status == 200, route
 with urlopen(BASE + "/search/search_index.json", timeout=10) as response:
     index = json.load(response)
-    assert len(index["docs"]) >= 18
+    assert len(index["docs"]) >= 19
     assert any("handoff" in item.get("text", "").lower() for item in index["docs"])
 errors = []
 with sync_playwright() as p:
@@ -36,7 +36,7 @@ with sync_playwright() as p:
     )
     page = browser.new_page(viewport={"width": 1440, "height": 1000}, locale="en-US")
     page.on("pageerror", lambda error: errors.append(str(error)))
-    for route in ("/", "/plans/", "/python-uv/", "/practice/", "/templates/"):
+    for route in ("/", "/plans/", "/python-uv/", "/practice/", "/obsidian/", "/templates/"):
         page.goto(BASE + route, wait_until="load")
         assert page.locator("h1").is_visible(), route
         assert page.locator("html").get_attribute("lang") == "en", route
@@ -61,4 +61,4 @@ with sync_playwright() as p:
     page.screenshot(path=str(ARTIFACTS / "preview-mobile.png"), full_page=True)
     assert not errors, errors
     browser.close()
-print("OK: 18 pages, 9 static assets, search index, English search, dark mode, mobile layout; no page errors")
+print("OK: 19 pages, 8 static assets, search index, English search, dark mode, mobile layout; no page errors")

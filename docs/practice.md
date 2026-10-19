@@ -90,3 +90,5 @@ Also identify which checks reject no input, negative values, and decimals.
 Write the implementation status and next task—such as considering an output-format change—in HANDOFF.md. Include verification results only if you requested or agreed to saving them. Otherwise, note that no results were saved and plan to rerun checks. Stop the previous conversation. In a new conversation or another tool, use the [resume prompt](workflow/handoff.md) and rerun the same tests.
 
 For an extension such as CSV input, update the specification, error cases, and tests first. You do not need to add a UI, storage, and external integrations all at once.
+
+For an optional next step, see [Organize project knowledge with Obsidian](obsidian.md) to manage useful discussion notes and prepare future handoffs.
