@@ -217,3 +217,11 @@ Screenshots are regenerated for the English edition:
 - Added official storage, vault, linking, and pricing sources reviewed on 2026-10-19.
 - Updated navigation, related-page links, and preview coverage for 19 pages.
 - Relative-link checks, strict build, and local browser checks passed (19 pages, search, dark mode, mobile layout, no page errors).
+
+## Clarify the specification exercise flow
+
+- Reorganized the page into five actions: understand the task, request a draft, review requirements/reasons, check acceptance criteria, and save the agreed file.
+- Removed duplicate preview documents and instructions to write requirements manually before requesting an AI draft.
+- Kept concrete examples, all five acceptance criteria, uv usage, and a clear next step.
+- Preserved earlier section URLs with anchor markers. Verification results remain displayed in conversation, with saving by request.
+- Relative links, strict build, and local browser checks of the five steps, existing anchors, and mobile layout passed.

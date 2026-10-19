@@ -1,197 +1,153 @@
 # Write a Specification
 
-Before asking AI to write code, decide **what the program should do and how you will judge whether it works**. Write those decisions in SPEC.md. This document is your specification.
+**On this page, you and the AI will prepare SPEC.md for a small study-time program.** SPEC.md is the specification: it describes what to build, the reasons for important choices, and the results the program must produce.
 
-For example, “summarize my study time” leaves many questions unanswered: Are the numbers minutes or hours? Are decimals allowed? What happens if nothing is entered? If you leave these choices to the AI, it may build something different from what you intended.
-
-**Your task on this page:** prepare and review SPEC.md. You are not implementing the program or running its tests yet.
+You will follow this sequence: **understand the task → ask for a draft → review the requirements → check the acceptance criteria → save the agreed specification**. Implementation comes next.
 
 ## Before you begin
 
-Complete the [first-run checks](../setup.md#run-the-first-run-checks), then keep using the same practice folder and chosen tool.
+Complete the [first-run checks](../setup.md#run-the-first-run-checks), then keep using the same `ai-practice` folder and AI tool. The earlier `smoke.py` program only checked that you could create and run a Python file. This exercise starts a new program.
 
-In that earlier exercise, you created `smoke.py`, a tiny program that prints **Ready for AI development**. Its purpose was simply to confirm that you could create and run a Python file. Now you are starting a different task: designing the study-duration program.
+Open `ai-practice/SPEC.md` in your editor. It is a Markdown text document: you read and edit it, rather than run it as a program. If it is missing, [download the specification template](../assets/templates/SPEC.md.txt), save it in `ai-practice`, and remove the final `.txt`.
 
-Use **SPEC.md** for both the program's requirements and the reasons behind important choices. Save it directly in your practice folder (for example, `ai-practice/SPEC.md`). If you created it during Common Setup, open that existing file. The following sections show example contents and provide a template if the file is missing.
+Keep the existing file for now. After reviewing the new draft, you will replace its first-run description with the study-time specification.
 
-SPEC.md is an ordinary text document. The `.md` extension means Markdown: you can edit the contents as text and use headings and lists to organize them. Open it in your editor to read or edit it; you do not run it as a Python program or terminal command.
+<span id="decide-these-six-things-first"></span>
 
-### SPEC.md: describe what the program must do
+## 1. Understand what you are going to build
 
-SPEC is short for specification. This file tells you and the AI **what to build and what counts as a correct result**.
-
-A short example of its contents looks like this:
-
-```markdown
-# Study-duration program
-
-Purpose: summarize my study sessions.
-Input: one or more integer durations in minutes, from 0 through 1440.
-Output: the session count, total minutes, and average to one decimal place.
-Invalid input: show an error and return exit code 2.
-Completion check: entering 25 and 50 gives count 2, total 75, and average 37.5.
-```
-
-This is a preview, not the complete specification. The next sections help you fill in the details. If you already have SPEC.md from the first-run exercise, update that file for the study-duration program. If it is missing, [download the specification template](../assets/templates/SPEC.md.txt), save it in your practice folder, and remove the final `.txt`.
-
-### In the same SPEC.md, explain important choices
-
-Add a **Decisions and reasons** section to SPEC.md. It explains **why** you chose an important requirement, especially when another reasonable choice was possible. Keeping the requirement and its reason in one file makes them easier to read together.
-
-For example:
-
-```markdown
-## Decisions and reasons
-
-Decision: allow a study duration of 0 minutes.
-Reason: a planned session may end without any recorded study time.
-Alternative considered: reject 0 and accept only positive durations.
-Effect on the specification: entering 0 must succeed with count 1, total 0, and average 0.0.
-```
-
-You do not need to record every small detail. Add an entry in this section when you make a meaningful choice or change a requirement. This helps you explain your work and prevents the next AI conversation from guessing the reason. The specification template includes this section; no separate decision file is needed for this exercise.
-
-### Give the AI your project instructions
-
-[WORKING_RULES.md](../templates.md#tool-independent-working-rules) contains **instructions for how the AI should work on your project**. It is not the program's specification. For example, the instructions can tell the AI:
+Imagine that you studied for **25 minutes**, then **50 minutes**. You want a program that summarizes those two sessions:
 
 ```text
-Ask about missing requirements before implementing.
-Do not change agreed completion criteria without asking.
-Do not add features or dependencies outside the agreed scope.
-Report which checks you actually ran and which you did not run.
+Input: 25 50
+Output: Count: 2 / Total: 75 min / Average: 37.5 min
 ```
 
-Read these instructions yourself, then ask your tool to read the file, attach it, or paste its contents into the conversation. Merely saving the file does not guarantee that an AI tool has read it.
+This is a **command-line program (CLI)**: you use it by entering a command in a terminal. The following requirements are already chosen for this exercise. Read them so you can check the AI's draft; you do not need to write a separate requirements document first.
 
-Use these links when you need a reminder:
-
-- [What the working rules mean](../templates.md#tool-independent-working-rules): explains the purpose of the instructions and how to provide them to any tool.
-- [How to save the file in your project](../setup.md#prepare-your-records): shows when and where to create it.
-- [Download the working-rules template](../assets/templates/WORKING_RULES.md.txt): provides the actual text to save. Remove the final `.txt` from the downloaded filename.
-
-For the difference between the shared rules and automatically discovered files such as CLAUDE.md or AGENTS.md, see [Tool-specific instruction files](../templates.md#tool-specific-instruction-files). You do not need to create a tool-specific file for this exercise.
-
-**What to do now:** open SPEC.md in your editor, and make sure the AI has received the project instructions. Continue below to decide the new program's requirements. You will save the reviewed specification before asking for code.
-
-## Decide these six things first
-
-For this exercise, imagine that you studied for 25 minutes and then 50 minutes. You want to enter those durations and see how many sessions you recorded, their total duration, and their average.
-
-We will make a small **command-line program (CLI)**: a program you run by typing a command in a terminal.
-
-Read the example decisions below. They are choices for this exercise, not universal rules for all programs.
-
-| Question you must answer | Decision for this exercise |
+| Part of the specification | Requirement for this exercise |
 | --- | --- |
-| Purpose: what problem are we solving? | Summarize the durations of study sessions |
-| User and operation: who uses it, and how? | A student enters durations in minutes in a terminal |
-| Input: what values are allowed? | One or more integers from 0 through 1440; each number is one session |
-| Output: what should be shown? | Session count, total minutes, and average minutes to one decimal place |
-| Invalid input: what should happen if a value is not allowed? | Show an error on standard error and finish with exit code 2 |
-| Out of scope: what are we deliberately leaving out? | Accounts, file storage, network access, charts, and additional packages |
+| Purpose and user | Help a student summarize study-session durations |
+| Input | One or more integers in minutes, each from 0 through 1440; each number is one session |
+| Output | Session count, total minutes, and average minutes to one decimal place, in the format above |
+| Successful completion | Return exit code 0 |
+| Invalid input | Reject missing input, negative values, values above 1440, decimals, and text; show an error on standard error and return exit code 2 |
+| Out of scope | Accounts, saved study data, network access, charts, and additional packages |
 
-An **exit code** is a number a program returns when it finishes. In this exercise, 0 means success and 2 means invalid input. **Standard error** is the output channel used for error messages.
+An **exit code** is a number returned when a program finishes: here, 0 means success and 2 means invalid input. **Standard error** is the output channel used for error messages.
 
-For example, allowing 0 means a session with no recorded study time is valid. Allowing 1440 sets the maximum duration of one session to one day. You could make different choices in another project, but you must state them before implementation.
+**Before continuing:** make sure you understand what each of the numbers 2, 75, and 37.5 in the example represents. Ask the AI to explain anything unfamiliar.
 
-**What to do now:** put these decisions into the corresponding sections of SPEC.md. If a choice is unclear, write it under Open decisions instead of leaving it for the AI to guess.
+<span id="ask-the-ai-for-a-draft"></span>
 
-## Ask the AI for a draft
+## 2. Ask the AI to draft SPEC.md
 
-Open your chosen tool's conversation for the practice folder. Paste the following request into its chat input. For a CLI tool, enter it in the AI conversation, not at the operating system's shell prompt.
+Use the conversation for your `ai-practice` project. Paste the request below into the AI's chat input. For a CLI tool, enter it in the AI conversation rather than at the operating system's shell prompt.
 
-Project instructions for the AI: [What the working rules mean](../templates.md#tool-independent-working-rules) · [How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt).
+The shared [WORKING_RULES.md](../templates.md#tool-independent-working-rules) tells the AI **how to work**, while SPEC.md describes **what to build**. Provide the rules through file access, attachment, or pasted text. References: [How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt). For names such as CLAUDE.md and AGENTS.md, see [Tool-specific instruction files](../templates.md#tool-specific-instruction-files).
 
 ```text
 I want a small Python CLI that summarizes study durations.
 Read the project working rules in WORKING_RULES.md or the contents provided with this request.
 If those contents are unavailable, ask me to provide them before proceeding.
 
-Draft SPEC.md without implementing the program.
-Use the existing uv-managed Python project; no dependency additions are needed.
-For this exercise:
-- Input is one or more integer durations in minutes, each from 0 through 1440.
-- Output is the session count, total minutes, and average minutes to one decimal place.
-- Successful execution returns exit code 0.
+Show a draft specification in this conversation for me to review.
+Do not implement the program or run its tests yet.
+Use the existing uv-managed Python project; no additional packages are needed.
+
+Requirements:
+- Input: one or more integer durations in minutes, each from 0 through 1440.
+- Each number represents one study session.
+- Output format for input 25 50:
+  Count: 2 / Total: 75 min / Average: 37.5 min
+- Show the average to one decimal place. Successful execution returns exit code 0.
 - Missing input, negatives, values above 1440, decimals, and text are invalid.
 - Invalid input produces an error on standard error and exit code 2.
-- No external APIs, persistent storage, or additional packages are needed.
+- No accounts, persistent storage, network access, charts, or additional packages.
 
-Include purpose, inputs, outputs, invalid-input behavior, exclusions,
-and acceptance criteria with concrete inputs, expected results, and verification methods.
-Include a Decisions and reasons section in SPEC.md for important choices,
-their reasons, alternatives considered, and affected acceptance criteria.
-List any remaining unclear points as questions or open decisions.
+Organize the draft into purpose and users, inputs, outputs, invalid-input behavior,
+out of scope, acceptance criteria, decisions and reasons, and open decisions.
+For acceptance criteria, include concrete inputs, expected results, and verification methods.
+Keep important choices and their reasons in the same document.
+Ask about unclear points instead of silently choosing an answer.
+Label proposed reasons for my review; do not present them as decisions I already made.
+Wait for my review before saving the agreed draft to SPEC.md.
 ```
 
-The working rules can be read from a local file, attached, or pasted into the conversation. No product-specific instruction file or automatic loading is required.
+**You should now have:** a draft shown in the conversation. Read it before asking for code.
 
-Read the AI's draft yourself. Check it against the decisions above. If it adds login, storage, charts, or a paid API, ask it to remove those additions. If it asks a question, answer it or record it as an open decision.
+## 3. Review the requirements and their reasons
 
-If the tool cannot save files, copy the reviewed draft into SPEC.md yourself. **An AI response in a conversation is not the saved specification until you put it in the project file.**
+Compare the draft with the requirements in step 1. Check that it uses minutes, accepts only the specified integers, gives the required output, and handles invalid inputs. Ask the AI to correct additions such as login or a database.
 
-## Connect acceptance criteria to tests
+Also review **Decisions and reasons** in the same draft. This section explains why an important requirement was chosen. For example:
 
-An **acceptance criterion** is a condition the program must satisfy before you call the work complete. “The program works” is too vague. “Entering 25 and 50 produces count 2, total 75, and average 37.5” is something you can actually check.
+```markdown
+## Decisions and reasons
 
-**AC** stands for acceptance criterion. AC-01 and AC-02 are labels that let you refer to a condition in the specification, a test, or a verification record.
+Decision: allow 0 minutes.
+Reason: a planned session may end without any recorded study time.
+Alternative considered: accept only positive durations.
+Affected criterion: AC-02 — entering 0 must succeed.
+```
 
-### Work through one example
+This is a possible reason for the exercise's choice. Accept it only if it matches your intention, or ask for it to be changed. Keep the requirement and its reason together in SPEC.md.
 
-For the input 25 and 50, calculate the expected result yourself:
+If the AI asks a question, answer it. Resolve questions that affect implementation; put genuinely deferred questions under **Open decisions** with a next action. If there are none, write “None.”
 
-1. There are two numbers, so the session count is **2**.
-2. Add them: 25 + 50 = **75 minutes**.
-3. Divide the total by the count: 75 / 2 = **37.5 minutes**.
+**You should now have:** a draft whose requirements and important reasons you can explain in your own words.
 
-You now know what a correct implementation must produce, even though the program does not exist yet. Save this as AC-01 in SPEC.md.
+<span id="connect-acceptance-criteria-to-tests"></span>
 
-Later, a test will run the program with these inputs and compare its actual output with that expected result. The **criterion states what must be true**; the **test checks whether it is true**.
+## 4. Check how you will judge the program
 
-### Write checks for other situations
+An **acceptance criterion** is a condition the program must satisfy before the work is complete. **AC** is short for acceptance criterion; AC-01 and AC-02 are labels you can refer to later in tests or discussions.
 
-A program can work with 25 and 50 but still fail on an empty input or a boundary value. Add checks for those situations too.
+Start with the expected result for 25 and 50. Calculate it before any code exists:
 
-| ID | Input or behavior to check | Expected result | How to verify it after implementation |
+1. Two durations mean a session count of **2**.
+2. 25 + 50 gives **75 minutes** in total.
+3. 75 / 2 gives an average of **37.5 minutes**.
+
+An automated test will later compare the program's actual output with this expectation. **The specification defines the correct result; the test checks it.**
+
+Ask the AI to make sure the draft's Acceptance criteria section covers this table:
+
+| ID | Input or behavior to check | Expected result | Verification after implementation |
 | --- | --- | --- | --- |
 | AC-01 | Enter 25 and 50 | Count 2, total 75, average 37.5; exit code 0 | Run the CLI and compare the output; include an automated test |
-| AC-02 | Enter 0 | Count 1, total 0, average 0.0; exit code 0 | Check the minimum allowed value manually or with a test |
-| AC-03 | Enter 1440 | Count 1, total 1440, average 1440.0; exit code 0 | Check the maximum allowed value manually or with a test |
-| AC-04 | Try each separately: no input, -1, 1441, 1.5, and abc | Error on standard error and exit code 2 for each case | Run each invalid input separately; include tests for each |
-| AC-05 | Run the program normally | No application data files created, no network access, and no additional package dependencies | Review the code and dependencies; inspect the folder before and after running |
+| AC-02 | Enter 0 | Count 1, total 0, average 0.0; exit code 0 | Test the minimum allowed value |
+| AC-03 | Enter 1440 | Count 1, total 1440, average 1440.0; exit code 0 | Test the maximum allowed value |
+| AC-04 | Try each separately: no input, -1, 1441, 1.5, and abc | Error on standard error and exit code 2 for each case | Include a test for each invalid input |
+| AC-05 | Run the program normally | No application data files created, no network access, and no additional package dependencies | Review code and dependencies; inspect the folder before and after running |
 
-AC-02 and AC-03 are **boundary checks**: they test the ends of the allowed range. AC-04 checks that the program rejects invalid inputs instead of silently using them. AC-05 concerns the program's behavior after [uv environment preparation](../python-uv.md), not the environment files or downloads created during setup. AC-05 checks the scope of the implementation; a correct numeric answer alone does not establish that it avoids storage or networking.
+AC-02 and AC-03 are **boundary checks**, covering the ends of the permitted range. AC-05 concerns the program itself after [uv environment setup](../python-uv.md). Files and downloads created while preparing the environment are separate. Passing calculation tests alone does not establish that a program avoids storage or network access.
 
-**What to do now:** add this table to the Acceptance criteria section of SPEC.md. You are planning the checks, not claiming that they have passed.
+**You should now have:** concrete completion checks in the draft. These are planned checks, not passed test results.
 
-### Use the criteria after implementation
+<span id="ready-for-implementation"></span>
 
-After the program is implemented, you will use AC-01 like this:
+## 5. Save the agreed specification and continue
+
+After reviewing the draft, ask the AI:
 
 ```text
-Input: 25 50
-Expected output: Count: 2 / Total: 75 min / Average: 37.5 min
-Expected exit code: 0
+Save the specification we reviewed to SPEC.md in the practice folder,
+replacing the earlier first-run description.
+Keep the requirements, acceptance criteria, decisions and reasons,
+and any open decisions together in that file.
+Do not implement the program yet.
 ```
 
-Ask the AI to run the program, compare actual results with these expectations, and display a summary of AC-01 and the other criteria in the conversation. Review which criteria passed, failed, or were not run. Related checks can share one short summary; full logs are unnecessary. Save it only if you request or agree to a record. If the AI cannot execute commands, run them yourself and give it the results to summarize. The [Practice project](../practice.md#3-run-normal-and-invalid-input-cases) gives the execution commands.
+If your tool cannot save files, copy the reviewed draft into `ai-practice/SPEC.md` yourself. Open the saved file and check that it contains the agreed version.
 
-An automated test performs a comparison for you; it does not decide what the correct answer should be. For AC-05, review is also necessary: a passing calculation test does not prove that no network access occurs.
+Before continuing, confirm:
 
-For example, if generated code prints an average of 75 for 25 and 50, do not change AC-01 to expect 75 just to make the test pass. The calculation above shows that the implementation needs correction.
+- [ ] SPEC.md is saved in the practice folder.
+- [ ] You can explain the inputs, output, invalid-input behavior, and important choices.
+- [ ] AC-01 through AC-05 describe expected results and ways to check them.
+- [ ] Questions affecting implementation are resolved.
 
-If you intentionally change a requirement, update the requirement and its reason together in SPEC.md first. Then update the corresponding tests.
+**Next:** follow [Implementation and verification](implementation.md). The AI will write code, run checks, and display actual results for you to review. If you want to keep those results, ask it to save a summary.
 
-## Ready for implementation
-
-Before moving on, check that:
-
-- [ ] SPEC.md is saved in the practice folder, not only in the conversation.
-- [ ] You can explain the permitted inputs, expected output, and invalid-input behavior.
-- [ ] Each acceptance criterion has a concrete expected result and a verification method.
-- [ ] You understand why 25 and 50 should produce an average of 37.5.
-- [ ] Questions affecting implementation are resolved; deferred questions have an owner and next action.
-- [ ] You have not marked planned checks as passed.
-
-Your deliverable from this page is **the reviewed SPEC.md, including acceptance criteria and important decisions with their reasons**. Next, follow [Implementation and verification](implementation.md) to ask the AI to write code and perform the planned checks.
+If a later test fails, compare the code with the agreed specification. For example, an average of 75 for inputs 25 and 50 indicates an implementation problem. If you intentionally change a requirement, update that requirement and its reason in SPEC.md before changing the tests.
