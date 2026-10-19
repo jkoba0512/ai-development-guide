@@ -29,7 +29,7 @@ Review the changes yourself. Confirm handling of no input, malformed input, and 
 
 ## 3. Run normal and invalid-input cases
 
-**Ask the AI to run the checks and display the results. You do not need to type every command, transcribe output, or create a verification file.** Review the proposed commands and permissions before execution.
+**Ask the AI to run the checks and display the results.** Review the proposed commands and permissions before execution.
 
 ```text
 Run the checks for AC-01 through AC-05 in SPEC.md using the existing uv environment.
@@ -71,7 +71,7 @@ Save the distributed implementation to `src/study_stats.py` and the tests to `te
 
 ## 4. Review the short results summary
 
-Read the AI's results in the conversation. Check **what was tested, whether anything failed, and what remains unverified**. Ask about anything you do not understand. You do not need to copy full logs or fill in a detailed form for every input. One short summary can cover related checks, provided the acceptance-criterion results are clear. Saving it is optional. Ask the AI to save it if you need it later; if the AI recommends saving, it should explain why and ask first.
+Read the AI's results in the conversation. Check **what was tested, whether anything failed, and what remains unverified**. Ask about anything you do not understand. If you want to keep the results, ask the AI to save a summary.
 
 For example, a summary might say “AC-01–AC-04: pass; automated CLI tests checked normal, boundary, and invalid inputs. AC-05: not run; code review still needed.” This is an illustration, not a result to copy as evidence. The actual summary must describe your own run.
 

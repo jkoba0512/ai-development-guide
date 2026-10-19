@@ -118,7 +118,7 @@ Expected results:
 
 `uv run` starts a command in the project environment. `--locked` reports an error if project settings and the lockfile disagree, rather than silently changing the lockfile. [Running commands](https://docs.astral.sh/uv/concepts/projects/run/) and [locking and syncing](https://docs.astral.sh/uv/concepts/projects/sync/).
 
-Keep `uv --version`, the Python version, and these terminal results available. When your AI tool is ready, ask it to summarize the versions in ENVIRONMENT.md and explain the check results on screen. Saving verification results is optional; you do not need to transcribe a detailed log. Then return to [Common setup → Prepare your records](setup.md#prepare-your-records).
+Keep `uv --version`, the Python version, and these terminal results available. When your AI tool is ready, ask it to summarize the versions in ENVIRONMENT.md and explain the check results on screen. Then return to [Common setup → Prepare your records](setup.md#prepare-your-records).
 
 ## Run programs and tests
 

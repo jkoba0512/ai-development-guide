@@ -72,12 +72,6 @@ Use these links when you need a reminder:
 
 For the difference between the shared rules and automatically discovered files such as CLAUDE.md or AGENTS.md, see [Tool-specific instruction files](../templates.md#tool-specific-instruction-files). You do not need to create a tool-specific file for this exercise.
 
-### Read results on screen; save them only if needed
-
-The AI normally runs checks and displays the actual results in the conversation. You review what passed, what failed, and what was not checked. You do not need to create a verification file or transcribe terminal output.
-
-If you need a saved summary later, ask for one and agree on a location. If the AI recommends saving, it should explain why and ask first. See [Optional verification record](../templates.md#optional-verification-record). If you already saved results from `smoke.py`, you can keep them; they are separate from the new program's requirements.
-
 **What to do now:** open SPEC.md in your editor, and make sure the AI has received the project instructions. Continue below to decide the new program's requirements. You will save the reviewed specification before asking for code.
 
 ## Decide these six things first

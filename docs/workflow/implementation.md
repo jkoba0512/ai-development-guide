@@ -46,11 +46,11 @@ Ask for a step-by-step explanation with a short input when you do not understand
 | Repeatability | The same procedure produces the same result |
 | Regression checks | Fixes preserve previously working behavior |
 
-**Let the AI execute checks and display the results. Your job is to review what was checked, failures, and remaining unknowns.** Ask it to include the commands, who ran them, and the result for each acceptance criterion; related checks may be grouped. Full terminal logs and a separate form for every input are unnecessary. For a failure, ask it to show the relevant input, actual result, and exit code so it can be reproduced.
+**Let the AI execute checks and display the results. Your job is to review what was checked, failures, and remaining unknowns.** Ask it to include the commands, who ran them, and the result for each acceptance criterion; related checks may be grouped. For a failure, ask it to show the relevant input, actual result, and exit code so it can be reproduced.
 
 “The tests should pass” is not execution evidence. Unperformed checks must remain marked as not run. If the AI cannot execute commands, run them yourself, provide the output, and ask it to explain the results in the conversation.
 
-**Saving results is optional.** Ask for a saved summary if you need it later. If the AI recommends saving, it should explain why and ask for your agreement first. Choose the location together; an [optional verification template](../templates.md#optional-verification-record) is available. No separate file is required to complete this exercise.
+Review the results displayed by the AI. If you want to keep them, ask the AI to save a summary.
 
 These commands are a reference for the AI, or for you when manual execution is needed:
 

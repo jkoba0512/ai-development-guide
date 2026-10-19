@@ -125,7 +125,7 @@ Expected output: `Ready for AI development`. Read the result on screen. Saving a
 
 ### Execution by the AI tool
 
-The AI normally performs the execution above and displays the result. If execution is unavailable with your tool or settings, run the command yourself and paste the output into the conversation. Ask the AI to explain it and identify it as “executed by a person.” No verification file is required. A permissions error does not require unrestricted access.
+The AI normally performs the execution above and displays the result. If execution is unavailable with your tool or settings, run the command yourself and paste the output into the conversation. Ask the AI to explain it and identify it as “executed by a person.” A permissions error does not require unrestricted access.
 
 If your selected interface cannot edit local files, use its proposed code to create smoke.py yourself and tell the AI that you performed the edit. You can complete the learning exercise without purchasing another plan.
 

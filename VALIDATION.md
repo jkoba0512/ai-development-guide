@@ -202,3 +202,9 @@ Screenshots are regenerated for the English edition:
 - Saving or updating results requires a user request or agreement; AI recommendations explain why and ask first.
 - Retained an optional template and updated handoffs to read saved results only if supplied, otherwise rerun checks.
 - Relative links and the strict MkDocs build passed; the optional download remains available.
+
+## Remove unnecessary recording explanations
+
+- Removed the Optional verification record section and the specification-page paragraph about creating files or transcribing output.
+- Removed links to the deleted section and shortened repeated recording explanations.
+- Kept a brief instruction to review displayed results and request a saved summary if wanted.

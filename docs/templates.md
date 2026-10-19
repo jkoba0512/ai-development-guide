@@ -11,16 +11,6 @@ Save the four core text files below, remove the final `.txt` to make them Markdo
 
 These are blank starting templates. Mark unknowns as unverified; do not mark checks as passed unless they ran. You do not need to record account names or secret values.
 
-## Optional verification record
-
-**Verification results are displayed in the conversation by default. No verification file is required.** Read what was checked, what failed, and what remains unverified.
-
-If you need a saved record for a submission, a later session, or a handoff, ask the AI to save a short summary in an agreed location. If the AI thinks saving would help, it should explain why and ask whether you want a record. It should not create or update one without your request or agreement.
-
-The [optional VERIFICATION.md template](assets/templates/VERIFICATION.md.txt) is available if you choose a separate file. You can also use a section of SPEC.md or another location you agree on. The filename is not part of the required setup. Existing records can be kept; there is no need to delete them.
-
-Whether displayed or saved, results must distinguish actual checks from assumptions and checks not run. Full logs are unnecessary for this exercise.
-
 ## Tool-independent working rules
 
 [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)) is an ordinary Markdown document, not a special configuration file for any AI product. This guide uses it as the single source of shared project instructions.
