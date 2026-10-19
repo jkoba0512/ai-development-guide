@@ -1,50 +1,53 @@
 # Practice: Build a Study-Time Statistics CLI
 
-Complete a small Python development cycle without external APIs or additional packages. Use the same specification and checks with any of the five tools.
+**Use this page as your route through the first complete project.** You will agree on a specification, ask the AI to implement it, then check and explain the results. Keep this page open when following a linked lesson.
 
 ## Before you begin
 
-Complete [Getting started](index.md#getting-started) through the [first-run checks](setup.md#run-the-first-run-checks). You should have one installed and signed-in tool, a prepared `ai-practice` folder, the shared records, a [Python environment prepared with uv](python-uv.md), and a successful initial `smoke.py` exercise (the program that prints `Ready for AI development`).
+Complete [Common setup and first-run checks](setup.md). Keep the same `ai-practice` folder, AI tool, and uv environment. You should be able to run `smoke.py` and see `Ready for AI development`.
 
-Keep using that folder and tool. You do not need to install another tool or buy a subscription for this project.
+The new program will accept study-session durations such as 25 and 50 minutes and display their count, total, and average. **CLI** means command-line interface: you run it by entering a command in a terminal.
 
 ## 1. Agree on the specification
 
-Update the SPEC.md already in your practice folder using the requirements below. If you need a fresh copy, save the [specification template](assets/templates/SPEC.md.txt) and remove its final `.txt`. If you chose to save results from running `smoke.py`, keep them; saving results is not a prerequisite for this project.
+Open [Write a specification](workflow/specification.md) and complete its five steps. That lesson explains the requirements, supplies the AI prompt, and helps you review the acceptance criteria.
 
-- Purpose: show the count, total, and average of study-session durations.
-- Input: one or more integer minute values from 0 through 1440.
-- Output: one line in the format `Count: 2 / Total: 75 min / Average: 37.5 min`.
-- Invalid input: an error on standard error, with exit code 2.
-- Out of scope: file storage, networking, authentication, and additional packages.
-- Acceptance criteria: [AC-01 through AC-05 on the specification page](workflow/specification.md).
-
-A runnable [reference implementation](assets/example/study_stats.py) and [reference tests](assets/example/test_study_stats.py) are available. First ask the AI to implement your agreed specification, then compare when needed. Avoid saving two competing implementations in the same location; ask the AI to identify which version it checked in its on-screen summary.
+**Return here when:** the study-time specification is saved in `ai-practice/SPEC.md` and you can explain its inputs and expected output. The earlier `smoke.py` file can stay; it is a separate startup check.
 
 ## 2. Request implementation
 
-In your prepared `ai-practice` folder, keep the shared records and ask the AI to read SPEC.md and [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)), then implement `src/study_stats.py` and `tests/test_study_stats.py`. Use the [implementation prompt](workflow/implementation.md).
+Follow [Implementation and verification → Implement a small unit of work](workflow/implementation.md#implement-a-small-unit-of-work), then **Review the diff** on that page. Use its implementation prompt once.
 
-Review the changes yourself. Confirm handling of no input, malformed input, and out-of-range values. Check that failed numeric conversion is not silently ignored.
+**Return here when:** `src/study_stats.py` and `tests/test_study_stats.py` exist and you have reviewed what changed. The first file is the program; the second contains checks that compare its behavior with SPEC.md. Ask the AI to explain any code you cannot follow.
 
 ## 3. Run normal and invalid-input cases
 
-**Ask the AI to run the checks and display the results.** Review the proposed commands and permissions before execution.
+In the same AI conversation, send:
 
 ```text
 Run the checks for AC-01 through AC-05 in SPEC.md using the existing uv environment.
 Compare actual results with the specification. Review code and dependencies for AC-05;
 calculation tests alone do not verify storage or network behavior.
-Display a brief summary in this conversation: what was checked, commands used,
-who ran them, and pass / fail / not run for each criterion. Group related checks.
-Include short failure details and anything you could not check.
-Do not mark a check as passed unless you actually performed it.
+Display a brief summary: commands used, who ran them, and pass / fail / not run
+for each criterion. Include failure details and anything you could not check.
 Do not change requirements to make tests pass.
-Do not create or update a verification record unless I request or agree to it.
-If saving would help, explain why and ask whether I want a record.
+Save results only if I request or agree to it. If saving would help, explain why and ask.
 ```
 
-If the AI cannot execute commands, run the commands below from ai-practice and paste the terminal results into the conversation. Ask the AI to explain the results on screen and identify you as the person who ran them. These commands are also a reference for reviewing what the AI runs; they work on macOS, Linux, and Windows PowerShell.
+Review proposed commands and their working folder before approving them. The expected results are:
+
+| Input | Expected output | Exit code |
+| --- | --- | --- |
+| 25 50 | Count: 2 / Total: 75 min / Average: 37.5 min | 0 |
+| 0 | Count: 1 / Total: 0 min / Average: 0.0 min | 0 |
+| 1440 | Count: 1 / Total: 1440 min / Average: 1440.0 min | 0 |
+| Try separately: no input, -1, 1441, 1.5, abc | An error on standard error | 2 |
+
+An exit code describes how a command finished. Here, **2 is correct for deliberately invalid input**. It does not mean that the test itself failed.
+
+### Commands if you run checks yourself
+
+If your AI cannot execute commands, run these from `ai-practice`, one at a time, then give it the output to explain. They work on macOS, Linux, and Windows PowerShell.
 
 ```sh
 uv run --locked python src/study_stats.py 25 50
@@ -58,37 +61,29 @@ uv run --locked python src/study_stats.py abc
 uv run --locked python -m unittest discover -s tests -v
 ```
 
-Successful cases return exit code 0; invalid inputs return 2. The AI should capture these automatically. If you run the commands yourself, immediately after each command check `echo $?` on macOS/Linux or `$LASTEXITCODE` in PowerShell. Check before running another command.
+Immediately after a program command, use `echo $?` on macOS/Linux or `$LASTEXITCODE` in PowerShell to see its exit code. Do this before the next command.
 
-| Input | Expected result |
-| --- | --- |
-| 25 50 | Count: 2 / Total: 75 min / Average: 37.5 min |
-| 0 | Count: 1 / Total: 0 min / Average: 0.0 min |
-| 1440 | Count: 1 / Total: 1440 min / Average: 1440.0 min |
-| None, -1, 1441, 1.5, abc | An explanation on standard error and exit code 2 |
-
-Save the distributed implementation to `src/study_stats.py` and the tests to `tests/test_study_stats.py` to run the reference version. The tests also work in the distributed folder layout. Their expected values come from the specification; they do not cover every attack or OS.
+The last command runs the automated tests. Expect a positive number of tests and `OK`; **“Ran 0 tests” means nothing was checked**. On a failure, use [When a check fails](workflow/implementation.md#when-a-check-fails), then rerun the affected checks.
 
 ## 4. Review the short results summary
 
-Read the AI's results in the conversation. Check **what was tested, whether anything failed, and what remains unverified**. Ask about anything you do not understand. If you want to keep the results, ask the AI to save a summary.
+Read what passed, what failed, and what was not checked. If the AI only says “it should work,” ask it to run the checks or identify what prevents execution. For AC-05, ask how it reviewed the program for extra dependencies, saved data, and network operations. uv's setup files and downloads are separate from the program's behavior.
 
-For example, a summary might say “AC-01–AC-04: pass; automated CLI tests checked normal, boundary, and invalid inputs. AC-05: not run; code review still needed.” This is an illustration, not a result to copy as evidence. The actual summary must describe your own run.
-
-Ask the AI to include a brief method and finding for AC-05. uv's environment setup creates project metadata and may download Python; those setup operations are separate from the program's behavior. After setup, add `--offline` to uv run if you also want to prohibit uv downloads. To check the program for storage and networking, ask the AI to review the code and compare the folder before and after execution. Have it summarize the method used; passing these tests alone does not prove an absence of network access.
-
-Ask the AI to explain the following, then check its explanation yourself:
+Ask:
 
 ```text
-Explain the processing steps from entering 25 and 50
-to displaying an average of 37.5.
-Also identify which checks reject no input, negative values, and decimals.
+Explain how inputs 25 and 50 produce the average 37.5.
+Show which code rejects missing input, negative values, and decimals.
 ```
+
+**Your first project is complete when** SPEC.md matches the program, you can explain the example, and AC-01 through AC-05 have been checked with actual results. Address failures or missing checks before calling the project complete. If you want to keep the results, ask the AI to save a summary.
+
+### Reference code if you need help
+
+A [reference program](assets/example/study_stats.py) and [reference tests](assets/example/test_study_stats.py) are available for comparison. Save a copy of your work before replacing it. To run the reference version, put the program in `src/study_stats.py` and the tests in `tests/test_study_stats.py`, then use the commands above. Ask the AI to identify which version it tested.
 
 ## 5. Hand off to another conversation
 
-Write the implementation status and next task—such as considering an output-format change—in HANDOFF.md. Include verification results only if you requested or agreed to saving them. Otherwise, note that no results were saved and plan to rerun checks. Stop the previous conversation. In a new conversation or another tool, use the [resume prompt](workflow/handoff.md) and rerun the same tests.
+**Optional next exercise:** follow [Handoffs between environments](workflow/handoff.md) if you want to change conversations, tools, or computers. You can use the same AI tool; no additional subscription is needed.
 
-For an extension such as CSV input, update the specification, error cases, and tests first. You do not need to add a UI, storage, and external integrations all at once.
-
-For an optional next step, see [Organize project knowledge with Obsidian](obsidian.md) to manage useful discussion notes and prepare future handoffs.
+You can also explore [Organize project knowledge with Obsidian](obsidian.md). For a later feature such as CSV input, agree on the new requirements in SPEC.md before changing code and tests.

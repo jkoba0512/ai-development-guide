@@ -1,42 +1,35 @@
 # Handoff
 
-Updated: [YYYY-MM-DD]
-
-## Reading order
-
-WORKING_RULES.md → SPEC.md → ENVIRONMENT.md → this file
-Read saved verification results if supplied; no verification file is required.
-
-Working rules reference:
-[What the working rules mean](https://jkoba0512.github.io/ai-development-guide/templates/#tool-independent-working-rules) · [How to save the file](https://jkoba0512.github.io/ai-development-guide/setup/#prepare-your-records) · [Download the rules template](https://jkoba0512.github.io/ai-development-guide/assets/templates/WORKING_RULES.md.txt)
+Updated: [date]
 
 ## Objective and current state
 
-[Specification status, completed scope, and remaining work]
+[What is being built, what code exists, and what remains unfinished]
+Requirements and reasons: see SPEC.md.
 
-## Code location and version
+## Project location and commands
 
-- Working directory / worktree: [details]
-- Branch / baseline commit: [details]
-- Uncommitted changes and untracked files: [details]
+- Folder: [location without secrets]
+- Start: [command]
+- Test: [command]
+- Git branch / commit: [if Git is used; otherwise omit]
 
-## Last verification
+## Next task
 
-[If results were saved by agreement, reference them here. Otherwise: no saved results; rerun checks at the destination. Do not invent a past result.]
+[One concrete next task and its expected result]
 
-## Decisions
+## Open questions
 
-[References to the Decisions and reasons section of SPEC.md]
+[Unresolved questions, or None]
 
-## Next single task
+## Checks at the destination
 
-[One concrete task and its acceptance criteria]
+[Rerun checks. Reference earlier saved results only if saving was requested or agreed.]
 
-## Authorized scope
+## Instructions for the next conversation
 
-[Files to change, commands, and network access]
-External publication / push / billing: [authorization status]
+Read the project working rules and SPEC.md, then this handoff.
+Use ENVIRONMENT.md and saved results if supplied. Summarize before changing files.
 
-## Open issues and notes
-
-[Known problems, dependencies, OS differences, and whether concurrent agents were stopped]
+Working rules reference:
+[Explanation](https://jkoba0512.github.io/ai-development-guide/templates/#tool-independent-working-rules) · [Setup](https://jkoba0512.github.io/ai-development-guide/setup/#prepare-your-records) · [Rules template](https://jkoba0512.github.io/ai-development-guide/assets/templates/WORKING_RULES.md.txt)

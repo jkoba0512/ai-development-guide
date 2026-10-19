@@ -46,20 +46,20 @@ extra_css:
 nav:
   - Introduction: index.md
   - Costs and Student Benefits: plans.md
-  - Python and uv Setup: python-uv.md
-  - Common Setup: setup.md
   - Tool Setup:
       - Antigravity: tools/antigravity.md
       - Grok Build: tools/grok-build.md
       - GitHub Copilot: tools/copilot.md
       - Codex: tools/codex.md
       - Claude Code: tools/claude-code.md
+  - Common Setup: setup.md
+  - Python and uv Setup: python-uv.md
+  - Practice Project: practice.md
   - Development Workflow:
       - Write a Specification: workflow/specification.md
       - Implementation and Verification: workflow/implementation.md
       - Safe Permission Settings: workflow/permissions.md
       - Handoffs Between Environments: workflow/handoff.md
-  - Practice Project: practice.md
   - Optional Extensions:
       - Organize Knowledge with Obsidian: obsidian.md
   - Templates: templates.md

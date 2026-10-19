@@ -1,6 +1,8 @@
 # Safe Permission Settings
 
-Permissions determine what an agent may run; a sandbox limits how far approved operations can reach. Approval prompts and sandboxing serve different purposes. A natural-language instruction such as “do not read secrets” is not a substitute for access control.
+Use this page when your setup instructions ask you to choose permissions or when an approval prompt is unclear. For the initial exercise, focus on the practice folder, review requested edits and commands, and use the settings on your chosen [tool setup page](../index.md#choose-your-tool-page). Browser automation and external integrations can wait until a task needs them.
+
+**Permissions** determine what an agent may run. A **sandbox** limits which resources its operations can access. Approval prompts and sandboxing serve different purposes. A natural-language instruction such as “do not read secrets” is not a substitute for access control.
 
 ## Starting policy
 
@@ -9,7 +11,7 @@ Permissions determine what an agent may run; a sandbox limits how far approved o
 | Files | Open only the practice folder. Keep personal documents, keys, and real data outside it |
 | Editing | Start with reading; allow changes to specific files during implementation |
 | Commands | Review the working directory and command before approving |
-| Network | Distinguish dependency downloads from model requests. Do not add unnecessary web or MCP access |
+| Network | Distinguish dependency downloads from model requests. Add external tool connections only when the task needs them |
 | Browser | Use practice pages and a dedicated profile |
 | External actions | Decide separately on pushes, PRs, publication, email, and billing |
 
@@ -19,7 +21,7 @@ Permissions determine what an agent may run; a sandbox limits how far approved o
 | --- | --- |
 | Antigravity | Project/IDE Request Review, access outside the folder, and Terminal Sandbox |
 | Grok Build | Ask mode and read-only sandbox for exploration; a suitable profile for editing |
-| Copilot / VS Code | Terminal/MCP approval scope, global auto-approval, and supported agent sandbox |
+| Copilot / VS Code | Terminal/external-tool approval scope, global auto-approval, and supported agent sandbox |
 | Codex CLI | Start read-only; use workspace-write for implementation and on-request approvals |
 | Claude Code | Explore in Plan mode, use an approval-based mode for edits, inspect /permissions |
 

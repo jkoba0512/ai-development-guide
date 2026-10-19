@@ -1,5 +1,7 @@
 # Local Checks and Publication Preparation
 
+**For guide maintainers.** Students can use the published pages directly; building or publishing this website is separate from the Python practice project.
+
 This guide uses Material for MkDocs and is published at https://jkoba0512.github.io/ai-development-guide/. The active deployment workflow is in `.github/workflows/pages.yml`; deploy updates manually after completing the local checks below.
 
 ## Build locally

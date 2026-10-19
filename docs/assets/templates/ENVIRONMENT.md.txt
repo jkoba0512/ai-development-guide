@@ -1,37 +1,25 @@
 # Environment
 
-Checked: [YYYY-MM-DD]
+Updated: [date]
 
-## Runtime
+- OS and terminal: [for example, Windows / PowerShell; mark unknown details unknown]
+- uv version: [observed version]
+- Python version: [observed version]
+- AI tool and interface: [app, editor, or CLI; version if known]
+- Project folder: [location without personal or secret information]
+- Access type: [free / student / institutional / paid]
+- Permissions: [project folder, edit/command approvals]
 
-- OS / shell: [type and version]
-- Python or other runtime: [version]
-- uv: [version for Python projects]
-- Python pin and lockfile: [.python-version and uv.lock revision]
-- AI tool / version / interface: [details]
-- Working directory: [portable description]
-- Local / cloud: [details]
+## Run this project
 
-## Access and billing
+- Prepare environment: uv sync --locked
+- First-run check: uv run --locked python smoke.py
+- Program: [add after implementation]
+- Tests: [add after tests exist]
 
-- Plan / authentication: [subscription / API / institutional access]
-- Price and renewal date: [currency, monthly/annual billing, free-period end]
-- Student benefit: [verified / unverified, expiry]
-- Additional billing / automatic top-ups: [status and budget]
-- Official terms checked on / URL: [details]
+Keep pyproject.toml, .python-version, and uv.lock with the code; recreate .venv locally.
 
-## Permissions
+## If applicable
 
-- Read / write scope: [details]
-- Command approvals / sandbox: [details]
-- Network / browser / external integrations: [details]
-
-## Reproduction steps
-
-- Install dependencies: [for these Python exercises: uv sync --locked]
-- Start: [directory and command, e.g. uv run --locked python src/study_stats.py 25 50]
-- Test: [directory and command, e.g. uv run --locked python -m unittest discover -s tests -v]
-
-## Secrets
-
-[Required environment-variable names and secure storage locations only. Do not include values.]
+[Trial expiry, renewal terms, or extra billing settings you need to remember.
+Omit if not applicable. Never include account names, payment details, or secret values.]

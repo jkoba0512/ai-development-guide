@@ -1,8 +1,10 @@
 # Troubleshooting
 
+Stop at the first failing step. Keep the exact message and ask the AI to explain it using the short error report below; avoid rerunning later setup commands until the cause is clear.
+
 | Symptom | Check first | Next action |
 | --- | --- | --- |
-| Command not found | New terminal session and installation directory on PATH | Follow the official PATH setup instructions |
+| Command not found | New terminal session and PATH (folders searched for commands) | Follow the official PATH setup instructions |
 | Student benefit unavailable | Verified account matches the signed-in account | Check activation, propagation, and expiry |
 | Cannot select a model | Auto-only plan or administrator policy | Use an available model for first-run checks |
 | Usage limit reached | Remaining allowance, reset time, and billing settings | Save progress and wait or hand off |
@@ -11,7 +13,7 @@
 | Installation blocked on school computer | Administrator policy and supported environments | Use an approved method or another allowed environment |
 | Tests fail after moving | uv/Python versions, uv.lock, OS, and working directory | Run uv sync --locked; keep .venv local and display the failure details; save only if requested or agreed |
 | Conversation becomes confusing | Specification and current-state records | Update HANDOFF.md and start a new conversation |
-| Changes missing from Git | Untracked files, ignore rules, or another worktree | Check git status and actual file locations |
+| Changes missing from Git (if used) | New files not added, ignore rules, or editing a different project copy | Check git status and actual file locations |
 
 ## How to report an error to the AI
 
@@ -29,5 +31,7 @@ Investigate from a minimal reproduction without expanding permissions or subscri
 Redact keys, authentication tokens, and personal information from logs. Keep relevant error wording and line numbers so the cause can still be investigated.
 
 ## Local site does not open
+
+This section is for previewing the guide website itself. It does not apply to running the student program.
 
 Install uv using the [environment manual](python-uv.md), then run `uv sync --locked` in the website repository as described in the README and run MkDocs from the project root. If port 8001 is occupied, use `uv run --locked mkdocs serve --dev-addr 127.0.0.1:8002`. Resolve build errors first; do not remove `--strict` simply to proceed to publication. See [Local checks](maintenance.md).

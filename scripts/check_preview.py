@@ -36,7 +36,7 @@ with sync_playwright() as p:
     )
     page = browser.new_page(viewport={"width": 1440, "height": 1000}, locale="en-US")
     page.on("pageerror", lambda error: errors.append(str(error)))
-    for route in ("/", "/plans/", "/python-uv/", "/practice/", "/obsidian/", "/templates/"):
+    for route in [route for route in routes if not route.startswith("/assets/")]:
         page.goto(BASE + route, wait_until="load")
         assert page.locator("h1").is_visible(), route
         assert page.locator("html").get_attribute("lang") == "en", route
@@ -55,9 +55,11 @@ with sync_playwright() as p:
     toggle.click()
     assert page.locator("body").get_attribute("data-md-color-scheme") == "slate"
     page.set_viewport_size({"width": 390, "height": 844})
+    for route in [route for route in routes if not route.startswith("/assets/")]:
+        page.goto(BASE + route, wait_until="load")
+        assert page.locator("h1").is_visible(), route
+        assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth"), f"Mobile page overflow: {route}"
     page.goto(BASE + "/practice/", wait_until="load")
-    assert page.locator("h1").is_visible()
-    assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth"), "Mobile page overflow"
     page.screenshot(path=str(ARTIFACTS / "preview-mobile.png"), full_page=True)
     assert not errors, errors
     browser.close()

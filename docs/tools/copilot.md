@@ -16,12 +16,14 @@ Student benefits may be unavailable if the verified account differs from the acc
 
 ## Prepare the practice folder
 
-Follow [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practice`, prepare [Python with uv](../python-uv.md), and [prepare the four core files](../setup.md#prepare-your-records). Return here afterward.
+If you reached this page from Common setup to open an existing project, skip to [Open the practice folder](#open-the-practice-folder).
+
+Follow [Common setup](../setup.md#prepare-a-working-folder) in order: it covers [Python with uv](../python-uv.md), the `ai-practice` folder, and [starting files](../setup.md#prepare-your-records). When you reach Common setup’s folder-opening step, return directly to [Open the practice folder](#open-the-practice-folder) below.
 
 ## Open the practice folder
 
 1. In VS Code, choose **File → Open Folder** and select **`ai-practice`**.
-2. Check that Explorer shows SPEC.md, [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt)), and the other records.
+2. Check that Explorer shows SPEC.md, [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt)), and the environment note if available.
 3. Open Copilot Chat.
 4. Attach [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt)) and SPEC.md, or explicitly name them in your first request.
 
@@ -29,18 +31,18 @@ Review unfamiliar repository settings and scripts before trusting a folder.
 
 ### Set permissions before the first request
 
-Keep global terminal and tool auto-approval disabled. Review commands and diffs. If adding MCP later, inspect the destination and tools and begin with session-scoped approval. Sandbox availability depends on OS and session type; check the active interface. [VS Code security](https://code.visualstudio.com/docs/agents/run/security).
+Keep global terminal and tool auto-approval disabled. Review commands and diffs. If adding external tool connections later, inspect their destination and approval scope. Sandbox availability depends on OS and session type; check the active interface. [VS Code security](https://code.visualstudio.com/docs/agents/run/security).
 
 For this tool's instruction-file names and how they relate to the shared rules, see [Tool-specific instruction files](../templates.md#tool-specific-instruction-files). Automatic discovery is optional for this exercise.
 
 ## Run the first-run checks
 
-Start in a question/explanation mode, then follow [Run the first-run checks](../setup.md#run-the-first-run-checks). Switch to an editing agent for the small-edit stage. If that interface cannot edit or run files, perform the operation yourself and record who did it.
+Start in a question/explanation mode, then follow [Run the first-run checks](../setup.md#run-the-first-run-checks). Switch to an editing agent for the small-edit stage. If that interface cannot edit or run files, perform the operation yourself and tell the AI what you did.
 
 Mode names vary by version. Record the actual interface in ENVIRONMENT.md. Free / Student model selection may be Auto-only; a specific model is not required for these checks. [Plan documentation](https://docs.github.com/en/copilot/get-started/plans).
 
 ## Continue development
 
-Proceed to the [Practice project](../practice.md). Review accepted completions and run tests yourself. Using another provider's model within Copilot does not grant a subscription to that provider's product.
+Proceed to the [Practice project](../practice.md). Review accepted code suggestions and ask the AI to run checks; execute them yourself if your interface cannot. Using another provider's model within Copilot does not grant a subscription to that provider's product.
 
 For later [handoffs](../workflow/handoff.md), point product-specific instruction files to the common [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt)) and reading order rather than maintaining separate rule sets.

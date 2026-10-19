@@ -4,6 +4,7 @@ An English guide to Antigravity, Grok Build, GitHub Copilot, Codex, and Claude C
 
 - Start here: [Getting started](docs/index.md#getting-started)
 - Costs and student benefits: [Official-source findings](docs/plans.md), checked on 2026-10-06
+- Student route: choose one tool → [Common setup](docs/setup.md) → [Practice project](docs/practice.md). Handoffs and Obsidian are optional extensions.
 - Shared instructions: [Tool-independent working rules](docs/templates.md#tool-independent-working-rules)
 - Python environment: [Set up Python with uv](docs/python-uv.md)
 - Practice: [Complete a small development cycle](docs/practice.md)

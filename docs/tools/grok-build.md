@@ -21,7 +21,9 @@ Complete browser authentication and confirm the account's Build access. API-key 
 
 ## Prepare the practice folder
 
-Follow [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practice`, prepare [Python with uv](../python-uv.md), and [prepare the four core files](../setup.md#prepare-your-records). Return here afterward.
+If you reached this page from Common setup to open an existing project, skip to [Open the practice folder](#open-the-practice-folder).
+
+Follow [Common setup](../setup.md#prepare-a-working-folder) in order: it covers [Python with uv](../python-uv.md), the `ai-practice` folder, and [starting files](../setup.md#prepare-your-records). When you reach Common setup’s folder-opening step, return directly to [Open the practice folder](#open-the-practice-folder) below.
 
 ## Open the practice folder
 

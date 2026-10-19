@@ -2,7 +2,7 @@
 
 This is an ordinary, tool-independent project document. Read it explicitly, or provide its contents as an attachment or pasted text. No automatic loading is assumed.
 
-- Read the available SPEC.md, ENVIRONMENT.md, and HANDOFF.md records first, from files or supplied contents. Read saved verification results if provided; a verification file is optional. Ask for any required document you cannot access; do not pretend to have read it.
+- Read SPEC.md and any supplied project notes before working. ENVIRONMENT.md is added after setup, and HANDOFF.md when preparing a handoff; their absence at an earlier stage is normal. Read saved verification results if supplied. Ask for required content you cannot access; do not pretend to have read it.
 - Report unreadable files, specification/code contradictions, and open decisions before proceeding.
 - Treat the specification as the source of truth. Do not change acceptance criteria without agreement.
 - Implement small changes. Do not add out-of-scope features or dependencies.
@@ -12,6 +12,6 @@ This is an ordinary, tool-independent project document. Read it explicitly, or p
 - Run checks and display a brief summary in the conversation: commands, who ran them, and pass / fail / not run for each acceptance criterion. Show relevant failure output and exit codes. If the user ran a check, summarize only the results they actually supplied; do not claim you executed it.
 - Saving verification results is optional. Create or update a record only when the user requests or agrees to it. If you recommend saving, explain why and ask whether to save and where; do not save automatically.
 - Distinguish observed results from assumptions and checks not run.
-- Update HANDOFF.md before ending work or moving environments.
+- When the user chooses a handoff, help prepare HANDOFF.md with the current state and next task. Include verification results only if the user requests or agrees to saving them.
 
 - For Python work in this guide, use uv to run code and tests. Keep pyproject.toml, .python-version, and uv.lock with the project; do not share .venv or silently change dependencies.

@@ -16,7 +16,9 @@ The official documentation describes app, IDE, and CLI entry points. This walkth
 
 ## Prepare the practice folder
 
-Use [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practice`, prepare [Python with uv](../python-uv.md), and [prepare the four core files](../setup.md#prepare-your-records). Return here after saving them.
+If you reached this page from Common setup to open an existing project, skip to [Open the practice folder](#open-the-practice-folder).
+
+Follow [Common setup](../setup.md#prepare-a-working-folder) in order: it covers [Python with uv](../python-uv.md), the `ai-practice` folder, and [starting files](../setup.md#prepare-your-records). When you reach Common setup’s folder-opening step, return directly to [Open the practice folder](#open-the-practice-folder) below.
 
 ## Open the practice folder
 
@@ -41,6 +43,6 @@ If browser operation becomes necessary, use a practice page and dedicated profil
 
 ## Continue development
 
-After the checks, follow the [Practice project](../practice.md). Save the specification in SPEC.md and implement small acceptance criteria. Move important plans stored only in conversations or artifact views into HANDOFF.md.
+After the checks, follow the [Practice project](../practice.md). Save the specification in SPEC.md and implement small acceptance criteria. When preparing a handoff later, ask the AI to summarize the next task in HANDOFF.md.
 
 When you later change tools, check the actual edited folder and diff and transfer code together with any verification results you chose to save. See [Handoffs](../workflow/handoff.md).

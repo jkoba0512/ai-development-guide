@@ -1,79 +1,85 @@
 # Handoffs Between Environments
 
-Use shared files to make work reproducible across conversations, tools, computers, and local/cloud environments. Tool-specific chat history is supporting material.
+**Use this optional lesson when changing conversations, AI tools, or computers.** A handoff gives the next person or AI enough information to continue. You can try it with a new conversation in the same tool; installing another tool is unnecessary.
+
+If you are still building your first program, finish the [Practice project](../practice.md) first.
 
 ## Shared foundation
 
-| Source of truth | Purpose |
+Keep the files that describe the project together:
+
+| File | What the next conversation learns |
 | --- | --- |
-| SPEC.md | Purpose, inputs, outputs, acceptance criteria, exclusions, and important decisions with their reasons |
-| src/ and tests/ | Actual code and verification methods |
-| pyproject.toml, .python-version, and uv.lock | Python environment settings and resolved dependencies; exclude .venv |
-| Saved verification results (optional) | Results saved at your request or with your agreement; no fixed filename required |
-| ENVIRONMENT.md | OS, versions, dependencies, startup commands, and permissions |
-| HANDOFF.md | Current state, unfinished work, and the next single task |
-| [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt)) | Shared working rules and reading order |
+| SPEC.md | Agreed requirements, acceptance criteria, and reasons for important choices |
+| src/ and tests/ | The program and its automated checks |
+| pyproject.toml, .python-version, uv.lock | How to recreate the Python environment |
+| ENVIRONMENT.md, if available | Your tool, runtime, permissions, and startup commands |
+| HANDOFF.md | Current state and the next task; create it below when needed |
 
-[WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt)) is a tool-independent project document. Explicitly provide it and the other records by file access, attachment, or pasted text; no automatic loading is assumed. **Ask the tool to summarize the supplied documents before proceeding.**
-
-[Tool-specific instruction files](../templates.md#tool-specific-instruction-files), such as AGENTS.md or CLAUDE.md, are optional adapters. If you use one, keep only references to the shared documents and avoid maintaining a second set of project rules. None is required to follow this guide.
+Provide the shared [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([Setup](../setup.md#prepare-your-records) · [Rules template](../assets/templates/WORKING_RULES.md.txt)) too. Explicitly give the next agent file access, attachments, or pasted contents. [Tool-specific instruction files](../templates.md#tool-specific-instruction-files) can point to the common rules.
 
 ## Before moving
 
-1. Stop running agents and background tasks.
-2. Review diffs and check that SPEC.md matches the code.
-3. Decide whether you need results saved for the move. Ask the AI to save a summary if useful; if it recommends saving, it should explain why and ask first. Otherwise, plan to rerun checks at the destination.
-4. Record the current state and next single task in HANDOFF.md.
-5. With Git, commit or preserve uncommitted changes. Record the branch and commit reference.
-6. Check that the transferred files contain no secrets.
+Ask the current AI to prepare a short handoff:
 
-If HANDOFF.md is included in the commit that will be created after writing it, you do not need to keep updating a self-referential commit hash. Distinguish the baseline commit from “the next commit containing this record.”
+```text
+Create or update HANDOFF.md for the next conversation.
+Include the objective, current code state, unresolved questions, and next task.
+Refer to SPEC.md for requirements and reasons instead of duplicating them.
+State which folder contains the code and how to run it.
+Reference saved verification results only if I previously requested or agreed to saving them.
+Otherwise say that checks should be rerun at the destination.
+Do not invent decisions or test results. Show the note for me to review.
+```
+
+Read the note and correct anything inaccurate. The [handoff template](../assets/templates/HANDOFF.md.txt) is available if useful. Let the first agent finish or stop it before another agent edits the same files.
 
 ## Transfer methods
 
-| Move | Procedure |
+| Where you are moving | What to do |
 | --- | --- |
-| Same computer, another tool | Open the same folder, stopping the previous agent first |
-| Another computer, no external service | Transfer the folder or a Git bundle on a secure local medium |
-| Another computer, repository sharing authorized | Push to the specified repository and branch, then clone/pull at the destination |
-| Local to cloud | Review files being sent; provide code, specification, environment setup, and any saved results you chose to include |
-| Cloud to local | Retrieve changes, recreate dependencies, and rerun tests locally |
+| New conversation or tool on the same computer | Open the same ai-practice folder |
+| Another computer | Transfer the project files using your approved method; exclude .venv |
+| A shared Git repository, if you use Git | Commit the intended files, review them, then push to the agreed destination; clone or pull at the destination |
+| A cloud agent | Supply only the intended project files and check its runtime and permissions |
+| Back from a cloud agent | Retrieve its changes, review them, and rerun checks locally |
 
-A push does not transfer uncommitted files. Copying a Git worktree as an ordinary folder can break its Git references. Create a destination worktree using Git's workflow, or transfer the actual files and records appropriately.
+A local folder does not automatically appear in a cloud agent. With Git, a push sends committed history, not unsaved or uncommitted changes. Keep secrets and unrelated files out of the transfer.
 
 ## After moving
 
-Project instructions for the AI: [What the working rules mean](../templates.md#tool-independent-working-rules) · [How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt).
+Open the project in the destination tool and send:
+
+Project instructions: [Explanation](../templates.md#tool-independent-working-rules) · [Setup](../setup.md#prepare-your-records) · [Rules template](../assets/templates/WORKING_RULES.md.txt).
 
 ```text
-Read WORKING_RULES.md, SPEC.md, ENVIRONMENT.md, and HANDOFF.md
-in that order, using local files or the supplied attachments/text.
-Read saved verification results if supplied; their absence is not a missing requirement.
-If a required document is unavailable, ask me to provide it before proceeding.
-Summarize the current objective, code state, last verification,
-unfinished work, and next single task.
-Report contradictions between the specification and code first.
-Do not edit files, add dependencies, or publish anything at this stage.
+Read WORKING_RULES.md, SPEC.md, and HANDOFF.md from the files or contents I provide.
+Also read ENVIRONMENT.md and saved verification results if supplied.
+Ask for required content you cannot access; do not assume it was read.
+Summarize the objective, code state, open questions, and next task.
+Point out contradictions between requirements and code.
+Do not edit files or run commands until I have reviewed the summary.
 ```
 
-Once the summary is correct, configure the environment, authentication, and permissions again. Set secrets securely in the destination environment; do not restore their values from shared files. For Python projects in this guide, recreate the environment with uv rather than copying .venv:
+Check the summary before continuing. Configure permissions for this session; they may differ from the earlier one.
+
+If you use the **same folder on the same computer**, keep its existing uv environment. For a **different computer or a new project copy**, install uv, open a terminal in the transferred folder, and run:
 
 ```sh
 uv python install
 uv sync --locked
+```
+
+After reviewing the code, ask the AI to rerun the tests:
+
+```sh
 uv run --locked python -m unittest discover -s tests -v
 ```
 
-Run the tests after they exist. See [Python and uv setup](../python-uv.md#dependencies-and-moving-to-another-computer). Display the destination results in the conversation. Save them only if requested or agreed.
+Run this only after tests exist and check that it ran more than zero tests. Review the displayed results. If setup fails, see [Python and uv troubleshooting](../python-uv.md#troubleshooting) before changing requirements.
 
 ## Ready to resume
 
-- [ ] The specification and code versions match.
-- [ ] Startup and tests can be reproduced.
-- [ ] The next task and allowed scope are clear.
-- [ ] Work can continue without chat history.
-- [ ] Multiple agents are not modifying the same files simultaneously.
+You are ready when the next AI can explain the task from the files, the checks run in the destination environment, and the next change is clear. Update ENVIRONMENT.md if the environment changed. Work with one writer at a time on shared files.
 
-Keep unknowns marked as unverified. If tests fail after a move, check Python versions, dependencies, working directory, and OS differences before changing the specification.
-
-For an optional way to read and organize the same project documents, see [Organize project knowledge with Obsidian](../obsidian.md).
+For an optional way to organize these documents, see [Organize project knowledge with Obsidian](../obsidian.md).

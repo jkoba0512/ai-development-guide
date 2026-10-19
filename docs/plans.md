@@ -4,6 +4,12 @@
 
 Distinguish free plans, time-limited offers, institutional access, and usage-based APIs. Signing in with a student email address does not make every product free.
 
+## Choose an accessible starting route
+
+If you already have an approved tool that can assist with local Python files, use that route. Otherwise, look at the **General free access** column and follow the matching [tool setup page](index.md#choose-your-tool-page). Confirm your own account can use the interface before proceeding. A student offer is an option, not a prerequisite for this exercise.
+
+Choose one route and continue to installation; return to the detailed offer sections only if they apply to your account. There is no need to claim benefits from every provider. When a limit is reached, you can wait for it to reset rather than purchase extra usage.
+
 ## Comparison
 
 | Product | General free access | Student benefits | Paid access and conditions |
@@ -30,7 +36,7 @@ Apply to GitHub Education, complete student verification, activate Copilot Stude
 
 The June 1 update to the official student announcement states **200 monthly AI credits and unlimited code completions**. The reviewed plan documentation limits Free / Student model selection to Auto. Do not reuse older descriptions such as “300 premium requests per month” or “students get the same plan as Pro.” [Official student announcement](https://github.com/orgs/community/discussions/189268), [plan documentation](https://docs.github.com/en/copilot/get-started/plans).
 
-AI credits are not a fixed number of conversations. Consumption depends on the model and tokens used. Long agent tasks can use more credits. [Billing explanation](https://docs.github.com/en/copilot/concepts/billing-and-usage/individuals/billing).
+AI credits are a usage allowance rather than a fixed number of conversations. Consumption depends on the model and tokens (chunks of input/output text) used. Long agent tasks can use more credits. [Billing explanation](https://docs.github.com/en/copilot/concepts/billing-and-usage/individuals/billing).
 
 ### Codex / Claude Code / Grok Build
 
@@ -39,6 +45,8 @@ Institutional Edu / Education contracts are separate from free offers for indivi
 For Grok, inspect Build support indicators in the pricing table in a browser, then confirm your signed-in eligibility and remaining allowance. This guide does not establish that Build is free for everyone or requires one particular paid plan. [Pricing table](https://x.ai/pricing), [Build setup](https://docs.x.ai/build/overview).
 
 ## Subscription and extra-cost checklist
+
+Use this checklist if you claim a trial, enable paid usage, or already use a paid plan. For a free route without a payment method, fields such as renewal price can be marked “not applicable.”
 
 - [ ] Confirm the plan name, price, currency, and monthly or annual billing.
 - [ ] Check the free period, application deadline, and student reverification rules.

@@ -14,7 +14,7 @@ The app is free to use without an account. Sync and Publish are optional paid se
 
 1. Install Obsidian from its [official download page](https://obsidian.md/download).
 2. In the vault chooser, select **Open folder as vault** and choose your existing `ai-practice` folder. Keep one copy of the project files rather than copying them into a second notes folder. [Official vault instructions](https://help.obsidian.md/Getting+started/Create+a+vault).
-3. Open SPEC.md. Read its requirements and decisions, then open HANDOFF.md to see the next task.
+3. Open SPEC.md. Read its requirements and decisions. If you already prepared HANDOFF.md, open it to see the next task; the example below shows how to create one when you need it.
 4. If useful, create a learning note with a question, your explanation, and a link to the relevant project document. Keep agreed requirements in SPEC.md.
 
 For this introduction, the built-in editor, search, and links are enough. Plugin setup and automation can be explored separately after you are comfortable with this workflow.

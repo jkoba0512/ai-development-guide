@@ -225,3 +225,31 @@ Screenshots are regenerated for the English edition:
 - Kept concrete examples, all five acceptance criteria, uv usage, and a clear next step.
 - Preserved earlier section URLs with anchor markers. Verification results remain displayed in conversation, with saving by request.
 - Relative links, strict build, and local browser checks of the five steps, existing anchors, and mobile layout passed.
+
+## Full student-progression review — 2026-10-19
+
+Read all 19 pages and the downloadable templates and sample code. This was an editorial and executable-workflow review, not a fresh product pricing review or a student usability study.
+
+| Pages reviewed | Findings and changes |
+| --- | --- |
+| Introduction, costs | Separated the first completion point from optional handoffs; explained choosing one accessible route without claiming every student offer |
+| Five tool pages | Clarified the transition into Common setup and the exact return to folder-opening; kept existing product setup mechanics and dated official references |
+| Common setup, Python/uv | Added terminal/working-directory explanations, staged file preparation, explicit return points, and a short AI-assisted environment note after execution |
+| Specification | Kept the five-step lesson; clarified permission to save and the transition to code review before execution |
+| Implementation, practice | Removed duplicated specification writing and premature tests; used practice as the route page, split code review from execution, and explained exit code 2 and zero-test output |
+| Permissions, troubleshooting | Explained unfamiliar terms at use and separated website-maintenance troubleshooting from student commands |
+| Templates, handoffs | Reduced template burden; introduced HANDOFF.md only at a chosen move, provided a short creation prompt, and clarified reusing versus recreating uv environments |
+| Obsidian | Adjusted the example for students who have not created a handoff yet; kept this an optional extension |
+| Maintenance, official sources | Marked site build/publication as maintainer work and retained original product verification dates |
+
+The initial documents are SPEC.md and the shared working rules. ENVIRONMENT.md is prepared after first-run checks; HANDOFF.md at an actual handoff. Verification results remain displayed in conversation and are saved only when requested or agreed. Git, additional AI tools, Obsidian, and website publication are outside the first-project requirement.
+
+Validation results:
+
+- Internal navigation, relative links, downloadable templates, and the strict MkDocs build passed.
+- Browser checks passed for all 19 pages at desktop and mobile widths, all 8 referenced static assets, search indexing, English search, dark mode, and absence of page errors.
+- Created a fresh isolated uv project using the documented init/pin/sync sequence. The Python environment checks and smoke.py command passed without extra dependencies.
+- The reference CLI produced the expected outputs for 25/50, 0, and 1440, and rejected all five documented invalid-input cases with exit code 2. All 9 automated tests passed.
+- Transferred code and environment descriptions without .venv, recreated the environment with uv, and passed all 9 tests again.
+- No VERIFICATION.md or premature HANDOFF.md was required by the initial workflow. The handoff file was introduced only for the transfer check.
+- Command execution was tested on macOS. Fresh Windows/Linux installations, actual five-product permissions, student access outcomes, and a live student usability trial remain untested.

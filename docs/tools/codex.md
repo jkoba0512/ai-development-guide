@@ -28,7 +28,9 @@ For account-based access, complete browser sign-in with the intended ChatGPT acc
 
 ## Prepare the practice folder
 
-Follow [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practice`, prepare [Python with uv](../python-uv.md), and [prepare the four core files](../setup.md#prepare-your-records). Return here afterward.
+If you reached this page from Common setup to open an existing project, skip to [Open the practice folder](#open-the-practice-folder).
+
+Follow [Common setup](../setup.md#prepare-a-working-folder) in order: it covers [Python with uv](../python-uv.md), the `ai-practice` folder, and [starting files](../setup.md#prepare-your-records). When you reach Common setup’s folder-opening step, return directly to [Open the practice folder](#open-the-practice-folder) below.
 
 ## Open the practice folder
 
@@ -59,7 +61,7 @@ For this tool's instruction-file names and how they relate to the shared rules, 
 
 ## Run the first-run checks
 
-Follow [Run the first-run checks](../setup.md#run-the-first-run-checks), reading [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt)) and SPEC.md before editing. Record whether the AI or a person performed each operation.
+Follow [Run the first-run checks](../setup.md#run-the-first-run-checks), reading [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt)) and SPEC.md before editing. Ask the AI to identify who performed each check in its displayed results.
 
 Check usage in the account dashboard or supported CLI commands such as `/status`. Additional credits and API billing are separate decisions. [Official pricing](https://learn.chatgpt.com/docs/pricing).
 

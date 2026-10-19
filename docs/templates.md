@@ -1,25 +1,21 @@
 # Shared Templates
 
-Save the four core text files below, remove the final `.txt` to make them Markdown files, and place them in the root of your practice project. If your browser displays the contents, use “Save as.” Replace bracketed placeholders with actual values.
+Use these files when the relevant stage asks for them. Save each download in the practice folder and remove its final `.txt`; if the browser displays text, copy it into an editor file. Replace placeholders only where they apply.
 
-| File | Purpose |
-| --- | --- |
-| [SPEC.md](assets/templates/SPEC.md.txt) | Purpose, inputs, outputs, acceptance criteria, and decisions with their reasons |
-| [ENVIRONMENT.md](assets/templates/ENVIRONMENT.md.txt) | Environment, authentication method, billing, permissions, and reproduction steps |
-| [HANDOFF.md](assets/templates/HANDOFF.md.txt) | Current state and information needed to resume |
-| [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)) | Shared working rules |
+| File | When you use it | Purpose |
+| --- | --- | --- |
+| [SPEC.md](assets/templates/SPEC.md.txt) | First-run check, then the practice project | What to build, expected results, and important decisions with their reasons |
+| [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([Setup](setup.md#prepare-your-records) · [Rules template](assets/templates/WORKING_RULES.md.txt)) | At the start of the first conversation | Instructions for how the AI should work |
+| [ENVIRONMENT.md](assets/templates/ENVIRONMENT.md.txt) | After the first-run check | A short note on your tool, Python environment, and startup command |
+| [HANDOFF.md](assets/templates/HANDOFF.md.txt) | When you choose to change conversations or environments | Current state and the next task for whoever continues |
 
-These are blank starting templates. Mark unknowns as unverified; do not mark checks as passed unless they ran. You do not need to record account names or secret values.
+[Common setup](setup.md#prepare-your-records) begins with the specification and working rules. Let the AI help prepare the later notes from observed details; review them before saving. Unknown values can stay “unknown,” and inapplicable fields can be omitted. Keep account names and secret values out of these files.
 
 ## Tool-independent working rules
 
 [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)) is an ordinary Markdown document, not a special configuration file for any AI product. This guide uses it as the single source of shared project instructions.
 
 Explicitly provide its contents when starting work: ask a tool with file access to read it, attach the file to a conversation, or paste the text into your request. The same method applies to SPEC.md and the other records. A tool that cannot access local files can still use the documents you supply; save its proposed changes yourself.
-
-If you already created AGENTS.md from an earlier version of this guide, rename it to [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)) and update your project references. If it contains tool-specific settings or instructions, review them first. You can retain a short AGENTS.md that points to the shared file as explained below; no other tool-specific file is required.
-
-If you used an earlier version of this guide and already have DECISIONS.md, copy its relevant entries into the **Decisions and reasons** section of SPEC.md. Use SPEC.md for future updates so you do not maintain the same information in two places. A separate decision record is only useful later if the history becomes too long to read comfortably alongside the requirements.
 
 ## Tool-specific instruction files
 
@@ -67,8 +63,14 @@ These documents guide behavior; they do not themselves enforce a sandbox or gran
 - SPEC.md: “Reject decimal inputs.” Include the reason in its Decisions and reasons section.
 - Code: convert to integers and check the permitted range.
 - Results shown in the conversation: “Entered 1.5 and confirmed exit code 2.” Save them only if requested or agreed.
-- HANDOFF.md: “Invalid-input checks passed. Next, run the same tests in another environment.”
+- HANDOFF.md: “The program and tests are implemented. Next, rerun checks in the new environment.”
 
 ## Practice example
 
 Use the [reference code](assets/example/study_stats.py) and [tests](assets/example/test_study_stats.py). The [practice project](practice.md) explains how to run them. Check file locations and the version under test before combining them with your own code.
+
+## Updating files from earlier guide versions
+
+If you already created AGENTS.md from an earlier version of this guide, rename it to [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)) and update your project references. If it contains tool-specific settings or instructions, review them first. You can retain a short AGENTS.md that points to the shared file as explained in [Tool-specific instruction files](#tool-specific-instruction-files); no other tool-specific file is required.
+
+If you used an earlier version of this guide and already have DECISIONS.md, copy its relevant entries into the **Decisions and reasons** section of SPEC.md. Use SPEC.md for future updates so you do not maintain the same information in two places. A separate decision record is only useful later if the history becomes too long to read comfortably alongside the requirements.

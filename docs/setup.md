@@ -1,50 +1,39 @@
 # Common Setup and First-Run Checks
 
-Use this page **after installing your chosen development tool and signing in**. You only need one tool. If you have not installed it yet, return to [Getting started](index.md#getting-started) and follow its tool setup page through **Install and sign in**.
+**Start here after installing and signing in to one AI development tool.** On this page you will prepare a folder, give the AI its instructions, and check that it can help you create and run one small program.
 
-A command-line interface (CLI) is started by typing a command in a terminal. An app or editor uses a project or folder selector.
-
-Here, “your development tool” means the app, editor, or CLI you selected: Antigravity, Grok Build, GitHub Copilot in VS Code, Codex, or Claude Code.
+Follow the sections in order. After each linked setup task, return to the place indicated below. If you have not installed a tool, choose one from [Getting started](index.md#choose-your-tool-page).
 
 ## Prepare a working folder
 
-This guide's first-run exercise and practice project use **Python 3.12 managed with uv**. Follow [Set up Python with uv](python-uv.md) now. It explains how to install uv and Python, create a separate `ai-practice` folder, prepare its environment, and check execution.
+Follow [Set up Python with uv](python-uv.md) through **Check that Python runs**. This creates the `ai-practice` folder and checks its Python environment. Then return to [Prepare your records](#prepare-your-records) below.
 
-If you already created the folder, follow the manual's [existing-project instructions](python-uv.md#create-the-practice-project) instead of creating it again. Return here after the environment check. You do not need an AI agent to perform these steps.
-
-### Check Python for the practice example
-
-From the prepared `ai-practice` folder, run:
-
-```sh
-uv --version
-uv run --locked python --version
-```
-
-The second command should show Python 3.12.x. Follow the [environment manual](python-uv.md#check-that-python-runs) if it fails. Installing an AI tool does not prepare this Python environment automatically.
-
-Git is optional. If using it, verify `git --version`. Record uv, Python, OS, shell, and tool versions once ENVIRONMENT.md is ready.
+If you already completed that environment check, continue below; keep using the same folder.
 
 ## Prepare your records
 
-Save the four core files from [Shared templates](templates.md) into `ai-practice`. Each download ends in `.md.txt`: remove the final `.txt` so, for example, `SPEC.md.txt` becomes `SPEC.md`.
+Start with **two Markdown files** in `ai-practice`. Markdown (`.md`) is editable text with headings and lists. Use the text editor in your chosen development tool, or another plain-text editor.
 
-Use a text editor to fill in the starting records; the AI tool does not need to be running yet.
+1. Create `SPEC.md` and paste this starting description:
 
-- **SPEC.md:** write “First-run check: create a Python script that prints Ready for AI development. No external packages or network access.” Keep important choices and their reasons in the same file.
-- **ENVIRONMENT.md:** record the environment, selected tool/interface, account access type, and available permission settings. Do not include secret values.
-- **HANDOFF.md:** set the next task to “Complete the reading, editing, and execution checks.”
-- **[WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)):** read and keep the shared working rules.
+    ```markdown
+    # First-run check
 
-Your folder should now look like this:
+    Create a Python file named smoke.py that prints Ready for AI development.
+    Use the existing uv environment, without extra packages or network operations in the program.
+    ```
 
-Project instructions for the AI: [What the working rules mean](templates.md#tool-independent-working-rules) · [How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt).
+2. Save the [working-rules template](assets/templates/WORKING_RULES.md.txt) as [WORKING_RULES.md](templates.md#tool-independent-working-rules) in the same folder. Remove the final `.txt` from the download name, and read its contents. References: [How to save the file](#prepare-your-records) · [What the rules mean](templates.md#tool-independent-working-rules).
+
+If a download opens as text in your browser, use **Save as**, or copy the text into a new editor file. Check the saved filename: it should end in `.md`, not `.md.txt` or `.md.txt.txt`. “Project root” means the top level of `ai-practice`, alongside `pyproject.toml`.
+
+Your starting folder should contain:
+
+Project instructions: [Explanation](templates.md#tool-independent-working-rules) · [Setup](#prepare-your-records) · [Rules template](assets/templates/WORKING_RULES.md.txt).
 
 ```text
 ai-practice/
 ├── SPEC.md
-├── ENVIRONMENT.md
-├── HANDOFF.md
 ├── WORKING_RULES.md
 ├── pyproject.toml
 ├── .python-version
@@ -54,89 +43,98 @@ ai-practice/
 └── tests/
 ```
 
-If using Git, initialize with `git init` from this folder. Create a `.gitignore` to exclude secrets before adding files. Review `git status` and `git diff`, then stage only the intended files and make your first commit. You do not need a GitHub account or a push to use Git locally.
+SPEC.md describes **what to build**. The working rules tell the AI **how to work**. [Shared templates](templates.md) also provides environment and handoff files for later stages; prepare them when you reach those stages.
 
 ## Open the folder or start the CLI
 
-**Open the `ai-practice` folder in your chosen development tool. If you use a command-line tool, navigate to that folder before starting it.** Do not select your entire home directory or a parent folder containing unrelated files.
+An app uses a folder selector. A **CLI** (command-line interface) starts from a terminal. Choose only the row for the tool you installed:
 
-| Interface | What to do | Detailed instructions |
-| --- | --- | --- |
-| Antigravity app / IDE | Create or open a project containing only ai-practice, then start a local conversation | [Antigravity](tools/antigravity.md#open-the-practice-folder) |
-| GitHub Copilot in VS Code | Open ai-practice with File → Open Folder, then open Copilot Chat | [Copilot](tools/copilot.md#open-the-practice-folder) |
-| Codex desktop app | Open or add ai-practice as the local project, then start a conversation | [Codex](tools/codex.md#open-the-practice-folder) |
-| Grok Build CLI | Enter ai-practice in the terminal, then start grok with limited permissions | [Grok Build](tools/grok-build.md#open-the-practice-folder) |
-| Codex CLI | Enter ai-practice, then start codex with read-only permissions | [Codex](tools/codex.md#open-the-practice-folder) |
-| Claude Code CLI | Enter ai-practice, then start claude and select Plan mode | [Claude Code](tools/claude-code.md#open-the-practice-folder) |
+| Your tool | Open the project and set permissions |
+| --- | --- |
+| Antigravity | [Open the practice folder](tools/antigravity.md#open-the-practice-folder) |
+| GitHub Copilot in VS Code | [Open the practice folder](tools/copilot.md#open-the-practice-folder) |
+| Codex app or CLI | [Open the practice folder](tools/codex.md#open-the-practice-folder) |
+| Grok Build | [Open the practice folder](tools/grok-build.md#open-the-practice-folder) |
+| Claude Code | [Open the practice folder](tools/claude-code.md#open-the-practice-folder) |
 
-For a new terminal, first locate the folder. From the directory containing `ai-practice`, run `cd ai-practice`. From elsewhere, use its full path, quoted if it contains spaces. If already inside it, skip that command. Check the working directory with `pwd` on macOS/Linux or `Get-Location` in PowerShell.
+**Read that section, open only `ai-practice`, set its permissions, then return to [Run the first-run checks](#run-the-first-run-checks) below.** Keep personal documents and unrelated folders outside the project.
 
-Follow the linked tool instructions to start the session and set permissions **before sending the first request**. Confirm that its project/folder display points to `ai-practice`. [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)) is an ordinary project document with no assumed automatic loading. Explicitly ask the tool to read it. If the interface cannot access local files, attach or paste its contents and the requested project records before sending the task.
+For a CLI, navigate to `ai-practice` before starting the agent. If the terminal is in the folder containing it, enter `cd ai-practice`. If it is elsewhere, use the full path, quoted if it contains spaces. Check the current folder with `pwd` on macOS/Linux or `Get-Location` in PowerShell. See [terminal basics](python-uv.md#before-you-type-commands) if this is unfamiliar.
 
-For an explanation of filenames such as CLAUDE.md, AGENTS.md, and .github/copilot-instructions.md, see [Tool-specific instruction files](templates.md#tool-specific-instruction-files). They are optional for this exercise; keep using the explicit reading request below.
+[Tool-specific instruction filenames](templates.md#tool-specific-instruction-files), such as CLAUDE.md or AGENTS.md, are explained separately. Here, explicitly ask the AI to read the shared rules rather than assuming automatic loading.
 
 ## Run the first-run checks
 
-Before starting, confirm that:
-
-- [ ] Your chosen tool is installed and signed in with the intended account.
-- [ ] The [Python and uv environment check](python-uv.md#check-that-python-runs) passes in ai-practice.
-- [ ] The four core files are saved under ai-practice.
-- [ ] The tool is open in that folder, with reading-first permissions.
-- [ ] No paid subscription is needed for your selected free route; any paid route was chosen deliberately.
+You are ready when your tool is signed in, Python runs through uv, and the two starting files are saved in `ai-practice`.
 
 ### Reading
 
-Send this request in the conversation you just opened:
+Send this request in your AI conversation:
 
-Project instructions for the AI: [What the working rules mean](templates.md#tool-independent-working-rules) · [How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt).
+Project instructions: [Explanation](templates.md#tool-independent-working-rules) · [Setup](#prepare-your-records) · [Rules template](assets/templates/WORKING_RULES.md.txt).
 
 ```text
-Read the project working rules (WORKING_RULES.md) and SPEC.md, using the local files
-or the contents I have attached or pasted. If either is unavailable, ask me to provide it.
-Then explain the purpose and file structure.
-Do not modify files, install dependencies, or publish anything at this stage.
-Report the name of any file you could not read and the reason.
+Read WORKING_RULES.md and SPEC.md in this project, or the contents I provide.
+If you cannot access either, ask me to attach or paste it.
+Explain what the first-run program should do and which folder we are using.
+Do not modify files or run commands yet.
 ```
 
-Compare the response with the actual files. A text response does not establish that editing or execution works.
+Check that the reply describes the print-only program and the correct folder. If the tool cannot access local files, attach the documents or paste their contents, then ask again.
 
 ### A small edit
 
-Once reading works, switch from reading-only / Plan mode to the tool's approval-based editing mode, as described on its setup page. Allow changes inside `ai-practice`, then request:
+Switch from reading-only / Plan mode to the approval-based editing mode described on your tool's setup page. If this restarts the session, provide the starting files again and repeat the reading request. Then send:
 
 ```text
-Create only smoke.py. It should print "Ready for AI development" when run.
-Use Python without external packages or network access.
-Run Python through uv, using the existing project environment.
-Do not change pyproject.toml, uv.lock, or .python-version for this task.
-After writing the file, show its contents and explain how to run it.
+Create smoke.py in the project root. It should print "Ready for AI development".
+Use Python without external packages or network operations in the program.
+Keep pyproject.toml, uv.lock, and .python-version unchanged.
+Show the file's contents before running it.
 ```
 
-Read the change. Then ask the AI to run the following command from `ai-practice` and display its actual result in the conversation. Review the command and working directory before approving it:
+Open the file and check that it prints the requested message. If the tool cannot save files, copy its proposed code into `ai-practice/smoke.py` yourself.
+
+### Execution by the AI tool
+
+Ask the AI to run this command from `ai-practice` and display the actual result. Review the command and folder before approving execution:
 
 ```sh
 uv run --locked python smoke.py
 ```
 
-This command is the same on macOS, Linux, and Windows PowerShell.
+Expected output:
 
-Expected output: `Ready for AI development`. Read the result on screen. Saving an execution record is optional: ask for one if you need it. If the AI thinks a record would help, it should explain why and ask before saving.
+```text
+Ready for AI development
+```
 
-### Execution by the AI tool
+If the tool cannot execute commands, run this in your terminal and paste the result into the conversation. Ask it to explain any error. See [Troubleshooting](troubleshooting.md) rather than widening permissions without understanding the problem.
 
-The AI normally performs the execution above and displays the result. If execution is unavailable with your tool or settings, run the command yourself and paste the output into the conversation. Ask the AI to explain it and identify it as “executed by a person.” A permissions error does not require unrestricted access.
+**Checkpoint:** you have checked reading, editing, and execution. Save results only if you want a summary later.
 
-If your selected interface cannot edit local files, use its proposed code to create smoke.py yourself and tell the AI that you performed the edit. You can complete the learning exercise without purchasing another plan.
+### Keep a short environment note
+
+ENVIRONMENT.md tells your future self or another AI how to run this project. Ask the AI to prepare it after the checks:
+
+```text
+Create a short ENVIRONMENT.md with the OS, uv and Python versions,
+chosen AI tool/interface, practice folder, and the command used to run smoke.py.
+Use only observed details or information I provide. Mark unknowns as unknown.
+Ask me which account access type I use: free, student, institutional, or paid.
+Do not include account names, keys, or other secrets.
+```
+
+Review the note. If the tool cannot save it, copy the summary into `ai-practice/ENVIRONMENT.md`. The [environment template](assets/templates/ENVIRONMENT.md.txt) is available if useful; fill only what applies.
 
 ## Continue to the practice project
 
-After reading, editing, and execution have been checked, continue to the [Practice project](practice.md). Replace the specification for the small `smoke.py` startup exercise with the agreed study-time CLI specification there. If you chose to save results, keep the earlier check distinguishable from the new project.
+**Next: [Practice project](practice.md).** Keep the same folder, tool, and Python environment. You will replace the small first-run specification with the study-time program's requirements.
 
-A [handoff](workflow/handoff.md) is useful later when you change conversations, tools, or computers. You do not need to switch tools during the first exercise.
+Later, use [Handoffs](workflow/handoff.md) when changing conversations, tools, or computers. That is when HANDOFF.md becomes useful.
 
 ## Local and cloud environments differ
 
-This initial flow uses a local folder. Local files do not automatically appear in a cloud environment. Before using cloud integration, check the repository, branch, files being sent, and runtime. Use a project without secrets, then verify imported changes again locally.
+This exercise uses files on your computer. A cloud agent runs elsewhere and needs the intended files supplied separately. If you use one later, check which repository and files it receives, then verify its changes locally. See [Safe permission settings](workflow/permissions.md).
 
-“Installed,” “signed in,” “opened the folder,” “read files,” “edited files,” and “executed code” are separate milestones. See [Safe permission settings](workflow/permissions.md).
+Git is optional for this exercise. If you choose it later, follow the [environment file guidance](python-uv.md#keep-local-environment-files-out-of-git) before adding files. Publishing this guide is covered separately for maintainers in [Local checks and publication](maintenance.md).

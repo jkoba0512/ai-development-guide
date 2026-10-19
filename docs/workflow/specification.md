@@ -129,7 +129,7 @@ AC-02 and AC-03 are **boundary checks**, covering the ends of the permitted rang
 
 ## 5. Save the agreed specification and continue
 
-After reviewing the draft, ask the AI:
+After reviewing the draft, allow it to edit SPEC.md in the practice folder using your tool's approval-based editing mode. Then ask:
 
 ```text
 Save the specification we reviewed to SPEC.md in the practice folder,
@@ -148,6 +148,6 @@ Before continuing, confirm:
 - [ ] AC-01 through AC-05 describe expected results and ways to check them.
 - [ ] Questions affecting implementation are resolved.
 
-**Next:** follow [Implementation and verification](implementation.md). The AI will write code, run checks, and display actual results for you to review. If you want to keep those results, ask it to save a summary.
+**Next:** follow [Implementation and verification](implementation.md) to create and review the code. Then return to [Practice project → Run normal and invalid-input cases](../practice.md#3-run-normal-and-invalid-input-cases) to ask the AI to run checks and show actual results.
 
 If a later test fails, compare the code with the agreed specification. For example, an average of 75 for inputs 25 and 50 indicates an implementation problem. If you intentionally change a requirement, update that requirement and its reason in SPEC.md before changing the tests.

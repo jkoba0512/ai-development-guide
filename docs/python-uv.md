@@ -6,6 +6,12 @@ Python runs your program. **uv** installs Python, prepares a separate environmen
 
 **Your goal:** create a practice folder where a Python command runs successfully through uv. Do this before asking the AI to write your first program.
 
+## Before you type commands
+
+A **terminal** is an app where you type commands. On macOS, open Terminal from Spotlight. On Windows, open PowerShell from Start. On Linux, open your terminal app. An editor's integrated terminal works too; use its Terminal menu. Choose the tab for that terminal's OS below.
+
+Paste commands into the terminal, not into an AI chat. Run one line at a time and wait for it to finish. If a command fails, stop and use [Troubleshooting](#troubleshooting) before continuing. The **working directory** is the folder in which commands operate. `cd` changes it; `pwd` on macOS/Linux or `Get-Location` in PowerShell shows it.
+
 ## Install uv
 
 Choose the instructions for your OS. These are terminal commands, not messages to the AI. You do not need to install Python separately first.
@@ -52,7 +58,9 @@ uv downloads Python if needed. An existing system Python installation does not h
 
 ## Create the practice project
 
-Choose a location separate from personal documents and secrets. Open a terminal there.
+Choose a parent folder in which to create the exercise, such as your usual coding-projects folder. Navigate there with `cd` in the terminal, or open that folder in your editor and start its integrated terminal. For example, `cd "/path/to/your/projects"` uses a placeholder: replace it with your actual folder path. Keep the practice project separate from unrelated files.
+
+Choose **one** tab below: new folder or existing folder. The commands in the new-folder tab create `ai-practice` and enter it; later commands should run inside that same folder.
 
 === "New practice folder"
     ```sh
@@ -118,7 +126,9 @@ Expected results:
 
 `uv run` starts a command in the project environment. `--locked` reports an error if project settings and the lockfile disagree, rather than silently changing the lockfile. [Running commands](https://docs.astral.sh/uv/concepts/projects/run/) and [locking and syncing](https://docs.astral.sh/uv/concepts/projects/sync/).
 
-Keep `uv --version`, the Python version, and these terminal results available. When your AI tool is ready, ask it to summarize the versions in ENVIRONMENT.md and explain the check results on screen. Then return to [Common setup → Prepare your records](setup.md#prepare-your-records).
+Keep the version output available for the short environment note after your first-run check.
+
+**Setup is complete when the three expected results above appear. Continue to [Common setup → Prepare your records](setup.md#prepare-your-records).** The sections below are references for later use; you can return when you need them.
 
 ## Run programs and tests
 
@@ -170,7 +180,7 @@ Only run the last command after tests exist. If deliberately changing dependenci
 
 | Symptom | What to do |
 | --- | --- |
-| uv is not found | Reopen the terminal; follow the installer's PATH instructions. Avoid installing uv repeatedly by different methods |
+| uv is not found | Reopen the terminal. PATH is the list of folders searched for commands; follow the installer's PATH instructions. Avoid installing uv repeatedly by different methods |
 | Python download fails | Check network/proxy access and school policies; do not disable certificate checks |
 | Project already exists | Keep its pyproject.toml; use the existing-project branch above |
 | Lockfile is missing | For a new reviewed project, run uv sync once to create it |
@@ -185,6 +195,6 @@ Only run the last command after tests exist. If deliberately changing dependenci
 - [ ] uv run --locked python --version shows Python 3.12.x.
 - [ ] Python runs from ai-practice/.venv.
 - [ ] The one-line check prints Python and uv are ready.
-- [ ] You know which files to transfer and why .venv stays local.
+- [ ] You can find the ai-practice folder again in your editor and terminal.
 
 Continue with [Prepare your records](setup.md#prepare-your-records), then open the folder in your chosen AI tool and perform the first-run checks.

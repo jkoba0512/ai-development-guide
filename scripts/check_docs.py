@@ -48,4 +48,4 @@ for name in ("SPEC", "ENVIRONMENT", "VERIFICATION", "HANDOFF", "WORKING_RULES"):
         errors.append(f"missing template: {name}")
 if errors:
     raise SystemExit("\n".join(errors))
-print(f"OK: {len(pages)} pages, navigation, relative links, 4 core templates + 1 optional verification template")
+print(f"OK: {len(pages)} pages, navigation, relative links, 5 downloadable templates")

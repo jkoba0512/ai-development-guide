@@ -16,20 +16,22 @@ Learn to define a specification, review changes, and verify behavior while using
 | Specification | Inputs, outputs, and completion criteria | SPEC.md |
 | Implementation | Changes match the specification | Code and diffs |
 | Verification | Normal, boundary, and invalid inputs behave correctly | Tests and results displayed in the conversation |
-| Handoff | Work can be reproduced and resumed elsewhere | ENVIRONMENT.md and HANDOFF.md |
+| Handoff (optional extension) | Work can be reproduced and resumed elsewhere | ENVIRONMENT.md and HANDOFF.md |
 
-**Keep the specification and code in the same project.** Verification results are displayed in the conversation; saving them is optional. If you need them for a submission or handoff, ask for a saved summary. If the AI recommends saving, it should explain why and ask first. When no results were saved, rerun checks after moving to another conversation or tool.
+**The AI drafts code and runs checks; you review the requirements, changes, and actual results.** Ask it to explain unfamiliar terms or code. Keep the specification and code in the same project. If you want to keep the displayed test results, ask for a saved summary.
 
 <span id="reading-order"></span>
 
 ## Getting started
 
-Follow these steps in order. Choose **one** tool and interface; you do not need to install all five or buy a subscription.
+Follow these steps in order. Choose **one** tool and interface; you do not need to install all five or buy a subscription. Use the links in the steps, rather than reading every navigation item as a required lesson.
+
+You will need a computer on which you can install an approved tool and uv, internet access for installation and AI use, and a text editor. This guide explains the terminal commands as they appear. If installation is blocked on a school computer, ask for the approved method before proceeding.
 
 1. **Choose a tool.** Check [Costs and student benefits](plans.md) and select an option you can access without paying if you want to stay on a free plan.
 2. **Install and sign in.** Use your [chosen tool's setup page](#choose-your-tool-page) below. Complete its **Install and sign in** section before opening a project.
-3. **Prepare Python, the folder, and records.** Follow [Set up Python with uv](python-uv.md) to install uv and Python and create ai-practice. Then [prepare your records](setup.md#prepare-your-records) with a text editor; no agent task is needed yet.
-4. **Open the folder or start the CLI.** Follow [Open the folder or start the CLI](setup.md#open-the-folder-or-start-the-cli), then the matching tool instructions. Confirm the project path and set reading-first permissions.
+3. **Prepare the practice project.** Open [Common setup](setup.md) and follow it in order. It sends you to the Python/uv manual, brings you back to prepare two starting files, and explains when to open your tool.
+4. **Open the folder or start the CLI.** Continue with [Open the folder or start the CLI](setup.md#open-the-folder-or-start-the-cli). Follow only your chosen tool's folder-opening section, then return to Common setup.
 5. **Check reading, editing, and execution.** Complete [Run the first-run checks](setup.md#run-the-first-run-checks) and read the actual results on screen.
 6. **Build the practice project.** Work through specification, implementation, and verification in the [Practice project](practice.md).
 7. **Hand off when needed.** Later, if changing conversations, tools, or computers, use [Handoffs between environments](workflow/handoff.md). Switching tools is not required for the first exercise.
@@ -52,10 +54,12 @@ If you are new to programming or terminals, begin by reading errors and actual r
 
 ## Your first completion goals
 
-- [ ] Explain your plan and additional billing settings.
+- [ ] Know which AI access option you are using and whether any additional billing is enabled.
 - [ ] Know which folders, commands, and network operations are allowed.
-- [ ] Run tests derived from acceptance criteria.
-- [ ] Resume work in another conversation by rereading the project files.
+- [ ] Ask the AI to run checks derived from the specification and interpret the displayed results.
+- [ ] Optional next step: resume work in another conversation from the project files.
 - [ ] Explain the reasons for AI-generated changes in your own words.
 
-When submitting work, follow the recipient's AI-use policy. Record which tools you used, what you delegated, and what you verified yourself.
+Your first completion point is the working [Practice project](practice.md#4-review-the-short-results-summary). Handoffs and Obsidian are extensions; Templates, Troubleshooting, and Official Sources are references. [Local checks and publication](maintenance.md) is for people maintaining this website, rather than a student exercise.
+
+When submitting work, follow the recipient's AI-use policy. State which tools you used, what you delegated, and what you verified yourself.

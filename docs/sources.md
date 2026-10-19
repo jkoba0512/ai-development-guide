@@ -104,3 +104,4 @@ Reviewed on 2026-10-19 for the optional extension. This does not update the earl
 | 2026-10-13 | English edition: translated documentation, prompts, templates, code messages, and configuration. Original research date retained |
 | 2026-10-17 | Made shared working instructions tool-independent through [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)) and explicit document sharing; updated prompts, templates, and handoff guidance |
 | 2026-10-18 | Added Python/uv environment setup; standardized Python execution and website builds on uv |
+| 2026-10-19 | Reviewed all 19 guide pages for student progression; reduced initial file setup, clarified return paths and completion points, and separated optional extensions from the first project. Product prices and benefits were not rechecked |
