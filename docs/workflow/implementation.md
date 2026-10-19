@@ -14,7 +14,10 @@ Use only the Python standard library, with no storage or network operations.
 Run Python and tests through uv in the existing project environment.
 Do not add packages or change project environment files without asking.
 Derive expected results from SPEC.md. Check input validation and CLI exit codes.
-Report the tests actually run, their results, and checks not performed separately.
+Run the checks and update VERIFICATION.md with a short summary of actual results.
+Include the commands, who ran them, and pass / fail / not run for each criterion.
+Group related checks; include failure details and limitations, without copying full logs.
+Do not mark unperformed checks as passed.
 ```
 
 If the AI proposes an extra package, download, or permission expansion, assess whether it is necessary. Do not add it if the specification can be satisfied without it.
@@ -41,9 +44,11 @@ Ask for a step-by-step explanation with a short input when you do not understand
 | Repeatability | The same procedure produces the same result |
 | Regression checks | Fixes preserve previously working behavior |
 
-“The tests should pass” is not execution evidence. Record the command, directory, exit code, output, and who ran it. Leave unperformed checks marked as not run.
+**Let the AI execute checks and maintain the short verification record. Your job is to review what was checked, failures, and remaining unknowns.** Ask it to include the commands, who ran them, and the result for each acceptance criterion; related checks may be grouped. Full terminal logs and a separate form for every input are unnecessary. For a failure, keep the relevant input, actual result, and exit code so it can be reproduced.
 
-For the Python practice project:
+“The tests should pass” is not execution evidence. Unperformed checks must remain marked as not run. If the AI cannot execute commands, run them yourself, provide the output, and ask it to write the summary. If it cannot save files, copy the summary into VERIFICATION.md.
+
+These commands are a reference for the AI, or for you when manual execution is needed:
 
 ```sh
 uv run --locked python -m unittest discover -s tests -v
@@ -55,7 +60,7 @@ These uv commands work on macOS, Linux, and Windows PowerShell after [environmen
 
 ## When a check fails
 
-Record the input, expected result, actual result, and error. Reproduce the failure with the smallest possible action. Do not change expected values or delete tests to hide failures. A person should decide whether a specification change is needed.
+Ask the AI to record the failing input, expected and actual results, and relevant error, then reproduce the failure with the smallest possible action. Do not change expected values or delete tests to hide failures. A person should decide whether a specification change is needed.
 
 ```text
 For AC-04, text input returned exit code 0.

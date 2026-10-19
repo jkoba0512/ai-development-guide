@@ -29,7 +29,20 @@ Review the changes yourself. Confirm handling of no input, malformed input, and 
 
 ## 3. Run normal and invalid-input cases
 
-Run from ai-practice. These commands work on macOS, Linux, and Windows PowerShell.
+**Ask the AI to run the checks and write a short record. You do not need to type every command or transcribe the output yourself.** Review the proposed commands and permissions before execution.
+
+```text
+Run the checks for AC-01 through AC-05 in SPEC.md using the existing uv environment.
+Compare actual results with the specification. Review code and dependencies for AC-05;
+calculation tests alone do not verify storage or network behavior.
+Update VERIFICATION.md briefly: what was checked, commands used, who ran them,
+and pass / fail / not run for each criterion. Group related checks where useful.
+Include short failure details and anything you could not check.
+Do not mark a check as passed unless you actually performed it.
+Keep the earlier first-run result. Do not change requirements to make tests pass.
+```
+
+If the AI cannot execute commands, run the commands below from ai-practice and paste the terminal results into the conversation. Ask the AI to summarize them in the record and identify you as the person who ran them. If it cannot save files, copy its short summary into VERIFICATION.md. These commands are also a reference for reviewing what the AI runs; they work on macOS, Linux, and Windows PowerShell.
 
 ```sh
 uv run --locked python src/study_stats.py 25 50
@@ -43,7 +56,7 @@ uv run --locked python src/study_stats.py abc
 uv run --locked python -m unittest discover -s tests -v
 ```
 
-Successful cases return exit code 0; invalid inputs return 2. Immediately after a command, check `echo $?` on macOS/Linux or `$LASTEXITCODE` in PowerShell. Check before running another command.
+Successful cases return exit code 0; invalid inputs return 2. The AI should capture these automatically. If you run the commands yourself, immediately after each command check `echo $?` on macOS/Linux or `$LASTEXITCODE` in PowerShell. Check before running another command.
 
 | Input | Expected result |
 | --- | --- |
@@ -54,9 +67,13 @@ Successful cases return exit code 0; invalid inputs return 2. Immediately after 
 
 Save the distributed implementation to `src/study_stats.py` and the tests to `tests/test_study_stats.py` to run the reference version. The tests also work in the distributed folder layout. Their expected values come from the specification; they do not cover every attack or OS.
 
-## 4. Record results and explanations
+## 4. Review the short results summary
 
-Record the command and actual result for each acceptance criterion in VERIFICATION.md. uv's environment setup creates project metadata and may download Python; those setup operations are separate from the program's behavior. After setup, add `--offline` to uv run if you also want to prohibit uv downloads. To check the program for storage and networking, review the code and compare the folder before and after execution. Record the method used; passing these tests alone does not prove an absence of network access.
+Open the AI-written VERIFICATION.md. Check **what was tested, whether anything failed, and what remains unverified**. Ask about anything you do not understand. You do not need to copy full logs or fill in a detailed form for every input. One short entry can cover related checks, provided the acceptance-criterion results are clear.
+
+For example, a summary might say “AC-01–AC-04: pass; automated CLI tests checked normal, boundary, and invalid inputs. AC-05: not run; code review still needed.” This is an illustration, not a result to copy as evidence. The actual record must describe your own run.
+
+Ask the AI to include a brief method and finding for AC-05. uv's environment setup creates project metadata and may download Python; those setup operations are separate from the program's behavior. After setup, add `--offline` to uv run if you also want to prohibit uv downloads. To check the program for storage and networking, ask the AI to review the code and compare the folder before and after execution. Have it summarize the method used; passing these tests alone does not prove an absence of network access.
 
 Ask the AI to explain the following, then check its explanation yourself:
 

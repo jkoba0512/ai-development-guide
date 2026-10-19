@@ -9,7 +9,7 @@ This is an ordinary, tool-independent project document. Read it explicitly, or p
 - Keep secrets and personal information out of AI inputs, conversations, and shared files.
 - Check targets and reasons before expanding permission scope.
 - Check specific authorization for external publication, pushes, billing, and third-party transmission.
-- Run tests and record commands, working directories, and exit codes.
+- Run checks and maintain a brief VERIFICATION.md summary: commands, who ran them, and pass / fail / not run for each acceptance criterion. Group related checks; keep relevant failure output and exit codes. Full logs are unnecessary. If the user ran a check, summarize only the results they actually supplied; do not claim you executed it.
 - Distinguish observed results from assumptions and checks not run.
 - Update HANDOFF.md before ending work or moving environments.
 

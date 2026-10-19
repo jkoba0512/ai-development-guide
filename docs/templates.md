@@ -6,11 +6,13 @@ Save the linked text files, remove the final `.txt` to make them Markdown files,
 | --- | --- |
 | [SPEC.md](assets/templates/SPEC.md.txt) | Purpose, inputs, outputs, acceptance criteria, and decisions with their reasons |
 | [ENVIRONMENT.md](assets/templates/ENVIRONMENT.md.txt) | Environment, authentication method, billing, permissions, and reproduction steps |
-| [VERIFICATION.md](assets/templates/VERIFICATION.md.txt) | Who ran each command, exit codes, and actual results |
+| [VERIFICATION.md](assets/templates/VERIFICATION.md.txt) | Short AI-written summary of checks, results, failures, and checks not run |
 | [HANDOFF.md](assets/templates/HANDOFF.md.txt) | Current state and information needed to resume |
 | [WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)) | Shared working rules |
 
 These are blank starting templates. Mark unknowns as unverified; do not mark checks as passed unless they ran. You do not need to record account names or secret values.
+
+VERIFICATION.md is normally written by the AI after it runs checks. You review the summary rather than transcribing commands and output. If the AI cannot run commands, give it your actual terminal results to summarize. Keep failures and checks not run visible; full logs are unnecessary for this exercise.
 
 ## Tool-independent working rules
 

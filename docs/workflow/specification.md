@@ -74,7 +74,7 @@ For the difference between the shared rules and automatically discovered files s
 
 ### Keep previous results separately
 
-VERIFICATION.md records **what actually happened when you ran a check**: the command, output, and result. Keep the earlier `smoke.py` execution results there. Updating SPEC.md for the new program does not mean deleting evidence of the earlier exercise.
+VERIFICATION.md is a **short record of checks actually performed**. Normally, the AI runs the checks and writes the summary; you review the results, failures, and anything not checked. You do not need to transcribe terminal output. Keep the earlier `smoke.py` execution results there. Updating SPEC.md for the new program does not mean deleting evidence of the earlier exercise.
 
 **What to do now:** open SPEC.md in your editor, and make sure the AI has received the project instructions. Continue below to decide the new program's requirements. You will save the reviewed specification before asking for code.
 
@@ -179,7 +179,7 @@ Expected output: Count: 2 / Total: 75 min / Average: 37.5 min
 Expected exit code: 0
 ```
 
-Run the program, compare its actual result with these expectations, and record the command, output, exit code, and pass/fail result under AC-01 in VERIFICATION.md. Repeat for the other criteria. The [Practice project](../practice.md#3-run-normal-and-invalid-input-cases) gives the execution commands.
+Ask the AI to run the program, compare actual results with these expectations, and summarize AC-01 and the other criteria in VERIFICATION.md. Review which criteria passed, failed, or were not run. Related checks can share one short entry; full logs are unnecessary. If the AI cannot execute commands, run them yourself and give it the results to summarize. The [Practice project](../practice.md#3-run-normal-and-invalid-input-cases) gives the execution commands.
 
 An automated test performs a comparison for you; it does not decide what the correct answer should be. For AC-05, review is also necessary: a passing calculation test does not prove that no network access occurs.
 

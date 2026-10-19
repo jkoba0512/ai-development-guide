@@ -187,3 +187,10 @@ Screenshots are regenerated for the English edition:
 - Explained explicit shared-rule delivery, optional tool-specific pointers, and Claude Code imports without assuming cross-tool import syntax.
 - Added discovery links from setup, specification, tool pages, and handoffs. No instruction files were created in the guide repository.
 - Official-document review covers instruction discovery only, not pricing or student benefits.
+
+## Simplify verification records
+
+- Made AI execution and concise AI-written verification summaries the default. Students review results, failures, and checks not run.
+- Retained manual execution and copyable summaries for interfaces without execution or file access.
+- Updated first-run checks, practice, implementation, specification, environment guidance, and shared templates.
+- Grouped checks are allowed; relevant failure evidence and honest not-run status remain required.

@@ -33,7 +33,7 @@ Use a text editor to fill in the starting records; the AI tool does not need to 
 
 - **SPEC.md:** write “First-run check: create a Python script that prints Ready for AI development. No external packages or network access.” Keep important choices and their reasons in the same file.
 - **ENVIRONMENT.md:** record the environment, selected tool/interface, account access type, and available permission settings. Do not include secret values.
-- **VERIFICATION.md:** leave results marked as not run until you execute them.
+- **VERIFICATION.md:** keep the template ready. The AI will write a short summary after the first check; you only need to review it.
 - **HANDOFF.md:** set the next task to “Complete the reading, editing, and execution checks.”
 - **[WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)):** read and keep the shared working rules.
 
@@ -115,7 +115,7 @@ Do not change pyproject.toml, uv.lock, or .python-version for this task.
 After writing the file, show its contents and explain how to run it.
 ```
 
-Read the change. Open a terminal in `ai-practice`, or use the editor's integrated terminal and confirm its working directory. Run:
+Read the change. Then ask the AI to run the following command from `ai-practice` and save a short result in VERIFICATION.md. Review the command and working directory before approving it:
 
 ```sh
 uv run --locked python smoke.py
@@ -123,11 +123,11 @@ uv run --locked python smoke.py
 
 This command is the same on macOS, Linux, and Windows PowerShell.
 
-Expected output: `Ready for AI development`. Record the directory, command, output, and pass/fail result in VERIFICATION.md.
+Expected output: `Ready for AI development`. Review the AI's result and its short record. You do not need to write the execution log yourself.
 
 ### Execution by the AI tool
 
-Ask the AI to run the same command. Review the command and working directory before approving it. If execution is unavailable with your tool or settings, record “executed by a person.” A permissions error does not require unrestricted access.
+The AI normally performs the execution above and writes the record. If execution is unavailable with your tool or settings, run the command yourself and paste the output into the conversation. Ask the AI to summarize it as “executed by a person.” If it cannot save files, copy that summary into VERIFICATION.md. A permissions error does not require unrestricted access.
 
 If your selected interface cannot edit local files, use its proposed code to create smoke.py yourself and record that you performed the edit. You can complete the learning exercise without purchasing another plan.
 

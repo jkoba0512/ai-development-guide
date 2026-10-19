@@ -1,26 +1,17 @@
-# Verification Record
+# Verification Summary
 
-## Target
+The AI normally fills this in after running checks. The student reviews results,
+failures, and anything not checked. Group related checks; no full logs are needed.
+Keep earlier results when adding a new run. Never claim a check passed without evidence.
 
-- Timestamp: [include timezone]
-- Code version: [commit or identifier for uncommitted changes]
-- Environment: [ENVIRONMENT.md version]
-- Executed by: [person / AI tool name]
+## [Date — task or code version]
 
-## Results
+- Executed by: [AI tool / person who supplied the actual results]
+- Commands: [commands used; working directory if different from the project root]
 
-| AC | Working directory and command | Expected result | Actual result and exit code | Status |
-| --- | --- | --- | --- | --- |
-| AC-01 | [command] | [result] | [output and exit code] | [pass / fail / not run] |
+| Criteria / check | Status | Brief actual result |
+| --- | --- | --- |
+| [AC IDs or first-run check] | [pass / fail / not run] | [what happened, or why not run] |
 
-## Manual review
-
-[Diffs, dependencies, network/storage behavior, and verification method]
-
-## Failure reproduction
-
-[Minimal input, commands, and actual error]
-
-## Checks not run and limitations
-
-[Unverified operating systems or conditions, with reasons]
+Failures or limitations: [none / failing input, expected vs actual result, relevant error and exit code / unverified conditions]
+Next action: [none / what needs to be checked or fixed]
