@@ -194,3 +194,11 @@ Screenshots are regenerated for the English edition:
 - Retained manual execution and copyable summaries for interfaces without execution or file access.
 - Updated first-run checks, practice, implementation, specification, environment guidance, and shared templates.
 - Grouped checks are allowed; relevant failure evidence and honest not-run status remain required.
+
+## Make verification recording optional
+
+- Removed VERIFICATION.md from required setup, folder trees, reading prompts, and completion criteria.
+- Default workflow displays checks and actual results in the conversation for student review.
+- Saving or updating results requires a user request or agreement; AI recommendations explain why and ask first.
+- Retained an optional template and updated handoffs to read saved results only if supplied, otherwise rerun checks.
+- Relative links and the strict MkDocs build passed; the optional download remains available.

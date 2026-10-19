@@ -9,7 +9,7 @@
 | AI cannot read files | Working folder, attachments, and access scope | Name the file explicitly; add only necessary access |
 | Execution approval requested | Command, working directory, and destination | Understand the operation and approve narrowly |
 | Installation blocked on school computer | Administrator policy and supported environments | Use an approved method or another allowed environment |
-| Tests fail after moving | uv/Python versions, uv.lock, OS, and working directory | Run uv sync --locked; keep .venv local and append failure evidence |
+| Tests fail after moving | uv/Python versions, uv.lock, OS, and working directory | Run uv sync --locked; keep .venv local and display the failure details; save only if requested or agreed |
 | Conversation becomes confusing | Specification and current-state records | Update HANDOFF.md and start a new conversation |
 | Changes missing from Git | Untracked files, ignore rules, or another worktree | Check git status and actual file locations |
 

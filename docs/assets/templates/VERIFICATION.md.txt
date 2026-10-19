@@ -1,7 +1,8 @@
 # Verification Summary
 
-The AI normally fills this in after running checks. The student reviews results,
-failures, and anything not checked. Group related checks; no full logs are needed.
+This template is optional. Results are normally displayed in the conversation.
+Use this file only if the user requests or agrees to saving a record here.
+The AI can fill it in from actual results. Group related checks; no full logs are needed.
 Keep earlier results when adding a new run. Never claim a check passed without evidence.
 
 ## [Date — task or code version]

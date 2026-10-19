@@ -4,7 +4,8 @@ Updated: [YYYY-MM-DD]
 
 ## Reading order
 
-WORKING_RULES.md → SPEC.md → ENVIRONMENT.md → VERIFICATION.md → this file
+WORKING_RULES.md → SPEC.md → ENVIRONMENT.md → this file
+Read saved verification results if supplied; no verification file is required.
 
 Working rules reference:
 [What the working rules mean](https://jkoba0512.github.io/ai-development-guide/templates/#tool-independent-working-rules) · [How to save the file](https://jkoba0512.github.io/ai-development-guide/setup/#prepare-your-records) · [Download the rules template](https://jkoba0512.github.io/ai-development-guide/assets/templates/WORKING_RULES.md.txt)
@@ -21,7 +22,7 @@ Working rules reference:
 
 ## Last verification
 
-[Relevant VERIFICATION.md entry, execution date, and pass / fail / not run]
+[If results were saved by agreement, reference them here. Otherwise: no saved results; rerun checks at the destination. Do not invent a past result.]
 
 ## Decisions
 

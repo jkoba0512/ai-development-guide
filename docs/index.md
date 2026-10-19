@@ -15,10 +15,10 @@ Learn to define a specification, review changes, and verify behavior while using
 | First run | Reading, editing, and execution work | A short first-run check |
 | Specification | Inputs, outputs, and completion criteria | SPEC.md |
 | Implementation | Changes match the specification | Code and diffs |
-| Verification | Normal, boundary, and invalid inputs behave correctly | Tests and VERIFICATION.md |
+| Verification | Normal, boundary, and invalid inputs behave correctly | Tests and results displayed in the conversation |
 | Handoff | Work can be reproduced and resumed elsewhere | ENVIRONMENT.md and HANDOFF.md |
 
-Chat history alone does not provide a complete set of working code and verification evidence. **Keep the specification, code, and verification records in the same project so you and the next AI tool can read them again.**
+**Keep the specification and code in the same project.** Verification results are displayed in the conversation; saving them is optional. If you need them for a submission or handoff, ask for a saved summary. If the AI recommends saving, it should explain why and ask first. When no results were saved, rerun checks after moving to another conversation or tool.
 
 <span id="reading-order"></span>
 
@@ -30,7 +30,7 @@ Follow these steps in order. Choose **one** tool and interface; you do not need 
 2. **Install and sign in.** Use your [chosen tool's setup page](#choose-your-tool-page) below. Complete its **Install and sign in** section before opening a project.
 3. **Prepare Python, the folder, and records.** Follow [Set up Python with uv](python-uv.md) to install uv and Python and create ai-practice. Then [prepare your records](setup.md#prepare-your-records) with a text editor; no agent task is needed yet.
 4. **Open the folder or start the CLI.** Follow [Open the folder or start the CLI](setup.md#open-the-folder-or-start-the-cli), then the matching tool instructions. Confirm the project path and set reading-first permissions.
-5. **Check reading, editing, and execution.** Complete [Run the first-run checks](setup.md#run-the-first-run-checks) and record the actual results.
+5. **Check reading, editing, and execution.** Complete [Run the first-run checks](setup.md#run-the-first-run-checks) and read the actual results on screen.
 6. **Build the practice project.** Work through specification, implementation, and verification in the [Practice project](practice.md).
 7. **Hand off when needed.** Later, if changing conversations, tools, or computers, use [Handoffs between environments](workflow/handoff.md). Switching tools is not required for the first exercise.
 
@@ -46,7 +46,7 @@ Start with **Install and sign in** on just one of these pages. Each then directs
 | Codex | [Desktop, or optional CLI with suitable access](tools/codex.md#install-and-sign-in) |
 | Claude Code | [CLI with suitable access](tools/claude-code.md#install-and-sign-in) |
 
-If you are new to programming or terminals, begin by recording errors and actual results. The Python examples use [uv-managed environments](python-uv.md). They are learning exercises, not a statement that every System Design assignment uses Python. The same workflow applies to web apps, research scripts, and personal projects.
+If you are new to programming or terminals, begin by reading errors and actual results with the AI's help. The Python examples use [uv-managed environments](python-uv.md). They are learning exercises, not a statement that every System Design assignment uses Python. The same workflow applies to web apps, research scripts, and personal projects.
 
 ## Your first completion goals
 

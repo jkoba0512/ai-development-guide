@@ -72,9 +72,11 @@ Use these links when you need a reminder:
 
 For the difference between the shared rules and automatically discovered files such as CLAUDE.md or AGENTS.md, see [Tool-specific instruction files](../templates.md#tool-specific-instruction-files). You do not need to create a tool-specific file for this exercise.
 
-### Keep previous results separately
+### Read results on screen; save them only if needed
 
-VERIFICATION.md is a **short record of checks actually performed**. Normally, the AI runs the checks and writes the summary; you review the results, failures, and anything not checked. You do not need to transcribe terminal output. Keep the earlier `smoke.py` execution results there. Updating SPEC.md for the new program does not mean deleting evidence of the earlier exercise.
+The AI normally runs checks and displays the actual results in the conversation. You review what passed, what failed, and what was not checked. You do not need to create a verification file or transcribe terminal output.
+
+If you need a saved summary later, ask for one and agree on a location. If the AI recommends saving, it should explain why and ask first. See [Optional verification record](../templates.md#optional-verification-record). If you already saved results from `smoke.py`, you can keep them; they are separate from the new program's requirements.
 
 **What to do now:** open SPEC.md in your editor, and make sure the AI has received the project instructions. Continue below to decide the new program's requirements. You will save the reviewed specification before asking for code.
 
@@ -179,7 +181,7 @@ Expected output: Count: 2 / Total: 75 min / Average: 37.5 min
 Expected exit code: 0
 ```
 
-Ask the AI to run the program, compare actual results with these expectations, and summarize AC-01 and the other criteria in VERIFICATION.md. Review which criteria passed, failed, or were not run. Related checks can share one short entry; full logs are unnecessary. If the AI cannot execute commands, run them yourself and give it the results to summarize. The [Practice project](../practice.md#3-run-normal-and-invalid-input-cases) gives the execution commands.
+Ask the AI to run the program, compare actual results with these expectations, and display a summary of AC-01 and the other criteria in the conversation. Review which criteria passed, failed, or were not run. Related checks can share one short summary; full logs are unnecessary. Save it only if you request or agree to a record. If the AI cannot execute commands, run them yourself and give it the results to summarize. The [Practice project](../practice.md#3-run-normal-and-invalid-input-cases) gives the execution commands.
 
 An automated test performs a comparison for you; it does not decide what the correct answer should be. For AC-05, review is also necessary: a passing calculation test does not prove that no network access occurs.
 

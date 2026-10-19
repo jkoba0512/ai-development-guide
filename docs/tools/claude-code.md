@@ -33,7 +33,7 @@ Follow the browser authentication prompts. Confirm the intended account and bill
 
 ## Prepare the practice folder
 
-Follow [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practice`, prepare [Python with uv](../python-uv.md), and [prepare the five records](../setup.md#prepare-your-records). Return here afterward.
+Follow [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practice`, prepare [Python with uv](../python-uv.md), and [prepare the four core files](../setup.md#prepare-your-records). Return here afterward.
 
 ## Open the practice folder
 
@@ -58,4 +58,4 @@ Explicitly supply [WORKING_RULES.md](../templates.md#tool-independent-working-ru
 
 ## Continue development
 
-Proceed to the [Practice project](../practice.md). Save code and verification records before moving conversations between interfaces. For another tool, resume from the shared files. See [Handoffs](../workflow/handoff.md).
+Proceed to the [Practice project](../practice.md). Save code before moving conversations between interfaces. Include verification results if you chose to save them; otherwise rerun checks at the destination. For another tool, resume from the shared files. See [Handoffs](../workflow/handoff.md).

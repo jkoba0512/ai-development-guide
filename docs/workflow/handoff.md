@@ -9,7 +9,7 @@ Use shared files to make work reproducible across conversations, tools, computer
 | SPEC.md | Purpose, inputs, outputs, acceptance criteria, exclusions, and important decisions with their reasons |
 | src/ and tests/ | Actual code and verification methods |
 | pyproject.toml, .python-version, and uv.lock | Python environment settings and resolved dependencies; exclude .venv |
-| VERIFICATION.md | What ran, where, by whom, and with what result |
+| Saved verification results (optional) | Results saved at your request or with your agreement; no fixed filename required |
 | ENVIRONMENT.md | OS, versions, dependencies, startup commands, and permissions |
 | HANDOFF.md | Current state, unfinished work, and the next single task |
 | [WORKING_RULES.md](../templates.md#tool-independent-working-rules) ([How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt)) | Shared working rules and reading order |
@@ -22,7 +22,7 @@ Use shared files to make work reproducible across conversations, tools, computer
 
 1. Stop running agents and background tasks.
 2. Review diffs and check that SPEC.md matches the code.
-3. Update verification records, separating failures from checks not run.
+3. Decide whether you need results saved for the move. Ask the AI to save a summary if useful; if it recommends saving, it should explain why and ask first. Otherwise, plan to rerun checks at the destination.
 4. Record the current state and next single task in HANDOFF.md.
 5. With Git, commit or preserve uncommitted changes. Record the branch and commit reference.
 6. Check that the transferred files contain no secrets.
@@ -36,7 +36,7 @@ If HANDOFF.md is included in the commit that will be created after writing it, y
 | Same computer, another tool | Open the same folder, stopping the previous agent first |
 | Another computer, no external service | Transfer the folder or a Git bundle on a secure local medium |
 | Another computer, repository sharing authorized | Push to the specified repository and branch, then clone/pull at the destination |
-| Local to cloud | Review files being sent; provide code, specification, verification records, and environment setup |
+| Local to cloud | Review files being sent; provide code, specification, environment setup, and any saved results you chose to include |
 | Cloud to local | Retrieve changes, recreate dependencies, and rerun tests locally |
 
 A push does not transfer uncommitted files. Copying a Git worktree as an ordinary folder can break its Git references. Create a destination worktree using Git's workflow, or transfer the actual files and records appropriately.
@@ -46,8 +46,9 @@ A push does not transfer uncommitted files. Copying a Git worktree as an ordinar
 Project instructions for the AI: [What the working rules mean](../templates.md#tool-independent-working-rules) · [How to save the file](../setup.md#prepare-your-records) · [Download the rules template](../assets/templates/WORKING_RULES.md.txt).
 
 ```text
-Read WORKING_RULES.md, SPEC.md, ENVIRONMENT.md, VERIFICATION.md, and HANDOFF.md
+Read WORKING_RULES.md, SPEC.md, ENVIRONMENT.md, and HANDOFF.md
 in that order, using local files or the supplied attachments/text.
+Read saved verification results if supplied; their absence is not a missing requirement.
 If a required document is unavailable, ask me to provide it before proceeding.
 Summarize the current objective, code state, last verification,
 unfinished work, and next single task.
@@ -63,7 +64,7 @@ uv sync --locked
 uv run --locked python -m unittest discover -s tests -v
 ```
 
-Run the tests after they exist. See [Python and uv setup](../python-uv.md#dependencies-and-moving-to-another-computer). Append the destination results.
+Run the tests after they exist. See [Python and uv setup](../python-uv.md#dependencies-and-moving-to-another-computer). Display the destination results in the conversation. Save them only if requested or agreed.
 
 ## Ready to resume
 

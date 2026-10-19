@@ -1,6 +1,6 @@
 # AI Development Practice Guide for Students
 
-An English guide to Antigravity, Grok Build, GitHub Copilot, Codex, and Claude Code. Specifications, code, and verification records form a shared foundation for handing work between tools and environments. Created for students enrolled in System Design; the examples can also be used independently.
+An English guide to Antigravity, Grok Build, GitHub Copilot, Codex, and Claude Code. Specifications and code form a shared foundation for handing work between tools and environments. Verification results are displayed in the conversation; saving them is optional and requires the user's request or agreement. Rerun checks after a move when no results were saved. Created for students enrolled in System Design; the examples can also be used independently.
 
 - Start here: [Getting started](docs/index.md#getting-started)
 - Costs and student benefits: [Official-source findings](docs/plans.md), checked on 2026-10-06

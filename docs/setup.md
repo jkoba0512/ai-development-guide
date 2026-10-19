@@ -27,13 +27,12 @@ Git is optional. If using it, verify `git --version`. Record uv, Python, OS, she
 
 ## Prepare your records
 
-Save the five files from [Shared templates](templates.md) into `ai-practice`. Each download ends in `.md.txt`: remove the final `.txt` so, for example, `SPEC.md.txt` becomes `SPEC.md`.
+Save the four core files from [Shared templates](templates.md) into `ai-practice`. Each download ends in `.md.txt`: remove the final `.txt` so, for example, `SPEC.md.txt` becomes `SPEC.md`.
 
 Use a text editor to fill in the starting records; the AI tool does not need to be running yet.
 
 - **SPEC.md:** write “First-run check: create a Python script that prints Ready for AI development. No external packages or network access.” Keep important choices and their reasons in the same file.
 - **ENVIRONMENT.md:** record the environment, selected tool/interface, account access type, and available permission settings. Do not include secret values.
-- **VERIFICATION.md:** keep the template ready. The AI will write a short summary after the first check; you only need to review it.
 - **HANDOFF.md:** set the next task to “Complete the reading, editing, and execution checks.”
 - **[WORKING_RULES.md](templates.md#tool-independent-working-rules) ([How to save the file](setup.md#prepare-your-records) · [Download the rules template](assets/templates/WORKING_RULES.md.txt)):** read and keep the shared working rules.
 
@@ -45,7 +44,6 @@ Project instructions for the AI: [What the working rules mean](templates.md#tool
 ai-practice/
 ├── SPEC.md
 ├── ENVIRONMENT.md
-├── VERIFICATION.md
 ├── HANDOFF.md
 ├── WORKING_RULES.md
 ├── pyproject.toml
@@ -83,7 +81,7 @@ Before starting, confirm that:
 
 - [ ] Your chosen tool is installed and signed in with the intended account.
 - [ ] The [Python and uv environment check](python-uv.md#check-that-python-runs) passes in ai-practice.
-- [ ] The five records are saved under ai-practice.
+- [ ] The four core files are saved under ai-practice.
 - [ ] The tool is open in that folder, with reading-first permissions.
 - [ ] No paid subscription is needed for your selected free route; any paid route was chosen deliberately.
 
@@ -115,7 +113,7 @@ Do not change pyproject.toml, uv.lock, or .python-version for this task.
 After writing the file, show its contents and explain how to run it.
 ```
 
-Read the change. Then ask the AI to run the following command from `ai-practice` and save a short result in VERIFICATION.md. Review the command and working directory before approving it:
+Read the change. Then ask the AI to run the following command from `ai-practice` and display its actual result in the conversation. Review the command and working directory before approving it:
 
 ```sh
 uv run --locked python smoke.py
@@ -123,17 +121,17 @@ uv run --locked python smoke.py
 
 This command is the same on macOS, Linux, and Windows PowerShell.
 
-Expected output: `Ready for AI development`. Review the AI's result and its short record. You do not need to write the execution log yourself.
+Expected output: `Ready for AI development`. Read the result on screen. Saving an execution record is optional: ask for one if you need it. If the AI thinks a record would help, it should explain why and ask before saving.
 
 ### Execution by the AI tool
 
-The AI normally performs the execution above and writes the record. If execution is unavailable with your tool or settings, run the command yourself and paste the output into the conversation. Ask the AI to summarize it as “executed by a person.” If it cannot save files, copy that summary into VERIFICATION.md. A permissions error does not require unrestricted access.
+The AI normally performs the execution above and displays the result. If execution is unavailable with your tool or settings, run the command yourself and paste the output into the conversation. Ask the AI to explain it and identify it as “executed by a person.” No verification file is required. A permissions error does not require unrestricted access.
 
-If your selected interface cannot edit local files, use its proposed code to create smoke.py yourself and record that you performed the edit. You can complete the learning exercise without purchasing another plan.
+If your selected interface cannot edit local files, use its proposed code to create smoke.py yourself and tell the AI that you performed the edit. You can complete the learning exercise without purchasing another plan.
 
 ## Continue to the practice project
 
-After reading, editing, and execution have been checked and recorded, continue to the [Practice project](practice.md). Replace the specification for the small `smoke.py` startup exercise with the agreed study-time CLI specification there. Keep verification history so the two checks are distinguishable.
+After reading, editing, and execution have been checked, continue to the [Practice project](practice.md). Replace the specification for the small `smoke.py` startup exercise with the agreed study-time CLI specification there. If you chose to save results, keep the earlier check distinguishable from the new project.
 
 A [handoff](workflow/handoff.md) is useful later when you change conversations, tools, or computers. You do not need to switch tools during the first exercise.
 

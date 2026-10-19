@@ -21,7 +21,7 @@ Complete browser authentication and confirm the account's Build access. API-key 
 
 ## Prepare the practice folder
 
-Follow [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practice`, prepare [Python with uv](../python-uv.md), and [prepare the five records](../setup.md#prepare-your-records). Return here afterward.
+Follow [Common setup](../setup.md#prepare-a-working-folder) to create `ai-practice`, prepare [Python with uv](../python-uv.md), and [prepare the four core files](../setup.md#prepare-your-records). Return here afterward.
 
 ## Open the practice folder
 
@@ -48,4 +48,4 @@ Within the practice directory, `grok inspect` shows discovered settings, rules, 
 
 ## Continue development
 
-Proceed to the [Practice project](../practice.md). When changing conversations or tools later, keep SPEC.md, code, and VERIFICATION.md as the sources of truth even when using chat export/import. Rerun tests after moving; do not assume permissions transferred. See [Handoffs](../workflow/handoff.md).
+Proceed to the [Practice project](../practice.md). When changing conversations or tools later, keep SPEC.md and code together; include saved verification results if you chose to save them. This also applies when using chat export/import. Rerun tests after moving; do not assume permissions transferred. See [Handoffs](../workflow/handoff.md).
