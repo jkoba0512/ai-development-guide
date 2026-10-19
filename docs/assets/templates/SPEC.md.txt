@@ -25,6 +25,10 @@ Status: [draft / agreed / changing]
 
 ## Acceptance criteria
 
+Each criterion is a condition the program must satisfy. ID means identifier;
+AC-01 means acceptance criterion number 1. Use these labels to refer to conditions
+in tests and discussions; they do not indicate test results.
+
 | ID | Action / input | Expected result | Verification method |
 | --- | --- | --- | --- |
 | AC-01 | [input] | [result] | [test / manual check] |

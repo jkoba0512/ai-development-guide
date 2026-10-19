@@ -253,3 +253,8 @@ Validation results:
 - Transferred code and environment descriptions without .venv, recreated the environment with uv, and passed all 9 tests again.
 - No VERIFICATION.md or premature HANDOFF.md was required by the initial workflow. The handoff file was introduced only for the transfer check.
 - Command execution was tested on macOS. Fresh Windows/Linux installations, actual five-product permissions, student access outcomes, and a live student usability trial remain untested.
+
+## Explain acceptance-criterion identifiers
+
+- Added ID, AC, and AC-01 definitions immediately before the specification table, with an example AI request.
+- Included the same reminder in the downloadable specification template.

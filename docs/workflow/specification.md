@@ -111,6 +111,10 @@ Start with the expected result for 25 and 50. Calculate it before any code exist
 
 An automated test will later compare the program's actual output with this expectation. **The specification defines the correct result; the test checks it.**
 
+In the table, **ID** means **identifier**: a label that lets you refer to one condition without repeating its whole description. **AC** stands for **acceptance criterion**, so **AC-01 means acceptance criterion number 1**. AC-02 is number 2, and so on. These labels identify conditions; they do not indicate that a check has passed.
+
+For example, you can ask the AI, “Test AC-01.” This means checking that inputs 25 and 50 produce count 2, total 75, average 37.5, and exit code 0.
+
 Ask the AI to make sure the draft's Acceptance criteria section covers this table:
 
 | ID | Input or behavior to check | Expected result | Verification after implementation |
